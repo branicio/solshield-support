@@ -1,0 +1,1084 @@
+/* SolShield support site — "Solar Noon"
+   ---------------------------------------------------------------------------
+   One stylesheet, three pages (index / privacy / terms), zero third-party
+   requests. Inter is self-hosted from fonts/; the App Store badges and the app
+   icon are the only images.
+
+   THE PALETTE IS DERIVED, NOT INVENTED.
+     - The hero band reproduces the app icon's own sweep: sky blue at the top,
+       amber at the bottom, with the sun's white bloom over it. A visitor who
+       has the app on their phone should recognise the page.
+     - The five uv-* values are the WHO risk-band colours the app itself paints
+       with (SolShield/Models/UVLevel.swift). They are not decoration; they are
+       the same scale the Dashboard shows.
+     - The six skin-* values are Fitzpatrick I-VI reference tones.
+   None of these may be substituted for a "nicer" hue.
+
+   CONTRAST. Every text/ground pair that uses tokens is machine-checked by
+   tools/support-site-verify/contrast.py, which reads the token blocks below
+   directly. Pairs that cannot be tokens (dark ink on the hero's fixed gradient)
+   are checked there as literals. Measured, non-token pairs are annotated inline
+   at the rule that creates them. Never lower a floor to make a colour fit.
+
+   WEIGHT DISCIPLINE. fonts/Inter-latin.woff2 is a variable face with a real
+   100-900 wght axis, and the face declaration below unlocks all of it. Display
+   type is weight 800. Never ask for a weight outside 100-900 and never set
+   font-style: italic on it (there is no italic face; the browser would slant
+   the roman). Use the i element for ribbon/skin captions only where this file
+   resets font-style to normal.
+
+   LANGUAGES. See the "language visibility" section near the bottom. It is the
+   one part of this file where a mistake is an outage rather than a blemish.
+*/
+
+/* ------------------------------------------------------------------ fonts */
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----------------------------------------------------------------- tokens */
+
+:root {
+  --bg: #FFFFFF;
+  --bg-alt: #F6FAFD;
+  --ink: #0F2B46;
+  --ink-soft: #4B6580;
+  --accent: #9A6414;
+  --sky: #4EB3E8;
+  --sun: #F5A623;
+  --line: rgba(12, 40, 70, .09);
+  --card: #FFFFFF;
+  --hero-ink: #07243D;
+
+  --uv-low: #3EC46D;
+  --uv-moderate: #F4D03F;
+  --uv-high: #F5891F;
+  --uv-veryhigh: #E24B3A;
+  --uv-extreme: #9B59B6;
+
+  --wrap: 1080px;
+  --radius: 14px;
+
+  /* --- everything below is derived from the eleven values above ---------- */
+
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --gutter: clamp(20px, 5vw, 34px);
+  --radius-sm: 10px;
+  --radius-lg: 20px;
+  --ease: cubic-bezier(.2, .7, .3, 1);
+
+  /* A firmer hairline for elements that must read as an edge rather than as a
+     whisper (the formula box, the FAQ rows). --line stays as specified. */
+  --line-2: rgba(12, 40, 70, .17);
+  --tint: rgba(78, 179, 232, .10);
+
+  --shadow-sm: 0 1px 2px rgba(12, 40, 70, .05);
+  --shadow-md: 0 14px 34px -18px rgba(12, 40, 70, .30);
+  --shadow-lg: 0 26px 58px -26px rgba(12, 40, 70, .38);
+
+  /* Hero. The band is identical in both schemes, so its inks are literal and
+     are never flipped. --hero-ink-soft measures 4.94:1 on --sky and 5.73:1 on
+     --sun, i.e. it clears AA against both ends of the gradient. */
+  --hero-ink-soft: #0B3B60;
+  --sun-soft: #FFD27A;
+  --sun-deep: #EF8A17;
+
+  /* The vow band and the footer are dark in BOTH schemes, so their inks are
+     literal too. Flipping them would put dark text on a dark ground.
+     Measured: --band-ink 12.87:1, --band-dim 7.83:1, --band-em 9.27:1 on
+     --band; --foot-ink 8.88:1 and --foot-link 13.33:1 on --foot-bg. */
+  --band: #0F2B46;
+  --band-ink: #EAF3FB;
+  --band-dim: #A8C2DA;
+  --band-em: #FFC65C;
+  --foot-bg: #0B2137;
+  --foot-ink: #A9C2DB;
+  --foot-link: #DCEAF7;
+
+  /* Contact card: the hero's sky-to-amber sweep, pulled almost to white so a
+     dark-ink card can sit on it. --accent measures 4.60:1 / 4.65:1 on the two
+     ends and 4.64:1 at the midpoint. */
+  --warm-a: #EDF7FE;
+  --warm-b: #FFF6E6;
+
+  /* The raised chip inside the language tablist. It has to read as LIFTED off
+     the tablist groove on both grounds, so it is lighter than --card in dark
+     rather than equal to it. */
+  --chip: #FFFFFF;
+
+  /* Fitzpatrick I-VI reference tones. Real skin, not brand colour. */
+  --skin-i: #F7E0D0;
+  --skin-ii: #EFCDB4;
+  --skin-iii: #DDB18C;
+  --skin-iv: #C08A5E;
+  --skin-v: #8D5A34;
+  --skin-vi: #4E2E1C;
+
+  /* Focus ring. Stated literally rather than as var(--ink) so a band that
+     re-tints its own inks cannot dim the ring; re-declared on every surface
+     that changes the ground (hero, vow, footer, ribbon). */
+  --ring: #0F2B46;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #080D18;
+    --bg-alt: #0B1424;
+    --ink: #EAF1FB;
+    --ink-soft: #9FB4D2;
+    --accent: #FFC65C;
+    --line: rgba(255, 255, 255, .09);
+    --card: #0E1828;
+    --line-2: rgba(255, 255, 255, .18);
+    --tint: rgba(255, 198, 92, .10);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .5);
+    --shadow-md: 0 16px 38px -20px rgba(0, 0, 0, .8);
+    --shadow-lg: 0 28px 64px -26px rgba(0, 0, 0, .85);
+    --band: #0D2438;
+    --foot-bg: #05090F;
+    --warm-a: #0E1D30;
+    --warm-b: #211A0C;
+    --chip: #1B2B42;
+    --ring: #FFC65C;
+  }
+}
+
+/* ------------------------------------------------------------------ reset */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Anchored headings must clear the sticky nav. */
+[id] { scroll-margin-top: 96px; }
+
+/* An overflow guard, not a size: the badge's own dimensions are set once, in
+   .badges .as, and its aspect ratio is preserved by height:auto there. */
+img, svg { display: block; max-width: 100%; }
+
+button { font: inherit; color: inherit; background: none; border: 0; }
+
+/* ------------------------------------------------------------- the ground */
+
+body {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.62;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Nothing on this site may push the page sideways, so the guard is per
+     container (see .uv-ribbon, .formula, .hero) rather than an overflow rule
+     on the root — overflow-x on <html> or <body> propagates to the viewport
+     and would either break position:sticky or, with `clip`, force overflow-y
+     to `hidden` and stop the page scrolling at all. This is the one global
+     part: a URL or an email address in the legal copy wraps instead of
+     widening its column. */
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -.028em;
+  text-wrap: balance;
+}
+
+::selection { background: var(--sun); color: var(--hero-ink); }
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+  transition: color .2s var(--ease);
+}
+a:hover { color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.skip-link:focus {
+  left: 14px;
+  top: 14px;
+  z-index: 100;
+  padding: 11px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--band);
+  color: var(--band-ink);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------------------------------------------------------------- measure */
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.wrap.narrow { max-width: 760px; }
+
+/* The full-bleed bands carry the gutter themselves so their backgrounds run
+   edge to edge; a .wrap inside one only has to do the centring. */
+.hero, .vow, .foot { padding-inline: var(--gutter); }
+.hero > .wrap, .vow > .wrap, .foot > .wrap { padding-inline: 0; }
+
+/* -------------------------------------------------------------------- nav */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+@supports ((backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px))) {
+  .nav {
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    backdrop-filter: saturate(180%) blur(14px);
+  }
+}
+.nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  min-height: 62px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.brand:hover { color: var(--ink); }
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--line), var(--shadow-sm);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.nav-links a {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+  /* Padding grows the touch target; the equal negative margin gives the space
+     back to the layout, so the row stays the height it looks. */
+  padding-block: 9px;
+  margin-block: -9px;
+}
+.nav-links a:hover,
+.nav-links a[aria-current] { color: var(--ink); }
+
+/* On a phone these links are the only route between Home, Privacy and Terms,
+   so they drop to their own full-width row rather than being hidden. order:3
+   puts that row below the brand + language tabs, not between them. */
+@media (max-width: 760px) {
+  .nav .wrap { min-height: 0; padding-block: 9px; row-gap: 8px; }
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+  .nav-links a { font-size: .8rem; }
+}
+
+/* --------------------------------------------------------------- langtabs */
+
+/* Contract: .langtabs is the role="tablist"; each control is a button with
+   role="tab", data-lang-target and aria-selected (site.js maintains the last
+   two). .langtab is accepted as a class alias for the control, so markup may
+   use either hook. The selected state carries three cues — fill, weight and an
+   underbar — so it never rests on colour alone. */
+.langtabs {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--bg-alt);                                    /* fallback */
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+  border: 1px solid var(--line);
+}
+.langtabs [role="tab"], .langtabs .langtab {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding: 7px 13px 8px;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color .22s var(--ease), background-color .22s var(--ease);
+}
+.langtabs [role="tab"]:hover, .langtabs .langtab:hover {
+  color: var(--ink);
+  background: var(--tint);
+}
+.langtabs [role="tab"][aria-selected="true"], .langtabs .langtab[aria-selected="true"] {
+  background: var(--chip);
+  color: var(--ink);
+  font-weight: 800;
+  box-shadow: 0 1px 3px rgba(12, 40, 70, .18);
+}
+/* Non-colour cue: only the selected tab grows an amber underbar. */
+.langtabs [role="tab"][aria-selected="true"]::after,
+.langtabs .langtab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--sun);
+}
+
+@media (max-width: 380px) {
+  .brand { font-size: .98rem; }
+  .brand-mark { width: 24px; height: 24px; border-radius: 7px; }
+  .langtabs [role="tab"], .langtabs .langtab { padding: 6px 10px 7px; letter-spacing: .06em; }
+}
+
+/* ------------------------------------------------------------------- hero */
+
+/* The gradient is the brand: it is the app icon's own sky-to-amber sweep and it
+   is IDENTICAL in both colour schemes. Do not add a dark-mode variant. All ink
+   on it is literal for the same reason. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  padding-block: clamp(52px, 9vw, 92px) clamp(44px, 7.5vw, 76px);
+  color: var(--hero-ink);
+  background: linear-gradient(172deg, var(--sky) 0%, #83CDED 40%, #F6C15E 84%, var(--sun) 100%);
+  --ring: #07243D;
+}
+/* The sun's bloom. Both layers only ever LIGHTEN the ground, so they can never
+   erode the contrast the literal inks were measured against. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(54% 48% at 50% -4%,
+      rgba(255, 255, 255, .92) 0%, rgba(255, 255, 255, .34) 36%, rgba(255, 255, 255, 0) 70%),
+    radial-gradient(130% 62% at 50% 116%,
+      rgba(255, 224, 158, .55) 0%, rgba(255, 224, 158, 0) 62%);
+}
+.hero > * { position: relative; }
+
+.hero-icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto clamp(18px, 2.6vw, 26px);
+  border-radius: 22px;
+  /* The icon's own ground is sky-to-amber too, so without a ring it dissolves
+     into the band. The white rim and the drop shadow lift it back off. */
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, .62),
+    0 18px 40px -12px rgba(7, 36, 61, .48);
+}
+
+.hero h1 {
+  font-size: clamp(2.15rem, 8vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.03;
+}
+
+.hero-tagline {
+  margin-top: 10px;
+  font-size: clamp(1.02rem, 2.6vw, 1.32rem);
+  font-weight: 500;
+  letter-spacing: -.008em;
+  text-wrap: balance;
+}
+
+.hero-meta {
+  margin-top: 12px;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .035em;
+  color: var(--hero-ink-soft);
+  text-wrap: balance;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: clamp(20px, 3vw, 28px);
+}
+.badges a {
+  display: inline-block;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform .3s var(--ease), filter .3s var(--ease);
+}
+.badges a:hover { transform: translateY(-2px); filter: drop-shadow(0 10px 18px rgba(7, 36, 61, .3)); }
+
+/* Apple's guidelines forbid editing the badge artwork, so it is SIZED HERE AND
+   NOWHERE ELSE. height:auto keeps the supplied 250x83 aspect ratio exactly. */
+.badges .as { width: 150px; height: auto; }
+
+/* -------------------------------------------------------------- uv ribbon */
+
+/* The signature motif: the WHO scale the app paints with, run edge to edge as
+   the horizon line under the hero. Five equal children, in order:
+   low, moderate, high, very high, extreme. Colour is assigned positionally so
+   the markup needs no per-band class; data-uv is an explicit override that is
+   declared after the positional rules and therefore always wins. */
+.uv-ribbon {
+  display: flex;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+}
+.uv-ribbon > * {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  padding: clamp(9px, 1.5vw, 13px) 4px clamp(10px, 1.7vw, 14px);
+  color: #0d2233;
+  /* A top highlight so the strip reads as one physical object, not five div. */
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .17), rgba(255, 255, 255, 0) 62%);
+}
+.uv-ribbon b, .uv-ribbon strong {
+  display: block;
+  font-size: clamp(.9rem, 2.3vw, 1.05rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  font-variant-numeric: tabular-nums;
+}
+.uv-ribbon i, .uv-ribbon em, .uv-ribbon span {
+  display: block;
+  margin-top: 2px;
+  font-style: normal;
+  font-size: clamp(.6rem, 1.5vw, .7rem);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  /* Never dim this with opacity: the dark ink on --uv-veryhigh has the least
+     headroom of the five bands and cannot spare any. Reflow, not overflow —
+     a long label wraps inside its own cell rather than widening the page. */
+  overflow-wrap: break-word;
+}
+
+.uv-ribbon > :nth-child(1) { background-color: var(--uv-low); }
+.uv-ribbon > :nth-child(2) { background-color: var(--uv-moderate); }
+.uv-ribbon > :nth-child(3) { background-color: var(--uv-high); }
+.uv-ribbon > :nth-child(4) { background-color: var(--uv-veryhigh); }
+.uv-ribbon > :nth-child(5) { background-color: var(--uv-extreme); color: #fff; }
+
+/* Explicit override. Declared last so it beats the positional rules at equal
+   specificity, which is what lets markup reorder or subset the scale. */
+.uv-ribbon [data-uv="low"] { background-color: var(--uv-low); color: #0d2233; }
+.uv-ribbon [data-uv="moderate"] { background-color: var(--uv-moderate); color: #0d2233; }
+.uv-ribbon [data-uv="high"] { background-color: var(--uv-high); color: #0d2233; }
+.uv-ribbon [data-uv="veryhigh"] { background-color: var(--uv-veryhigh); color: #0d2233; }
+.uv-ribbon [data-uv="extreme"] { background-color: var(--uv-extreme); color: #fff; }
+
+/* --------------------------------------------------------------- sections */
+
+.block { padding-block: clamp(54px, 8.5vw, 96px); }
+.block.alt {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+/* Two plain blocks in a row share a ground, so their full paddings stack into
+   a gap wider than either section's own rhythm. Trim the second one's top.
+   Any block that follows a tinted band keeps its full padding — there the gap
+   is doing the work of separating two different surfaces. */
+.block:not(.alt) + .block:not(.alt) { padding-top: clamp(30px, 4.5vw, 52px); }
+
+.section-head { margin-bottom: clamp(26px, 4vw, 40px); }
+.section-head h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  letter-spacing: -.03em;
+}
+.section-head p {
+  margin-top: 12px;
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+.section-head.center { text-align: center; }
+.section-head.center p { margin-inline: auto; }
+
+/* The kicker's leading rule is the sky-to-amber sweep again, three pixels of
+   it — the smallest place the brand gradient appears on the page. */
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.kicker::before,
+.kicker.center::after,
+.center .kicker::after,
+.contact-card .kicker::after {
+  content: "";
+  width: 22px;
+  height: 2px;
+  flex: none;
+  border-radius: 1px;
+  background: linear-gradient(90deg, var(--sky), var(--sun));
+}
+/* Centred kickers get a matching rule on the right, and their left rule is
+   mirrored so the pair reads outward from the words. */
+.kicker.center,
+.center .kicker,
+.contact-card .kicker { justify-content: center; }
+.kicker.center::before,
+.center .kicker::before,
+.contact-card .kicker::before { background: linear-gradient(90deg, var(--sun), var(--sky)); }
+
+/* --------------------------------------------------------------- features */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(14px, 1.8vw, 20px);
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.feature {
+  padding: clamp(18px, 2.2vw, 24px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.feature:hover, .feature:focus-within {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--sun) 38%, var(--line));
+  box-shadow: var(--shadow-md);
+}
+.feature h3, .feature b, .feature strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.3;
+}
+.feature p {
+  color: var(--ink-soft);
+  font-size: .94rem;
+  line-height: 1.6;
+}
+
+.ico {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--sky), var(--sun));
+  box-shadow: 0 8px 18px -10px rgba(245, 166, 35, .85);
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.ico svg { width: 22px; height: 22px; fill: currentColor; }
+
+/* -------------------------------------------------------------------- vow */
+
+/* Dark in BOTH schemes — the privacy promise gets the one quiet band on the
+   page. Its inks are the literal --band-* values for that reason. */
+.vow {
+  padding-block: clamp(28px, 4.5vw, 44px);
+  text-align: center;
+  background: var(--band);
+  color: var(--band-ink);
+  font-size: clamp(1.02rem, 2.4vw, 1.28rem);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.45;
+  text-wrap: balance;
+  --ring: #FFC65C;
+}
+.vow .em {
+  color: var(--band-em);
+  font-style: normal;
+}
+
+/* ---------------------------------------------------------------- science */
+
+.sci {
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+.sci p {
+  max-width: 62ch;
+  margin-inline: auto;
+  color: var(--ink-soft);
+  font-size: .96rem;
+  line-height: 1.7;
+}
+
+/* The one genuinely fixed-width thing on the page: an equation may not be
+   broken mid-operator, so it never wraps. Instead the type and the padding
+   track the viewport, which is enough to fit "minutes = MED / (UV index x 1.5)"
+   unbroken all the way down to 320px. overflow-x is the backstop for a
+   translation or a font substitution that outruns that: THIS box scrolls, the
+   page never does. */
+.formula {
+  margin: 0 auto clamp(14px, 2vw, 20px);
+  padding: clamp(12px, 2vw, 18px) clamp(10px, 2.4vw, 22px);
+  border: 1px dashed var(--line-2);
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  font-family: var(--mono);
+  font-size: clamp(.75rem, 3.4vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow-x: auto;
+}
+/* At the 320px floor the equation is still ~23px wider than the box, so the
+   card gives up some of its own side padding rather than let it scroll: the
+   page gutter is already holding the text off the screen edge. Measured after
+   this rule: the formula fits unbroken at every width from 320px up. */
+@media (max-width: 360px) {
+  .sci { padding-inline: 12px; }
+  .formula { padding-inline: 8px; }
+}
+
+/* ------------------------------------------------------------- skin types */
+
+.skins {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(8px, 1.2vw, 14px);
+}
+/* Six across is unreadable on a phone, so the row reflows to two rows of three
+   rather than scrolling sideways. */
+@media (max-width: 620px) {
+  .skins { grid-template-columns: repeat(3, 1fr); }
+}
+
+.skin { text-align: center; min-width: 0; }
+.swatch {
+  height: clamp(46px, 6.5vw, 62px);
+  margin-bottom: 8px;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  /* A soft top light so a flat tone reads as a surface. */
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 58%);
+}
+.skin b, .skin strong {
+  display: block;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+.skin i, .skin em, .skin span {
+  display: block;
+  margin-top: 1px;
+  font-style: normal;
+  font-size: .78rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  overflow-wrap: break-word;
+}
+
+.skins > :nth-child(1) .swatch { background-color: var(--skin-i); }
+.skins > :nth-child(2) .swatch { background-color: var(--skin-ii); }
+.skins > :nth-child(3) .swatch { background-color: var(--skin-iii); }
+.skins > :nth-child(4) .swatch { background-color: var(--skin-iv); }
+.skins > :nth-child(5) .swatch { background-color: var(--skin-v); }
+.skins > :nth-child(6) .swatch { background-color: var(--skin-vi); }
+
+/* Explicit override, declared after the positional rules for the same reason
+   as the ribbon's — and carrying the .skins ancestor so it matches the
+   positional rules' specificity rather than losing to it. */
+.skins .swatch[data-skin="i"] { background-color: var(--skin-i); }
+.skins .swatch[data-skin="ii"] { background-color: var(--skin-ii); }
+.skins .swatch[data-skin="iii"] { background-color: var(--skin-iii); }
+.skins .swatch[data-skin="iv"] { background-color: var(--skin-iv); }
+.skins .swatch[data-skin="v"] { background-color: var(--skin-v); }
+.skins .swatch[data-skin="vi"] { background-color: var(--skin-vi); }
+
+/* -------------------------------------------------------------------- faq */
+
+/* Native <details>/<summary>. No JavaScript is involved, so the FAQ keeps
+   working on the same terms as the legal copy does. */
+.faq {
+  display: grid;
+  gap: 10px;
+}
+.faq details {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.faq details[open] {
+  border-color: color-mix(in srgb, var(--sun) 34%, var(--line));
+  box-shadow: var(--shadow-md);
+}
+
+.faq summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 17px 52px 17px clamp(16px, 2vw, 22px);
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -.012em;
+  line-height: 1.4;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .2s var(--ease);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { color: var(--accent); }
+
+/* The +/- marker, drawn from two bars so it needs no glyph and no image. */
+.faq summary::before,
+.faq summary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  border-radius: 2px;
+  background: var(--accent);
+  transition: transform .28s var(--ease), opacity .28s var(--ease);
+}
+.faq summary::before { width: 13px; height: 2px; margin-top: -1px; }
+.faq summary::after { width: 2px; height: 13px; margin-top: -6.5px; margin-right: 5.5px; }
+.faq details[open] summary::after { transform: scaleY(0); opacity: 0; }
+
+.faq details > :not(summary) {
+  margin: 0 clamp(16px, 2vw, 22px) 18px;
+  color: var(--ink-soft);
+  font-size: .96rem;
+  line-height: 1.66;
+}
+.faq details > :not(summary) + :not(summary) { margin-top: 12px; }
+.faq details[open] > :not(summary) { animation: reveal .3s var(--ease) both; }
+
+/* ---------------------------------------------------------------- contact */
+
+/* The card's ground is deliberately close to white, because --accent has to
+   stay above 4.5:1 on it (it measures 4.60:1). It therefore earns its edge
+   from an amber-tinted border and a real shadow rather than from more colour. */
+.contact-card {
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px);
+  border: 1px solid var(--line);
+  border: 1px solid color-mix(in srgb, var(--sun) 26%, var(--line));
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--warm-a), var(--warm-b));
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+.contact-card h2 {
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  letter-spacing: -.03em;
+}
+.contact-card p {
+  max-width: 56ch;
+  margin: 12px auto 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* The single most important action on the site, so it gets the brand's own
+   amber in both schemes. --hero-ink measures 7.80:1 on --sun and 11.10:1 on
+   --sun-soft, so the label clears AA across the whole gradient. */
+.mail {
+  display: inline-block;
+  margin-top: clamp(18px, 2.5vw, 24px);
+  padding: 13px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--sun-soft), var(--sun));
+  color: var(--hero-ink);
+  font-size: .98rem;
+  font-weight: 700;
+  letter-spacing: -.005em;
+  text-decoration: none;
+  box-shadow: 0 12px 26px -14px rgba(239, 138, 23, .95);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.mail:hover {
+  color: var(--hero-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px -14px rgba(239, 138, 23, 1);
+}
+
+/* ----------------------------------------------------------------- footer */
+
+/* Dark in both schemes, like .vow — literal inks, literal ring. */
+.foot {
+  padding-block: clamp(30px, 4.5vw, 46px);
+  background: var(--foot-bg);
+  color: var(--foot-ink);
+  text-align: center;
+  font-size: .88rem;
+  --ring: #FFC65C;
+}
+.foot .brand { color: #fff; justify-content: center; }
+.foot .brand:hover { color: #fff; }
+.foot .brand-mark { box-shadow: 0 0 0 1px rgba(255, 255, 255, .18); }
+
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 22px;
+  margin: 16px 0 18px;
+}
+.foot-links a {
+  color: var(--foot-link);
+  font-weight: 600;
+  text-decoration: none;
+  padding-block: 8px;
+  margin-block: -8px;
+}
+.foot-links a:hover { color: #fff; text-decoration: underline; }
+
+.cr { color: var(--foot-ink); }
+.attr {
+  margin-top: 6px;
+  color: var(--foot-ink);
+  opacity: .78;   /* 8.88:1 base leaves room; lands near 6.5:1 on --foot-bg */
+  font-size: .82rem;
+}
+
+/* ------------------------------------------------------------ legal pages */
+
+/* ~2,500 words of policy in three languages. Everything here serves reading:
+   a 68ch measure, 1.7 leading, and a ruled break before every h2 so the eye
+   can find a clause without a table of contents. */
+.legal {
+  max-width: 68ch;
+  margin-inline: auto;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.legal h1 {
+  font-size: clamp(1.85rem, 5vw, 2.6rem);
+  letter-spacing: -.032em;
+  margin-bottom: 14px;
+}
+.legal h2 {
+  position: relative;
+  margin-top: clamp(38px, 5vw, 56px);
+  padding-top: clamp(22px, 3vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.22rem, 3vw, 1.5rem);
+  letter-spacing: -.025em;
+}
+/* The rule gets a short sun-gradient cap: it marks the start of a clause
+   without adding a second colour to the page. */
+.legal h2::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 38px;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, var(--sky), var(--sun));
+}
+.legal h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.legal h2:first-child::before { display: none; }
+
+.legal h3 {
+  margin-top: 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  color: var(--ink);
+}
+
+.legal p, .legal ul, .legal ol, .legal table { margin-top: 14px; }
+.legal ul, .legal ol { padding-left: 1.3em; }
+.legal li { margin-top: 7px; }
+.legal li::marker { color: var(--accent); }
+.legal strong, .legal b { font-weight: 700; }
+.legal a { font-weight: 500; }
+.legal > :first-child { margin-top: 0; }
+
+.updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: clamp(26px, 4vw, 38px);
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--ink-soft);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.updated::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+/* ------------------------------------------------------ language visibility */
+
+/* Languages are hidden ONLY when site.js has announced itself by setting
+   data-js on <html>. If the script never runs, throws before that line, or
+   throws later (its catch removes the attribute again), this selector stops
+   matching and all three languages render stacked, top to bottom — readable,
+   anchor-navigable, and complete. Showing the wrong language is cosmetic;
+   showing none would be a legal-content outage. Never hide [data-lang]
+   outside an html[data-js="on"] scope. */
+html[data-js="on"] [data-lang] { display: none; }
+html[data-js="on"] [data-lang][data-lang-active] { display: block; }
+
+/* Without JS the three languages stack, so give them a rule between them.
+   Scoped to the no-JS case so the single visible section can never inherit a
+   stray border from a hidden sibling. */
+html:not([data-js="on"]) [data-lang] + [data-lang] { border-top: 2px solid var(--line); }
+
+/* A tablist that cannot switch anything is a trap, so the CONTROL is hidden
+   without JS. This hides no content — all three languages are already on the
+   page, which is precisely why hiding the control is safe. Any future no-JS
+   language switcher (plain links to #portugues / #espanol) must therefore not
+   use .langtabs. */
+html:not([data-js="on"]) .langtabs { display: none; }
+
+/* ----------------------------------------------------------------- motion */
+
+[data-rise] {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rise .5s cubic-bezier(.2, .7, .3, 1) forwards;
+}
+@keyframes rise { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  [data-rise] { opacity: 1; transform: none; animation: none; }
+}
+
+/* A short positional stagger, so a row of cards arrives as a sweep rather than
+   as a flash. The ceiling is deliberately low (0.32s) — nothing may still be
+   fading in by the time a reader has reached it. Cancelled outright by the
+   reduced-motion block below, which sets animation:none on everything. */
+[data-rise]:nth-child(2) { animation-delay: .06s; }
+[data-rise]:nth-child(3) { animation-delay: .12s; }
+[data-rise]:nth-child(4) { animation-delay: .18s; }
+[data-rise]:nth-child(5) { animation-delay: .24s; }
+[data-rise]:nth-child(6) { animation-delay: .28s; }
+[data-rise]:nth-child(n+7) { animation-delay: .32s; }
+
+@keyframes reveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  /* Restated after the blanket rule above: [data-rise] starts at opacity 0, so
+     killing its animation without also restoring it would hide the content. */
+  [data-rise] { opacity: 1; transform: none; }
+}
+
+/* ------------------------------------------------------------------ print */
+
+@media print {
+  .nav, .langtabs, .skip-link, .badges, .foot, .hero::before { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .wrap, .wrap.narrow { max-width: none; padding-inline: 0; }
+  .hero { background: none; color: #000; padding-block: 0 18pt; }
+  .legal { max-width: none; }
+  .legal h2, .legal h3, h1, h2, h3 { color: #000; page-break-after: avoid; }
+  .faq details { border: 0; box-shadow: none; }
+  /* Print every answer, open or not — a printed FAQ of six questions and no
+     answers is not a document. !important beats the UA rule that hides the
+     contents of a closed <details>. */
+  .faq details > :not(summary) { display: block !important; }
+  .faq summary::before, .faq summary::after { display: none; }
+  a { color: #000; }
+}
