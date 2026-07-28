@@ -794,10 +794,17 @@ a:hover { color: var(--ink); }
 }
 /* At the 320px floor the equation is still ~23px wider than the box, so the
    card gives up some of its own side padding rather than let it scroll: the
-   page gutter is already holding the text off the screen edge. Measured after
-   this rule: the formula fits unbroken at every width from 320px up. */
+   page gutter is already holding the text off the screen edge.
+
+   The budget is set by the LONGEST of the three languages, not by English.
+   "minutos = DEM ÷ (índice UV × 1,5)" (pt-BR and es-ES) renders 258px at the
+   320px floor against English's 252px, so the 12px .sci padding that fit
+   English exactly left PT/ES 6px short and silently scrolling. .sci gives up
+   4px more; .formula keeps its full 8px so the text never crowds its own
+   dashed border. Measured at 320px: box 260px, content 258px — all three
+   languages fit unbroken, with 2px to spare. */
 @media (max-width: 360px) {
-  .sci { padding-inline: 12px; }
+  .sci { padding-inline: 8px; }
   .formula { padding-inline: 8px; }
 }
 
