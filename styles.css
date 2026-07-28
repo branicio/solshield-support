@@ -549,18 +549,15 @@ a:hover { color: var(--ink); }
   display: block;
   margin-top: 2px;
   font-style: normal;
-  /* Floor lowered from .65rem to .53rem (8.48px) in Task 5's fix round: at
-     .65rem, single-word captions with no space to wrap at —
-     "Moderate"/"Moderado" — broke mid-word at 320px ("MODERA"/"TE").
-     Measured in the browser: at .53rem the longest single word in any of the
-     three languages (8 characters — "Moderate"/"Moderado") needs ≈54.3px
-     against a 56px cell, ~1.7px of margin; overflow-wrap: normal below means
-     a word that still doesn't fit will bleed past its cell rather than
-     fracture, which is the lesser failure and has not been observed to occur
-     at this floor for EN/PT/ES. Two-word captions ("Very High"/"Muito
-     Alto"/"Muy Alto") wrap at the space onto a second line same as before —
-     unaffected by this. */
-  font-size: clamp(.53rem, 1.5vw, .7rem);
+  /* Floor restored to .65rem (10.4px) in fix round 2 — Task 3's fix round 2
+     deliberately raised it to this exact value with the instruction to let
+     the band grow or the caption wrap rather than shrink further; a fix
+     round 1 attempt at this file lowered it to .53rem (8.48px) to stop a
+     mid-word break, which reversed that ruling and dropped below any usable
+     floor (Apple HIG's own floor is 11pt). The narrow-viewport fix now lives
+     in the @media rule below instead: it buys back horizontal room (tighter
+     cell padding, tighter letter-spacing) rather than shrinking the glyph. */
+  font-size: clamp(.65rem, 1.5vw, .7rem);
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -571,13 +568,29 @@ a:hover { color: var(--ink); }
      than widening the page. */
   /* break-word (the prior implementer's original choice) allows the browser
      to split ANY word at an arbitrary character when the alternative is
-     overflow — which is what produced the mid-word break above. normal +
-     hyphens:none means a caption only ever breaks at a space (or, for a
-     single word, doesn't break at all), so the lowered floor above is what
-     actually prevents overflow, not this property. */
+     overflow — which is what produced the "MODERA"/"TE" mid-word break this
+     round is fixing. normal + hyphens:none means a caption only ever breaks
+     at a space (or, for a single word, doesn't break at all); the @media
+     rule below is what actually prevents overflow at narrow widths, not
+     this property by itself. */
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;
+}
+
+/* Below ~400px, .uv-ribbon's five cells no longer have room for an 8-letter
+   single-word caption ("Moderate"/"Moderado") at the standard .65rem +
+   .06em tracking without breaking. Buy the room back instead of shrinking
+   the glyph further: 3px back from cell padding (1.5px/side) and looser
+   uppercase tracking traded for tighter (letter-spacing barely reads at
+   this size anyway). Measured: all five EN/PT/ES captions fit their cell
+   on one line at 320px under this rule with scrollWidth === clientWidth. */
+@media (max-width: 400px) {
+  .uv-ribbon > * { padding-inline: 1px; }
+  .uv-ribbon i, .uv-ribbon em, .uv-ribbon span {
+    font-size: .65rem;
+    letter-spacing: .01em;
+  }
 }
 
 .uv-ribbon > :nth-child(1) { background-color: var(--uv-low); }
