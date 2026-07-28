@@ -108,6 +108,17 @@
   --warm-a: #EDF7FE;
   --warm-b: #FFF6E6;
 
+  /* Mail CTA. The approved mockup draws this as a solid navy pill — the
+     highest-contrast element on the card — so light mode matches it exactly:
+     white on --mail-bg measures 14.44:1. Dark mode keeps the amber-gradient
+     treatment instead of inverting to a light pill: navy-on-dark reads as a
+     weak CTA there, and --hero-ink on the amber gradient already clears AA
+     (7.80:1-11.10:1), so there is no trade between "matches the mockup" and
+     "clears contrast" — each scheme gets whichever is actually true for it. */
+  --mail-bg: #0F2B46;
+  --mail-ink: #FFFFFF;
+  --mail-shadow: rgba(12, 40, 70, .38);
+
   /* The raised chip inside the language tablist. It has to read as LIFTED off
      the tablist groove on both grounds, so it is lighter than --card in dark
      rather than equal to it. */
@@ -142,9 +153,25 @@
     --shadow-md: 0 16px 38px -20px rgba(0, 0, 0, .8);
     --shadow-lg: 0 28px 64px -26px rgba(0, 0, 0, .85);
     --band: #0D2438;
-    --foot-bg: #05090F;
-    --warm-a: #0E1D30;
-    --warm-b: #211A0C;
+    /* Lifted ABOVE --bg (was #05090F, below it), so the footer is a well
+       relative to the page instead of vanishing into a same-depth black.
+       Measured 1.08:1 against --bg — subtle by design, since the real edge
+       is .foot's border-top; this only fixes the direction. */
+    --foot-bg: #0E1726;
+    /* Retuned from #0E1D30/#211A0C: a straight RGB blend between those two
+       collapsed to S<0.04 (near gray) around the 55-70% mark and swung
+       through a desaturated yellow-green there — a visible muddy-olive band
+       in the card's lower corner. This pair takes the long way round the
+       hue wheel (blue -> violet -> red -> amber) instead of the short way
+       (blue -> teal -> green -> amber), so it never dips through green:
+       worst-case saturation along the path is .12, and the hue at that
+       point is violet/magenta, not olive. */
+    --warm-a: #0F1B36;
+    --warm-b: #2A1608;
+    /* Mail CTA stays amber in dark — see the light-mode comment above. */
+    --mail-bg: linear-gradient(135deg, var(--sun-soft), var(--sun));
+    --mail-ink: var(--hero-ink);
+    --mail-shadow: rgba(239, 138, 23, .95);
     --chip: #1B2B42;
     --ring: #FFC65C;
   }
@@ -522,7 +549,10 @@ a:hover { color: var(--ink); }
   display: block;
   margin-top: 2px;
   font-style: normal;
-  font-size: clamp(.6rem, 1.5vw, .7rem);
+  /* Floor raised from .6rem (9.6px): at the legibility floor already, one
+     step up. Narrow viewports may wrap the caption to a second line or let
+     the ribbon grow taller instead of shrinking further. */
+  font-size: clamp(.65rem, 1.5vw, .7rem);
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -665,9 +695,13 @@ a:hover { color: var(--ink); }
 /* -------------------------------------------------------------------- vow */
 
 /* Dark in BOTH schemes — the privacy promise gets the one quiet band on the
-   page. Its inks are the literal --band-* values for that reason. */
+   page. Its inks are the literal --band-* values for that reason. In dark
+   mode --band (#0D2438) sits only ~1.23:1 above --bg (#080D18) — nearly
+   indistinguishable — so border-top: var(--line) gives it a real edge that
+   doesn't depend on the two grounds staying far enough apart. */
 .vow {
   padding-block: clamp(28px, 4.5vw, 44px);
+  border-top: 1px solid var(--line);
   text-align: center;
   background: var(--band);
   color: var(--band-ink);
@@ -871,34 +905,39 @@ a:hover { color: var(--ink); }
   line-height: 1.65;
 }
 
-/* The single most important action on the site, so it gets the brand's own
-   amber in both schemes. --hero-ink measures 7.80:1 on --sun and 11.10:1 on
-   --sun-soft, so the label clears AA across the whole gradient. */
+/* The single most important action on the site. Colour is entirely token-
+   driven (--mail-bg/--mail-ink/--mail-shadow, defined per scheme up in
+   :root) so light matches the approved mockup's navy pill exactly and dark
+   keeps the brand amber — see the token comments for why each is right for
+   its scheme. */
 .mail {
   display: inline-block;
   margin-top: clamp(18px, 2.5vw, 24px);
   padding: 13px 28px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--sun-soft), var(--sun));
-  color: var(--hero-ink);
+  background: var(--mail-bg);
+  color: var(--mail-ink);
   font-size: .98rem;
   font-weight: 700;
   letter-spacing: -.005em;
   text-decoration: none;
-  box-shadow: 0 12px 26px -14px rgba(239, 138, 23, .95);
+  box-shadow: 0 12px 26px -14px var(--mail-shadow);
   transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
 .mail:hover {
-  color: var(--hero-ink);
+  color: var(--mail-ink);
   transform: translateY(-2px);
-  box-shadow: 0 18px 34px -14px rgba(239, 138, 23, 1);
+  box-shadow: 0 18px 34px -14px var(--mail-shadow);
 }
 
 /* ----------------------------------------------------------------- footer */
 
-/* Dark in both schemes, like .vow — literal inks, literal ring. */
+/* Dark in both schemes, like .vow — literal inks, literal ring. Same
+   border-top rationale as .vow: an edge that doesn't rely on --foot-bg and
+   --bg staying far enough apart to read as a seam on their own. */
 .foot {
   padding-block: clamp(30px, 4.5vw, 46px);
+  border-top: 1px solid var(--line);
   background: var(--foot-bg);
   color: var(--foot-ink);
   text-align: center;
