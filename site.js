@@ -40,6 +40,19 @@
     var i18nEls = Array.prototype.slice.call(document.querySelectorAll("[data-i18n-en]"));
     i18nEls.forEach(function (el) { el.dataset.i18nBaseline = el.textContent; });
 
+    // The same channel for aria-label. A label is text a screen-reader user
+    // hears, so on a trilingual site it has to speak their language; but it is
+    // an attribute, not textContent, so the loop above cannot carry it. Only
+    // the shared chrome needs this — inside a [data-lang] section a label is
+    // already translated by duplication. "[data-i18n-aria-en]" and
+    // "[data-i18n-en]" are distinct attribute names, so the two sets never
+    // overlap. Baseline is captured here, before any switch, for the same
+    // reason as above.
+    var i18nAriaEls = Array.prototype.slice.call(document.querySelectorAll("[data-i18n-aria-en]"));
+    i18nAriaEls.forEach(function (el) {
+      el.dataset.i18nAriaBaseline = el.getAttribute("aria-label") || "";
+    });
+
     function pick() {
       var h = (location.hash || "").replace("#", "").toLowerCase();
       if (HASH[h]) return HASH[h];
@@ -86,6 +99,15 @@
       i18nEls.forEach(function (el) {
         var v = el.getAttribute("data-i18n-" + lang);
         el.textContent = v != null ? v : el.dataset.i18nBaseline;
+      });
+
+      i18nAriaEls.forEach(function (el) {
+        var v = el.getAttribute("data-i18n-aria-" + lang);
+        var next = v != null ? v : el.dataset.i18nAriaBaseline;
+        // An empty label is worse than none: it would silence an element the
+        // author meant to name. Fall back to removing the attribute instead.
+        if (next) el.setAttribute("aria-label", next);
+        else el.removeAttribute("aria-label");
       });
 
       document.documentElement.lang = LANG_ATTR[lang] || lang;
