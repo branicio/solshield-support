@@ -108,7 +108,17 @@
     });
 
     apply(pick(), false);
-    window.addEventListener("hashchange", function () { apply(pick(), false); });
+    // Only re-derive the language when the new hash actually names one of the
+    // three language anchors (#top / #portugues / #espanol). Any other
+    // in-page anchor — including the skip link's #main — must leave the
+    // reader's current language alone: falling through to pick()'s
+    // navigator.language branch on every hashchange would silently switch a
+    // PT/ES reader who clicks an ordinary anchor to whatever the browser's
+    // locale says.
+    window.addEventListener("hashchange", function () {
+      var h = (location.hash || "").replace("#", "").toLowerCase();
+      if (HASH[h]) apply(HASH[h], false);
+    });
 
   } catch (err) {
     // Setup did not complete, so withdraw the authorisation data-js grants

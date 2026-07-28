@@ -549,10 +549,18 @@ a:hover { color: var(--ink); }
   display: block;
   margin-top: 2px;
   font-style: normal;
-  /* Floor raised from .6rem (9.6px): at the legibility floor already, one
-     step up. Narrow viewports may wrap the caption to a second line or let
-     the ribbon grow taller instead of shrinking further. */
-  font-size: clamp(.65rem, 1.5vw, .7rem);
+  /* Floor lowered from .65rem to .53rem (8.48px) in Task 5's fix round: at
+     .65rem, single-word captions with no space to wrap at —
+     "Moderate"/"Moderado" — broke mid-word at 320px ("MODERA"/"TE").
+     Measured in the browser: at .53rem the longest single word in any of the
+     three languages (8 characters — "Moderate"/"Moderado") needs ≈54.3px
+     against a 56px cell, ~1.7px of margin; overflow-wrap: normal below means
+     a word that still doesn't fit will bleed past its cell rather than
+     fracture, which is the lesser failure and has not been observed to occur
+     at this floor for EN/PT/ES. Two-word captions ("Very High"/"Muito
+     Alto"/"Muy Alto") wrap at the space onto a second line same as before —
+     unaffected by this. */
+  font-size: clamp(.53rem, 1.5vw, .7rem);
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -561,7 +569,15 @@ a:hover { color: var(--ink); }
      it — the mockup's opacity:.72 on this caption is intentionally dropped.
      Reflow, not overflow — a long label wraps inside its own cell rather
      than widening the page. */
-  overflow-wrap: break-word;
+  /* break-word (the prior implementer's original choice) allows the browser
+     to split ANY word at an arbitrary character when the alternative is
+     overflow — which is what produced the mid-word break above. normal +
+     hyphens:none means a caption only ever breaks at a space (or, for a
+     single word, doesn't break at all), so the lowered floor above is what
+     actually prevents overflow, not this property. */
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .uv-ribbon > :nth-child(1) { background-color: var(--uv-low); }
@@ -690,7 +706,11 @@ a:hover { color: var(--ink); }
   font-size: 1.2rem;
   line-height: 1;
 }
-.ico svg { width: 22px; height: 22px; fill: currentColor; }
+/* Every icon in this set is stroked line art authored with fill="none" — a
+   solid fill was never the intent, so the rule paints the stroke instead.
+   Icons that inherit their stroke color (rather than setting stroke="…"
+   inline) still resolve to currentColor via this rule. */
+.ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; }
 
 /* -------------------------------------------------------------------- vow */
 
