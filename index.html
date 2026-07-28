@@ -250,13 +250,422 @@
     </footer>
 
   </section>
+
   <!-- ======================================================== /ENGLISH ==
-       Task 6 appends <section data-lang="pt" lang="pt-BR" aria-label="Português">
-       and <section data-lang="es" lang="es-ES" aria-label="Español"> here,
-       each an exact copy of the nine blocks above with the badge swapped to
-       badges/app-store-pt-br.svg / badges/app-store-es-es.svg and id="top"
-       dropped from the <h1> (ids must stay unique).
+       The two sections below are structural clones of the block above:
+       same elements, classes, data-rise flags and inline SVGs, with only the
+       copy, the App Store badge and the section's own data-lang / id / lang /
+       aria-label changed. The rationale comments are not repeated — read them
+       once, in English. parity.py enforces the equivalence.
+
+       id="portugues" and id="espanol" are the only hand-authored ids on the
+       page: they are the deep-link anchors site.js maps to a language, and it
+       honours an existing id (`if (!s.id)`). role="tabpanel", aria-controls
+       and aria-hidden are still stamped at runtime and must not appear here.
+       id="top" stays on the English <h1> alone — ids must be unique.
   -->
+
+  <section data-lang="pt" id="portugues" lang="pt-BR" aria-label="Português">
+
+    <!-- 1. hero -->
+    <header class="hero">
+      <div class="wrap">
+        <img class="hero-icon" src="app-icon.png" alt="" width="96" height="96" data-rise>
+        <h1 data-rise>SolShield</h1>
+        <p class="hero-tagline" data-rise>Domine sua exposição solar</p>
+        <p class="hero-meta" data-rise>iPhone · iPad · Desenvolvido com Apple Weather · Sem necessidade de conta</p>
+        <div class="badges" data-rise>
+          <a href="https://apps.apple.com/app/apple-store/id6757956272">
+            <img class="as" src="badges/app-store-pt-br.svg" alt="Baixar na App Store">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. WHO UV scale -->
+    <div class="uv-ribbon">
+      <div data-uv="low"><b>0–2</b><i>Baixo</i></div>
+      <div data-uv="moderate"><b>3–5</b><i>Moderado</i></div>
+      <div data-uv="high"><b>6–7</b><i>Alto</i></div>
+      <div data-uv="veryhigh"><b>8–10</b><i>Muito Alto</i></div>
+      <div data-uv="extreme"><b>11+</b><i>Extremo</i></div>
+    </div>
+
+    <!-- 3. features -->
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Dentro do aplicativo</p>
+          <h2>Recursos</h2>
+        </div>
+        <div class="grid">
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
+            <h3>Índice UV em tempo real</h3>
+            <p>Leituras em tempo real da sua localização pelo Apple Weather, com níveis de risco codificados por cores da OMS.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
+            <h3>Tempo de queimadura personalizado</h3>
+            <p>Minutos até a queimadura para o seu tipo de pele Fitzpatrick, do I ao VI.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="5" width="17.6" height="15.8" rx="2.6"/><path d="M3.2 9.8h17.6M8 3.2v3.4M16 3.2v3.4M7.6 13.6h2.2M11.6 13.6h2.2M15.6 13.6h2.2M7.6 17.2h2.2M11.6 17.2h2.2"/></svg></div>
+            <h3>Previsão horária e de 7 dias</h3>
+            <p>Veja quando o UV atinge o pico hoje e planeje a semana em torno disso.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
+            <h3>Temporizador de exposição solar</h3>
+            <p>Faz a contagem regressiva do seu tempo seguro ao sol e avisa quando ele acaba.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 9.2a6 6 0 1 0-12 0c0 5.4-2.2 6.8-2.2 6.8h16.4S18 14.6 18 9.2z"/><path d="M13.8 19.4a2 2 0 0 1-3.6 0"/></svg></div>
+            <h3>Notificações inteligentes</h3>
+            <p>Alertas de limite de UV, avisos de pico diário e lembretes para reaplicar o protetor solar.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 20.6h17.2"/><path d="M6.8 20.6v-4.8M11 20.6V9.4M15.2 20.6v-7.4M19.4 20.6V5.6"/></svg></div>
+            <h3>Histórico de exposição</h3>
+            <p>Médias semanais, leituras de pico e tendências ao longo do tempo.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
+            <h3>Estimativa de Vitamina D</h3>
+            <p>Quanto a sua exposição atual está realmente produzindo, por tipo de pele.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.6C10.7 5.1 8.7 4.3 6.2 4.3H3.4v13.2h2.8c2.5 0 4.5.8 5.8 2.2 1.3-1.4 3.3-2.2 5.8-2.2h2.8V4.3h-2.8c-2.5 0-4.5.8-5.8 2.3z"/><path d="M12 6.6v13.1"/></svg></div>
+            <h3>Aprender</h3>
+            <p>O índice UV explicado, orientações da OMS e prevenção do câncer de pele.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
+            <h3>English · Português · Español</h3>
+            <p>Troque de idioma quando quiser, sem reiniciar.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. the privacy vow -->
+    <div class="vow">
+      <div class="wrap">Sem anúncios. Sem contas. <span class="em">Sua localização nunca sai do seu dispositivo.</span></div>
+    </div>
+
+    <!-- 5. the science -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">A ciência</p>
+          <h2>O tempo de queimadura não é um palpite</h2>
+        </div>
+        <div class="sci">
+          <div class="formula">minutes = MED ÷ (UV index × 1.5)</div>
+          <p>MED é a Dose Eritematosa Mínima — a energia UV que a sua pele absorve antes de avermelhar visivelmente. Ela varia conforme o tipo Fitzpatrick (200 J/m² para o Tipo I até 900 J/m² para o Tipo VI), e é por isso que duas pessoas sob o mesmo sol recebem números muito diferentes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Fitzpatrick scale -->
+    <section class="block alt">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Feito para você</p>
+          <h2>Seis tipos de pele</h2>
+        </div>
+        <div class="skins">
+          <div class="skin"><div class="swatch" data-skin="i"></div><b>I</b><i>Sempre queima</i></div>
+          <div class="skin"><div class="swatch" data-skin="ii"></div><b>II</b><i>Geralmente queima</i></div>
+          <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Às vezes queima</i></div>
+          <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Raramente queima</i></div>
+          <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Muito raramente queima</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Nunca queima</i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">Bom saber</p>
+          <h2>Perguntas frequentes</h2>
+        </div>
+        <div class="faq">
+
+          <details>
+            <summary>Quanto custa o SolShield?</summary>
+            <p>O SolShield é um <a href="terms.html">aplicativo por assinatura</a>: <strong>$9.99 por ano</strong> ou <strong>$0.99 por mês</strong> (USD), cada plano com <strong>7 dias de teste gratuito</strong>. A assinatura libera o aplicativo inteiro — UV em tempo real, previsões, o temporizador de exposição, notificações, histórico e a seção Aprender. Se você não cancelar antes do fim do teste, ele se converte automaticamente em uma assinatura paga.</p>
+          </details>
+
+          <details>
+            <summary>Como cancelo minha assinatura?</summary>
+            <p>Pela Apple, a qualquer momento. Abra o aplicativo Ajustes no seu iPhone ou iPad, toque no seu nome, toque em <strong>Assinaturas</strong>, encontre o SolShield e toque em <strong>Cancelar Assinatura</strong>. O cancelamento entra em vigor no fim do período de cobrança atual e você mantém o acesso até lá. Os <a href="terms.html">reembolsos</a> são tratados pela Apple, não por nós.</p>
+          </details>
+
+          <details>
+            <summary>O SolShield rastreia minha localização?</summary>
+            <p>Não. Sua localização é usada no seu dispositivo para consultar o índice UV de onde você está, e as coordenadas são enviadas ao Apple WeatherKit apenas para responder a essa consulta. Não há contas, não há servidores nossos, não há SDKs de análise, não há SDKs de publicidade e <a href="privacy.html">não há rastreamento de nenhum tipo</a>. Locais salvos, histórico de UV e seus ajustes permanecem no seu dispositivo.</p>
+          </details>
+
+          <details>
+            <summary>De onde vêm os dados de UV?</summary>
+            <p>Do Apple Weather, através do framework WeatherKit da Apple. Os níveis de risco seguem as faixas do Índice UV Solar Global da OMS — Baixo 0–2, Moderado 3–5, Alto 6–7, Muito Alto 8–10, Extremo 11+.</p>
+          </details>
+
+          <details>
+            <summary>Como o tempo de queimadura é calculado?</summary>
+            <p>A partir da Dose Eritematosa Mínima: <strong>minutes = MED ÷ (UV index × 1.5)</strong>. A MED é a energia UV que a sua pele absorve antes de avermelhar visivelmente, e varia conforme o tipo Fitzpatrick — 200 J/m² para o Tipo I até 900 J/m² para o Tipo VI. Para pele do Tipo II com UV 7, isso dá 250 ÷ 10.5 ≈ 24 minutos. Abaixo de UV 3 mostramos “Baixo risco de queimadura” em vez de um número, seguindo a orientação da OMS. São estimativas para um indivíduo médio, não aconselhamento médico.</p>
+          </details>
+
+          <details>
+            <summary>Quais idiomas o SolShield oferece?</summary>
+            <p>Inglês, português e espanhol. Troque a qualquer momento nos Ajustes do aplicativo — sem precisar reiniciar.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. contact -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="contact-card">
+          <p class="kicker">Suporte</p>
+          <h2>Escreva para nós</h2>
+          <p>Uma dúvida sobre sua assinatura, um erro, ou algo que você gostaria que o aplicativo fizesse — cada mensagem é lida pela pessoa que desenvolve o SolShield.</p>
+          <a class="mail" href="mailto:braniapps@gmail.com">braniapps@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Política de Privacidade</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Termos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contato</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Índice UV e Proteção Solar</p>
+        <p class="attr">Dados meteorológicos desenvolvidos com Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="es" id="espanol" lang="es-ES" aria-label="Español">
+
+    <!-- 1. hero -->
+    <header class="hero">
+      <div class="wrap">
+        <img class="hero-icon" src="app-icon.png" alt="" width="96" height="96" data-rise>
+        <h1 data-rise>SolShield</h1>
+        <p class="hero-tagline" data-rise>Domine su exposición solar</p>
+        <p class="hero-meta" data-rise>iPhone · iPad · Desarrollado con Apple Weather · Sin necesidad de cuenta</p>
+        <div class="badges" data-rise>
+          <a href="https://apps.apple.com/app/apple-store/id6757956272">
+            <img class="as" src="badges/app-store-es-es.svg" alt="Consíguelo en el App Store">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. WHO UV scale -->
+    <div class="uv-ribbon">
+      <div data-uv="low"><b>0–2</b><i>Bajo</i></div>
+      <div data-uv="moderate"><b>3–5</b><i>Moderado</i></div>
+      <div data-uv="high"><b>6–7</b><i>Alto</i></div>
+      <div data-uv="veryhigh"><b>8–10</b><i>Muy Alto</i></div>
+      <div data-uv="extreme"><b>11+</b><i>Extremo</i></div>
+    </div>
+
+    <!-- 3. features -->
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Dentro de la aplicación</p>
+          <h2>Funciones</h2>
+        </div>
+        <div class="grid">
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
+            <h3>Índice UV en tiempo real</h3>
+            <p>Lecturas en tiempo real de su ubicación desde Apple Weather, con niveles de riesgo codificados por colores de la OMS.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
+            <h3>Tiempo de quemadura personalizado</h3>
+            <p>Minutos hasta la quemadura para su tipo de piel Fitzpatrick, del I al VI.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="5" width="17.6" height="15.8" rx="2.6"/><path d="M3.2 9.8h17.6M8 3.2v3.4M16 3.2v3.4M7.6 13.6h2.2M11.6 13.6h2.2M15.6 13.6h2.2M7.6 17.2h2.2M11.6 17.2h2.2"/></svg></div>
+            <h3>Pronóstico por hora y de 7 días</h3>
+            <p>Vea cuándo alcanza su pico el UV hoy y planifique la semana en torno a ello.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
+            <h3>Temporizador de exposición solar</h3>
+            <p>Hace la cuenta atrás de su tiempo seguro al sol y le avisa cuando se acaba.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 9.2a6 6 0 1 0-12 0c0 5.4-2.2 6.8-2.2 6.8h16.4S18 14.6 18 9.2z"/><path d="M13.8 19.4a2 2 0 0 1-3.6 0"/></svg></div>
+            <h3>Notificaciones inteligentes</h3>
+            <p>Alertas de umbral de UV, avisos de pico diario y recordatorios para volver a aplicar el protector solar.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 20.6h17.2"/><path d="M6.8 20.6v-4.8M11 20.6V9.4M15.2 20.6v-7.4M19.4 20.6V5.6"/></svg></div>
+            <h3>Historial de exposición</h3>
+            <p>Promedios semanales, lecturas máximas y tendencias a lo largo del tiempo.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
+            <h3>Estimación de Vitamina D</h3>
+            <p>Cuánto está produciendo realmente su exposición actual, según el tipo de piel.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.6C10.7 5.1 8.7 4.3 6.2 4.3H3.4v13.2h2.8c2.5 0 4.5.8 5.8 2.2 1.3-1.4 3.3-2.2 5.8-2.2h2.8V4.3h-2.8c-2.5 0-4.5.8-5.8 2.3z"/><path d="M12 6.6v13.1"/></svg></div>
+            <h3>Aprender</h3>
+            <p>El índice UV explicado, las recomendaciones de la OMS y la prevención del cáncer de piel.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
+            <h3>English · Português · Español</h3>
+            <p>Cambie de idioma cuando quiera, sin reiniciar.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. the privacy vow -->
+    <div class="vow">
+      <div class="wrap">Sin anuncios. Sin cuentas. <span class="em">Su ubicación nunca sale de su dispositivo.</span></div>
+    </div>
+
+    <!-- 5. the science -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">La ciencia</p>
+          <h2>El tiempo de quemadura no es una suposición</h2>
+        </div>
+        <div class="sci">
+          <div class="formula">minutes = MED ÷ (UV index × 1.5)</div>
+          <p>La MED es la Dosis Eritematosa Mínima — la energía UV que su piel absorbe antes de enrojecer visiblemente. Varía según el tipo Fitzpatrick (200 J/m² para el Tipo I hasta 900 J/m² para el Tipo VI), y por eso dos personas bajo el mismo sol obtienen cifras muy diferentes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Fitzpatrick scale -->
+    <section class="block alt">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Hecho para usted</p>
+          <h2>Seis tipos de piel</h2>
+        </div>
+        <div class="skins">
+          <div class="skin"><div class="swatch" data-skin="i"></div><b>I</b><i>Siempre se quema</i></div>
+          <div class="skin"><div class="swatch" data-skin="ii"></div><b>II</b><i>Suele quemarse</i></div>
+          <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>A veces se quema</i></div>
+          <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Rara vez se quema</i></div>
+          <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Muy rara vez se quema</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Nunca se quema</i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">Información útil</p>
+          <h2>Preguntas frecuentes</h2>
+        </div>
+        <div class="faq">
+
+          <details>
+            <summary>¿Cuánto cuesta SolShield?</summary>
+            <p>SolShield es una <a href="terms.html">aplicación por suscripción</a>: <strong>$9.99 al año</strong> o <strong>$0.99 al mes</strong> (USD), cada plan con <strong>7 días de prueba gratuita</strong>. La suscripción desbloquea toda la aplicación — UV en tiempo real, pronósticos, el temporizador de exposición, notificaciones, historial y la sección Aprender. Si no cancela antes de que termine la prueba, se convierte automáticamente en una suscripción de pago.</p>
+          </details>
+
+          <details>
+            <summary>¿Cómo cancelo mi suscripción?</summary>
+            <p>A través de Apple, en cualquier momento. Abra la aplicación Ajustes en su iPhone o iPad, toque su nombre, toque <strong>Suscripciones</strong>, busque SolShield y toque <strong>Cancelar suscripción</strong>. La cancelación surte efecto al final del período de facturación actual y usted mantiene el acceso hasta entonces. Los <a href="terms.html">reembolsos</a> los gestiona Apple, no nosotros.</p>
+          </details>
+
+          <details>
+            <summary>¿SolShield rastrea mi ubicación?</summary>
+            <p>No. Su ubicación se usa en su dispositivo para consultar el índice UV del lugar donde se encuentra, y las coordenadas se envían a Apple WeatherKit solo para responder a esa consulta. No hay cuentas, no hay servidores nuestros, no hay SDK de análisis, no hay SDK de publicidad y <a href="privacy.html">no hay seguimiento de ningún tipo</a>. Las ubicaciones guardadas, el historial de UV y sus ajustes permanecen en su dispositivo.</p>
+          </details>
+
+          <details>
+            <summary>¿De dónde provienen los datos de UV?</summary>
+            <p>De Apple Weather, a través del framework WeatherKit de Apple. Los niveles de riesgo siguen las bandas del Índice UV Solar Mundial de la OMS — Bajo 0–2, Moderado 3–5, Alto 6–7, Muy Alto 8–10, Extremo 11+.</p>
+          </details>
+
+          <details>
+            <summary>¿Cómo se calcula el tiempo de quemadura?</summary>
+            <p>A partir de la Dosis Eritematosa Mínima: <strong>minutes = MED ÷ (UV index × 1.5)</strong>. La MED es la energía UV que su piel absorbe antes de enrojecer visiblemente, y varía según el tipo Fitzpatrick — 200 J/m² para el Tipo I hasta 900 J/m² para el Tipo VI. Para una piel de Tipo II con UV 7, eso da 250 ÷ 10.5 ≈ 24 minutos. Por debajo de UV 3 mostramos «Bajo riesgo de quemadura» en lugar de un número, siguiendo las recomendaciones de la OMS. Son estimaciones para una persona promedio, no consejo médico.</p>
+          </details>
+
+          <details>
+            <summary>¿Qué idiomas admite SolShield?</summary>
+            <p>Inglés, portugués y español. Cambie en cualquier momento en los Ajustes de la aplicación — sin necesidad de reiniciar.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. contact -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="contact-card">
+          <p class="kicker">Soporte</p>
+          <h2>Escríbanos</h2>
+          <p>Una duda sobre su suscripción, un error, o algo que le gustaría que hiciera la aplicación — cada mensaje lo lee la persona que desarrolla SolShield.</p>
+          <a class="mail" href="mailto:braniapps@gmail.com">braniapps@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Política de Privacidad</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Términos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contacto</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Índice UV y Protección Solar</p>
+        <p class="attr">Datos meteorológicos desarrollados con Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
 
 </main>
 
