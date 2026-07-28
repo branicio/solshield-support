@@ -720,7 +720,11 @@ a:hover { color: var(--ink); }
    indistinguishable — so border-top: var(--line) gives it a real edge that
    doesn't depend on the two grounds staying far enough apart. */
 .vow {
-  padding-block: clamp(28px, 4.5vw, 44px);
+  /* Padding-block widened (Fix round 1, Task 5): at the old clamp(28px,
+     4.5vw, 44px) the band read as a rule between two sections rather than
+     the mockup's statement block. No colour/token change, so the dark-mode
+     contrast measurements this band was gated on are unaffected. */
+  padding-block: clamp(38px, 5.5vw, 56px);
   border-top: 1px solid var(--line);
   text-align: center;
   background: var(--band);
@@ -805,6 +809,11 @@ a:hover { color: var(--ink); }
   border-radius: 12px;
   /* A soft top light so a flat tone reads as a surface. */
   background-image: linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 58%);
+  /* Cheap depth cue (Fix round 1, Task 5): a flat colour bar with no shadow
+     was the single biggest reason this band read as inert next to the
+     feature-icon tiles, which all carry a shadow of their own. box-shadow
+     doesn't touch text contrast, so no gate is affected. */
+  box-shadow: 0 4px 10px -5px rgba(0, 0, 0, .35);
 }
 .skin b, .skin strong {
   display: block;
