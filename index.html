@@ -1,177 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolShield Support</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .hero {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            padding: 50px 40px;
-            margin-bottom: 20px;
-        }
-        .app-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 26px;
-            margin: 0 auto 25px;
-            box-shadow: 0 4px 15px rgba(255, 149, 0, 0.4);
-        }
-        h1 {
-            font-size: 2.2em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .tagline {
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-        }
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .link-card {
-            background: #f8f9ff;
-            border-radius: 12px;
-            padding: 20px;
-            text-decoration: none;
-            color: #333;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .link-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
-        }
-        .link-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            flex-shrink: 0;
-        }
-        .link-content {
-            text-align: left;
-        }
-        .link-title {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 3px;
-        }
-        .link-description {
-            font-size: 0.9em;
-            color: #666;
-        }
-        .contact-section {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            padding: 30px;
-        }
-        .contact-section h2 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-        .contact-section p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        .email-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .email-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-        .footer {
-            margin-top: 30px;
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9em;
-        }
-        .footer a {
-            color: white;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolShield — UV Index &amp; Sun Protection</title>
+  <meta name="description" content="Real-time UV index, personalized sunburn time for your skin type, and a 7-day forecast. Powered by Apple Weather. English, Portuguese and Spanish.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="app-icon.png">
+  <script src="site.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="hero">
-            <img src="app-icon.png" alt="SolShield App Icon" class="app-icon">
-            <h1>SolShield</h1>
-            <p class="tagline">UV Index & Sun Protection</p>
 
-            <div class="links">
-                <a href="privacy.html" class="link-card">
-                    <div class="link-icon">
-                        <span role="img" aria-label="privacy">&#128274;</span>
-                    </div>
-                    <div class="link-content">
-                        <div class="link-title">Privacy Policy</div>
-                        <div class="link-description">How we protect your data and privacy</div>
-                    </div>
-                </a>
+<!-- Chrome: lives outside every [data-lang] section, so its text is swapped by
+     site.js from the data-i18n-* attributes rather than by duplication. -->
+<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido">Skip to content</a>
 
-                <a href="terms.html" class="link-card">
-                    <div class="link-icon">
-                        <span role="img" aria-label="terms">&#128220;</span>
-                    </div>
-                    <div class="link-content">
-                        <div class="link-title">Terms of Use</div>
-                        <div class="link-description">Terms and conditions for using SolShield</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="contact-section">
-            <h2>Need Help?</h2>
-            <p>Have questions, feedback, or need support? We're here to help.</p>
-            <a href="mailto:braniapps@gmail.com" class="email-link">Contact Support</a>
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2026 Paulo Branicio. All rights reserved.</p>
-        </div>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html" aria-current="page" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio">Home</a>
+      <a href="privacy.html" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad">Privacy</a>
+      <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos">Terms</a>
+      <a href="mailto:braniapps@gmail.com" data-i18n-en="Support" data-i18n-pt="Suporte" data-i18n-es="Soporte">Support</a>
+    </nav>
+    <!-- site.js stamps aria-selected/aria-controls/tabindex on these at load. -->
+    <div class="langtabs" role="tablist" aria-label="Language">
+      <button type="button" role="tab" class="langtab" data-lang-target="en" aria-label="English">EN</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="pt" aria-label="Português">PT</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="es" aria-label="Español">ES</button>
     </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================ ENGLISH ==
+       site.js stamps role="tabpanel", id, and aria-hidden on this element.
+       Never hand-author those. Portuguese and Spanish are exact copies of
+       this block with data-lang / lang / aria-label and the copy swapped.
+  -->
+  <section data-lang="en" lang="en" aria-label="English">
+
+    <!-- 1. hero -->
+    <header class="hero">
+      <div class="wrap">
+        <img class="hero-icon" src="app-icon.png" alt="" width="96" height="96" data-rise>
+        <h1 id="top" data-rise>SolShield</h1>
+        <p class="hero-tagline" data-rise>Master your sun exposure</p>
+        <p class="hero-meta" data-rise>iPhone · iPad · Powered by Apple Weather · No account required</p>
+        <div class="badges" data-rise>
+          <a href="https://apps.apple.com/app/apple-store/id6757956272">
+            <img class="as" src="badges/app-store-en-us.svg" alt="Download on the App Store">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. WHO UV scale — five children, in WHO order. Colour is positional;
+         data-uv repeats it explicitly so the order is self-documenting. -->
+    <div class="uv-ribbon">
+      <div data-uv="low"><b>0–2</b><i>Low</i></div>
+      <div data-uv="moderate"><b>3–5</b><i>Moderate</i></div>
+      <div data-uv="high"><b>6–7</b><i>High</i></div>
+      <div data-uv="veryhigh"><b>8–10</b><i>Very High</i></div>
+      <div data-uv="extreme"><b>11+</b><i>Extreme</i></div>
+    </div>
+
+    <!-- 3. features — exactly nine cards; the copy deck's nine are the nine.
+         Do not add a tenth for a Home Screen extension: the app ships no such
+         target, so advertising one would be false. Each .ico holds a stroked
+         inline <svg>; style="fill:none" is needed because styles.css sets
+         `.ico svg { fill: currentColor }`, which would otherwise flood a
+         line icon solid white. -->
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Inside the app</p>
+          <h2>Features</h2>
+        </div>
+        <div class="grid">
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
+            <h3>Real-time UV index</h3>
+            <p>Live readings for your location from Apple Weather, with WHO colour-coded risk levels.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
+            <h3>Personalized sunburn time</h3>
+            <p>Minutes to burn for your Fitzpatrick skin type, I through VI.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="5" width="17.6" height="15.8" rx="2.6"/><path d="M3.2 9.8h17.6M8 3.2v3.4M16 3.2v3.4M7.6 13.6h2.2M11.6 13.6h2.2M15.6 13.6h2.2M7.6 17.2h2.2M11.6 17.2h2.2"/></svg></div>
+            <h3>Hourly &amp; 7-day forecast</h3>
+            <p>See when UV peaks today and plan the week around it.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
+            <h3>Sun exposure timer</h3>
+            <p>Counts down your safe time in the sun and tells you when it’s up.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 9.2a6 6 0 1 0-12 0c0 5.4-2.2 6.8-2.2 6.8h16.4S18 14.6 18 9.2z"/><path d="M13.8 19.4a2 2 0 0 1-3.6 0"/></svg></div>
+            <h3>Smart notifications</h3>
+            <p>UV threshold alerts, daily peak warnings, and sunscreen reapplication reminders.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 20.6h17.2"/><path d="M6.8 20.6v-4.8M11 20.6V9.4M15.2 20.6v-7.4M19.4 20.6V5.6"/></svg></div>
+            <h3>Exposure history</h3>
+            <p>Weekly averages, peak readings and trends over time.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
+            <h3>Vitamin D estimate</h3>
+            <p>How much your current exposure is actually producing, by skin type.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.6C10.7 5.1 8.7 4.3 6.2 4.3H3.4v13.2h2.8c2.5 0 4.5.8 5.8 2.2 1.3-1.4 3.3-2.2 5.8-2.2h2.8V4.3h-2.8c-2.5 0-4.5.8-5.8 2.3z"/><path d="M12 6.6v13.1"/></svg></div>
+            <h3>Learn</h3>
+            <p>The UV index explained, WHO guidance, and skin-cancer prevention.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
+            <h3>English · Português · Español</h3>
+            <p>Switch language any time, no restart.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. the privacy vow. A <div>, not a <section>: it is a one-line banner
+         with no heading of its own, and a headingless <section> is what the
+         HTML spec (and the Nu validator) tells you not to write. .vow is
+         styled entirely by class, so nothing depends on the element. -->
+    <div class="vow">
+      <div class="wrap">No ads. No accounts. <span class="em">Your location never leaves your device.</span></div>
+    </div>
+
+    <!-- 5. the science -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">The science</p>
+          <h2>Sunburn time isn’t a guess</h2>
+        </div>
+        <div class="sci">
+          <div class="formula">minutes = MED ÷ (UV index × 1.5)</div>
+          <p>MED is the Minimal Erythemal Dose — the UV energy your skin absorbs before it visibly reddens. It differs by Fitzpatrick type (200 J/m² for Type I up to 900 J/m² for Type VI), which is why two people standing in the same sun get very different numbers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Fitzpatrick scale — six children, in order I…VI. Tone is positional;
+         data-skin repeats it explicitly. -->
+    <section class="block alt">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Built around you</p>
+          <h2>Six skin types</h2>
+        </div>
+        <div class="skins">
+          <div class="skin"><div class="swatch" data-skin="i"></div><b>I</b><i>Always burns</i></div>
+          <div class="skin"><div class="swatch" data-skin="ii"></div><b>II</b><i>Usually burns</i></div>
+          <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Sometimes burns</i></div>
+          <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Rarely burns</i></div>
+          <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Very rarely burns</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Never burns</i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ — six items. 1 and 2 link to terms.html, 3 links to privacy.html. -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">Good to know</p>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq">
+
+          <details>
+            <summary>What does SolShield cost?</summary>
+            <p>SolShield is a <a href="terms.html">subscription app</a>: <strong>$9.99 per year</strong> or <strong>$0.99 per month</strong> (USD), each with a <strong>7-day free trial</strong>. The subscription unlocks the whole app — real-time UV, forecasts, the exposure timer, notifications, history and the Learn section. If you do not cancel before the trial ends, it converts to a paid subscription automatically.</p>
+          </details>
+
+          <details>
+            <summary>How do I cancel my subscription?</summary>
+            <p>Through Apple, at any time. Open the Settings app on your iPhone or iPad, tap your name, tap <strong>Subscriptions</strong>, find SolShield and tap <strong>Cancel Subscription</strong>. Cancellation takes effect at the end of the current billing period and you keep access until then. <a href="terms.html">Refunds</a> are handled by Apple, not by us.</p>
+          </details>
+
+          <details>
+            <summary>Does SolShield track my location?</summary>
+            <p>No. Your location is used on your device to look up the UV index for where you are, and the coordinates are sent to Apple WeatherKit only to answer that query. There are no accounts, no servers of ours, no analytics SDKs, no advertising SDKs and <a href="privacy.html">no tracking of any kind</a>. Saved locations, UV history and your settings stay on your device.</p>
+          </details>
+
+          <details>
+            <summary>Where does the UV data come from?</summary>
+            <p>Apple Weather, through Apple’s WeatherKit framework. Risk levels follow the WHO Global Solar UV Index bands — Low 0–2, Moderate 3–5, High 6–7, Very High 8–10, Extreme 11+.</p>
+          </details>
+
+          <details>
+            <summary>How is sunburn time calculated?</summary>
+            <p>From the Minimal Erythemal Dose: <strong>minutes = MED ÷ (UV index × 1.5)</strong>. MED is the UV energy your skin absorbs before it visibly reddens, and it differs by Fitzpatrick type — 200 J/m² for Type I up to 900 J/m² for Type VI. For Type II skin at UV 7 that is 250 ÷ 10.5 ≈ 24 minutes. Below UV 3 we show “Low burn risk” instead of a number, following WHO guidance. These are estimates for an average individual, not medical advice.</p>
+          </details>
+
+          <details>
+            <summary>Which languages does SolShield support?</summary>
+            <p>English, Portuguese and Spanish. Switch at any time in the app’s Settings — no restart needed.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. contact -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="contact-card">
+          <p class="kicker">Support</p>
+          <h2>Write to us</h2>
+          <p>A question about your subscription, a bug, or something you’d like the app to do — every message is read by the person who builds SolShield.</p>
+          <a class="mail" href="mailto:braniapps@gmail.com">braniapps@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. footer — inside the language section so it translates with it. -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Privacy Policy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Terms of Use</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contact</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · UV Index &amp; Sun Protection</p>
+        <p class="attr">Weather data powered by Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+  <!-- ======================================================== /ENGLISH ==
+       Task 6 appends <section data-lang="pt" lang="pt-BR" aria-label="Português">
+       and <section data-lang="es" lang="es-ES" aria-label="Español"> here,
+       each an exact copy of the nine blocks above with the badge swapped to
+       badges/app-store-pt-br.svg / badges/app-store-es-es.svg and id="top"
+       dropped from the <h1> (ids must stay unique).
+  -->
+
+</main>
+
 </body>
 </html>
