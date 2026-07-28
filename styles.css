@@ -500,7 +500,13 @@ a:hover { color: var(--ink); }
   min-width: 0;
   text-align: center;
   padding: clamp(9px, 1.5vw, 13px) 4px clamp(10px, 1.7vw, 14px);
-  color: #0d2233;
+  /* Pure black, not the mockup's #0d2233: measured against the WHO band
+     colours, black clears 4.5:1 AA on all four of low/moderate/high/veryhigh
+     (veryhigh is the tightest at 5.30:1), which #0d2233 did not on veryhigh
+     (4.10:1). This is also what UVLevel.swift's textColor does in the app
+     (.black for every level but .extreme), so the ribbon and the app's UV
+     cards agree. */
+  color: #000000;
   /* A top highlight so the strip reads as one physical object, not five div. */
   background-image: linear-gradient(180deg, rgba(255, 255, 255, .17), rgba(255, 255, 255, 0) 62%);
 }
@@ -520,9 +526,11 @@ a:hover { color: var(--ink); }
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
-  /* Never dim this with opacity: the dark ink on --uv-veryhigh has the least
-     headroom of the five bands and cannot spare any. Reflow, not overflow —
-     a long label wraps inside its own cell rather than widening the page. */
+  /* Never dim this with opacity: even with black ink, --uv-veryhigh is the
+     tightest of the four black-ink bands (5.30:1) and cannot spare any of
+     it — the mockup's opacity:.72 on this caption is intentionally dropped.
+     Reflow, not overflow — a long label wraps inside its own cell rather
+     than widening the page. */
   overflow-wrap: break-word;
 }
 
@@ -534,10 +542,10 @@ a:hover { color: var(--ink); }
 
 /* Explicit override. Declared last so it beats the positional rules at equal
    specificity, which is what lets markup reorder or subset the scale. */
-.uv-ribbon [data-uv="low"] { background-color: var(--uv-low); color: #0d2233; }
-.uv-ribbon [data-uv="moderate"] { background-color: var(--uv-moderate); color: #0d2233; }
-.uv-ribbon [data-uv="high"] { background-color: var(--uv-high); color: #0d2233; }
-.uv-ribbon [data-uv="veryhigh"] { background-color: var(--uv-veryhigh); color: #0d2233; }
+.uv-ribbon [data-uv="low"] { background-color: var(--uv-low); color: #000000; }
+.uv-ribbon [data-uv="moderate"] { background-color: var(--uv-moderate); color: #000000; }
+.uv-ribbon [data-uv="high"] { background-color: var(--uv-high); color: #000000; }
+.uv-ribbon [data-uv="veryhigh"] { background-color: var(--uv-veryhigh); color: #000000; }
 .uv-ribbon [data-uv="extreme"] { background-color: var(--uv-extreme); color: #fff; }
 
 /* --------------------------------------------------------------- sections */
