@@ -18,14 +18,17 @@
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
-    <nav class="nav-links" aria-label="Main">
+    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal">
       <a href="index.html" aria-current="page" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio">Home</a>
       <a href="privacy.html" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad">Privacy</a>
       <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos">Terms</a>
       <a href="mailto:braniapps@gmail.com" data-i18n-en="Support" data-i18n-pt="Suporte" data-i18n-es="Soporte">Support</a>
     </nav>
-    <!-- site.js stamps aria-selected/aria-controls/tabindex on these at load. -->
-    <div class="langtabs" role="tablist" aria-label="Language">
+    <!-- site.js stamps aria-selected/aria-controls/tabindex on these at load.
+         The three tab labels stay untranslated: a language's own endonym is
+         correct in every locale, and translating them would make the switcher
+         harder to use, not easier. -->
+    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma">
       <button type="button" role="tab" class="langtab" data-lang-target="en" aria-label="English">EN</button>
       <button type="button" role="tab" class="langtab" data-lang-target="pt" aria-label="Português">PT</button>
       <button type="button" role="tab" class="langtab" data-lang-target="es" aria-label="Español">ES</button>
