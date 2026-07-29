@@ -64,6 +64,17 @@
   --wrap: 1080px;
   --radius: 14px;
 
+  /* The sticky nav's rendered height (.nav .wrap min-height: 62px + the 1px
+     border-bottom on .nav). [id]'s scroll-margin-top, below the reset, is
+     derived from this plus a spacing allowance instead of a second literal
+     number, so the two can't drift apart. Redeclared to 98px inside the
+     760px breakpoint (see .nav), where the nav wraps to two rows and
+     measures up to ~98px — a hairline scroll-margin-top tuned only for the
+     one-row 63px nav used to land an anchored heading right under the
+     wrapped nav's second row. If you change the nav's height at either
+     breakpoint, update --nav-h there too. */
+  --nav-h: 63px;
+
   /* --- everything below is derived from the eleven values above ---------- */
 
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
@@ -186,8 +197,11 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Anchored headings must clear the sticky nav. */
-[id] { scroll-margin-top: 96px; }
+/* Anchored headings must clear the sticky nav with real headroom, not a
+   hairline: --nav-h plus a fixed 33px allowance, so a jump never lands a
+   heading flush against the nav's bottom edge. Yields 96px on the 63px
+   desktop nav and 131px on the 98px wrapped mobile nav (see --nav-h). */
+[id] { scroll-margin-top: calc(var(--nav-h) + 33px); }
 
 /* An overflow guard, not a size: the badge's own dimensions are set once, in
    .badges .as, and its aspect ratio is preserved by height:auto there. */
@@ -352,6 +366,13 @@ a:hover { color: var(--ink); }
    so they drop to their own full-width row rather than being hidden. order:3
    puts that row below the brand + language tabs, not between them. */
 @media (max-width: 760px) {
+  :root {
+    /* Measured 95.9-97.9px for the wrapped two-row nav (brand + langtabs row,
+       then the nav-links row) across the padding/row-gap below; 98px keeps
+       --nav-h ahead of the tallest case so [id]'s scroll-margin-top never
+       falls short. */
+    --nav-h: 98px;
+  }
   .nav .wrap { min-height: 0; padding-block: 9px; row-gap: 8px; }
   .nav-links {
     order: 3;
