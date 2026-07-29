@@ -127,9 +127,14 @@ Example: https://branicio.github.io/solshield-support/terms.html#espanol
 Each page renders all three languages as sibling `<section data-lang="en|pt|es">`
 elements inside `<main>`. `site.js` is what turns that into a tabbed view:
 
-- On load it reads `location.hash` (`#top` → en, `#portugues` → pt,
-  `#espanol` → es); if the hash is empty or unrecognised it falls back to
-  `navigator.language`, then to English.
+- On load, `pick()` (site.js:124-141) resolves a language in this order: an
+  explicit language named in `location.hash` (`#top` → en, `#portugues` → pt,
+  `#espanol` → es) beats the stored preference (see below), which beats
+  `navigator.language`, which falls back to English. The hash wins on
+  purpose: a link was shared precisely to land the reader in that language,
+  so a deep link to `#espanol` still overrides a stored Portuguese
+  preference — if memory won instead, a Portuguese reader could never open a
+  Spanish link a friend sent them.
 - Clicking a language tab (`role="tab"`, `EN`/`PT`/`ES` in the nav) shows that
   language's section, hides the other two (`data-lang-active` +
   `aria-hidden`), sets `document.documentElement.lang`, and updates
@@ -143,6 +148,60 @@ elements inside `<main>`. `site.js` is what turns that into a tabbed view:
   reader's current language alone. Falling through to `navigator.language` on
   every hashchange would otherwise silently switch a PT/ES reader to whatever
   the browser's locale says the moment they clicked an ordinary anchor.
+
+### Persisting the language across page navigation
+
+Before this was fixed, a reader's language choice was lost on every page
+load: nav links were bare (`href="privacy.html"`) and `pick()` fell straight
+through to `navigator.language`, so a Portuguese reader clicking
+"Privacidade" landed back in English. Two independent mechanisms now carry
+the choice forward. Both exist because neither alone covers every way a
+reader actually gets from one page to the next:
+
+1. **A stored preference.** `openStore()` (site.js:94-104) probes
+   `localStorage` with a real `setItem`/`removeItem` round-trip — not just a
+   presence check — and falls back to `sessionStorage`, and finally to no
+   persistence at all if both throw. `remember(lang)` (site.js:119-122)
+   writes the choice to whichever store won, under `STORE_KEY =
+   "solshield.lang"`; `readStored()` (site.js:107-117) reads it back,
+   discarding anything that isn't exactly `"en"`/`"pt"`/`"es"` (a hand-edited
+   or stale value is ignored rather than trusted). Crucially, only an
+   **explicit** choice is ever stored — a tab click, an arrow-key move, or
+   landing on a URL that names a language — never a language merely inferred
+   from `navigator.language`. Storing an inferred value would freeze a
+   first-time visitor's browser locale into memory permanently, making every
+   later visit behave as if they had chosen it.
+2. **Language-tagged in-site links.** On every language change, `apply()`
+   (site.js:193-203) rewrites the `href` of every nav/footer/brand link that
+   points at `index.html`, `privacy.html` or `terms.html` to carry the active
+   language's fragment (`#portugues`, `#espanol`; English gets no fragment,
+   since it's the default and `pick()` reaches it on its own). The link set
+   is collected once up front (site.js:68-84); `mailto:` links, external
+   links, and the skip link's `#main` are excluded there and are never
+   rewritten.
+
+**Why both exist:** storage is what saves a reader who types or bookmarks a
+bare URL with no fragment — the link-tagging mechanism has nothing to rewrite
+in that case. The fragments are what save a reader who copies a link,
+middle-clicks, or opens a page in a new tab, none of which carries
+`sessionStorage` along, and any of which can land on a browser with storage
+blocked entirely. Together, the language survives even if one mechanism is
+completely unavailable.
+
+**The separate `try`/`catch` is the subtle part.** Storage access
+(`openStore`, site.js:94-104) is wrapped in its own `try`/`catch`, isolated
+from the script's outer one (site.js:13-258). Safari private mode — and some
+privacy settings in other browsers — make `localStorage` *throw on access*,
+not just silently refuse to persist. If that exception reached the outer
+`catch`, it would remove `data-js` (site.js:256), which is what authorises
+`styles.css` to hide inactive `[data-lang]` sections — removing it drops the
+page into the no-JS presentation, all three languages rendered stacked at
+once. That would turn "we can't remember your choice" into a visible
+regression on a page that, for `privacy.html` and `terms.html`, is a legal
+document. So a storage failure must degrade to "no memory" and nothing more.
+This was verified with both `localStorage` and `sessionStorage` throwing on
+every call: `data-js` stayed `"on"` and the language still persisted
+correctly across pages via the link fragments alone.
 
 ### The no-JS fallback
 
@@ -171,8 +230,8 @@ script.
 
 ## Where prices appear
 
-The section Pew Pal's README does not have, because Pew Pal has no
-subscription. SolShield's prices appear in exactly these six places:
+The section Pew Pal's README does not have. SolShield's prices appear in
+exactly these six places:
 
 | File | Languages | Location |
 |---|---|---|
