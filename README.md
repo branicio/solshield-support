@@ -49,6 +49,8 @@ reason, without first confirming a coordinated App Store Connect update.**
 | `fonts/OFL.txt` | The SIL Open Font License covering Inter — required attribution, must ship alongside the font |
 | `badges/app-store-{en-us,pt-br,es-es}.svg` | Vendored App Store badge artwork, one per language — see "Vendored store badges" below |
 | `app-icon.png` | Shared app-icon asset used as the favicon and the nav/footer brand mark on every page |
+| `README.md` | This file |
+| `.gitignore` | Ignores `.DS_Store` |
 
 ---
 
@@ -232,7 +234,7 @@ Four small Python scripts, no dependencies beyond the standard library:
 | Script | What it checks |
 |---|---|
 | `contrast.py <styles.css>` | Reads foreground/background token pairs live from `:root` and the dark-scheme block, plus a fixed list of brand/WHO colours that aren't tokens (hero ink on sky/sun, the five UV-ribbon ink-on-band pairs), and checks each against its WCAG floor (4.5:1 text, or the pair's stated floor). Exits 1 and prints every failing pair with its measured ratio. |
-| `links.py <baseline.html> <new.html>` | Exits 1 if any outbound (`http://`, `https://`, `mailto:`) link present in the baseline page is missing from the new page. New links are fine — only losses fail. |
+| `links.py <baseline.html> <new.html>` | Exits 1 if any outbound (`http://`, `https://`, `mailto:`) link present in the baseline page is missing from the new page — *unless* the dropped URL is in the script's `INTENTIONALLY_REMOVED` map (URL → a required, written reason), in which case it still prints, with its reason, so a reader can tell a deliberate removal from a regression, but does not fail the gate. New links are always fine; only unacknowledged losses fail. Currently one entry: `https://open-meteo.com`, dropped because the old Privacy Policy falsely named Open-Meteo as the weather provider (the app uses Apple WeatherKit). Anyone adding an entry must supply a reason. |
 | `parity.py <page.html>` | Exits 1 unless the `en`, `pt`, and `es` `[data-lang]` sections of a page have matching counts of headings (`h1`/`h2`/`h3`), `<article>`, `<details>`, and `<a href>` elements — catches a language section missing a block the others have. It also detects a **duplicate `[data-lang]` value** (two sibling sections claiming the same language) and fails immediately, naming the duplicated language, rather than silently averaging over it. |
 | `assets.py <file>…` | Exits 1 if any given file references a third-party subresource the browser would fetch: `script src`, `link href`, `img src`, `iframe`/`video`/`audio`/`source`/`embed` `src`, `object data`, `@import`, or CSS `url()` — and, separately, every candidate inside an `srcset` list, since one remote candidate there can be third-party even when the plain `src` is local. A **protocol-relative URL** (`//host/...`) is treated as third-party everywhere a `https://` URL would be, since the browser fetches both off-origin. Outbound `<a href>` links are not subresources and are allowed. |
 
