@@ -446,6 +446,27 @@ a:hover { color: var(--ink); }
   .langtabs [role="tab"], .langtabs .langtab { padding: 6px 10px 7px; letter-spacing: .06em; }
 }
 
+/* Just above the 760px breakpoint the desktop nav is one row of brand, links
+   and five language tabs. French has the longest link labels
+   ("Confidentialité"), and at 761-781px they pushed the tabs onto a second
+   row (84px nav against a 63px --nav-h). A tighter link gap in that band
+   alone keeps every language on one row; the phone layout (<=760px) keeps
+   its own 18px gap. */
+@media (min-width: 761px) and (max-width: 840px) {
+  .nav-links { gap: 14px; }
+}
+
+/* Five language tabs (EN/PT/ES/FR/IT since SolShield 1.2.0) no longer fit
+   beside the brand below 350px: the tablist wraps to a row of its own and
+   the nav becomes three rows, measured 129px at 320-349px (96px at 350px and
+   up). --nav-h follows it, with the same headroom as the 760px breakpoint,
+   so [id]'s scroll-margin-top keeps its allowance. The 360px threshold sits
+   above the measured 349px on purpose: over-estimating --nav-h only adds a
+   little space above an anchored heading, under-estimating hides it. */
+@media (max-width: 360px) {
+  :root { --nav-h: 131px; }
+}
+
 /* ------------------------------------------------------------------- hero */
 
 /* The gradient is the brand: it is the app icon's own sky-to-amber sweep and it
@@ -691,10 +712,20 @@ a:hover { color: var(--ink); }
 
 /* --------------------------------------------------------------- features */
 
+/* Eight feature cards since 2026-10-30, when the ninth ("Exposure history")
+   was removed because the app has no history feature. The column counts are
+   chosen to divide eight — 4 x 2 on a wide screen, 2 x 4 on a tablet, one
+   column on a phone — so no row ever ends on an empty slot, which the old
+   auto-fit 240px tracks (three columns on desktop) would leave as 3/3/2. At
+   981px the four cards are still ~213px wide. If the number of cards
+   changes, revisit these counts. */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(14px, 1.8vw, 20px);
+}
+@media (max-width: 980px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   .grid { grid-template-columns: 1fr; }

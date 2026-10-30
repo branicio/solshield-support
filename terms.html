@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Use — SolShield</title>
-  <meta name="description" content="SolShield Terms of Use: the medical disclaimer, the subscription plans and prices, Apple WeatherKit as the weather provider, and governing law by region. English, Portuguese and Spanish.">
+  <meta name="description" content="SolShield Terms of Use: the medical disclaimer, the subscription plans and prices, Apple WeatherKit as the weather provider, and governing law by region. English, Portuguese, Spanish, French and Italian.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="app-icon.png">
   <script src="site.js" defer></script>
@@ -13,24 +13,26 @@
 
 <!-- Chrome: lives outside every [data-lang] section, so its text is swapped by
      site.js from the data-i18n-* attributes rather than by duplication. -->
-<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido" data-i18n-fr="Aller au contenu" data-i18n-it="Vai al contenuto">Skip to content</a>
 
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
-    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal">
-      <a href="index.html" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio">Home</a>
-      <a href="privacy.html" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad">Privacy</a>
-      <a href="terms.html" aria-current="page" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos">Terms</a>
-      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contact</a>
+    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal" data-i18n-aria-fr="Principale" data-i18n-aria-it="Principale">
+      <a href="index.html" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio" data-i18n-fr="Accueil" data-i18n-it="Home">Home</a>
+      <a href="privacy.html" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad" data-i18n-fr="Confidentialité" data-i18n-it="Privacy">Privacy</a>
+      <a href="terms.html" aria-current="page" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos" data-i18n-fr="Conditions" data-i18n-it="Condizioni">Terms</a>
+      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
     </nav>
     <!-- site.js stamps aria-selected/aria-controls/tabindex on these at load.
-         The three tab labels stay untranslated: a language's own endonym is
+         The five tab labels stay untranslated: a language's own endonym is
          correct in every locale. -->
-    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma">
+    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma" data-i18n-aria-fr="Langue" data-i18n-aria-it="Lingua">
       <button type="button" role="tab" class="langtab" data-lang-target="en" aria-label="English">EN</button>
       <button type="button" role="tab" class="langtab" data-lang-target="pt" aria-label="Português">PT</button>
       <button type="button" role="tab" class="langtab" data-lang-target="es" aria-label="Español">ES</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="fr" aria-label="Français">FR</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="it" aria-label="Italiano">IT</button>
     </div>
   </div>
 </header>
@@ -39,8 +41,8 @@
 
   <!-- ============================================================ ENGLISH ==
        site.js stamps role="tabpanel", id and aria-hidden on this element.
-       Never hand-author those. Portuguese and Spanish are exact structural
-       copies of this block — same heading levels in the same order, same
+       Never hand-author those. Portuguese, Spanish, French and Italian are exact
+       structural copies of this block — same heading levels in the same order, same
        number of <a href> — with only the copy and the section's own
        data-lang / id / lang / aria-label changed. parity.py enforces it.
 
@@ -48,12 +50,17 @@
        four facts in it are load-bearing and were each verified at the source
        before this rewrite. (1) The two subscription prices are quoted once
        each per language, under "Plans and prices" and nowhere else in this
-       file, and come from the App Store Connect API on 2026-07-28 — a gate
+       file, and come from the App Store Connect API on 2026-07-28
+       (re-verified unchanged on 2026-10-30) — a gate
        counts those lines, so do not repeat a price anywhere else. The plan
        NAMES there are the ASC localized display names, also verified on
        2026-07-28: the annual plan is "SolShield Premium" in all three
        locales (it carries no "Annual"/"Anual" in its name), and the monthly
-       plan is "SolShield Premium (Monthly)" / "(Mensal)" / "(Mensual)". A
+       plan is "SolShield Premium (Monthly)" / "(Mensal)" / "(Mensual)". The
+       French and Italian sections (added 2026-10-30 for SolShield 1.2.0)
+       name the monthly plan "(Mensuel)" / "(Mensile)" and the annual plan
+       plain "SolShield Premium"; those must equal the fr-FR / it
+       subscription localizations in App Store Connect. A
        EULA must name the products the way the purchase sheet does, so the
        billing period is carried in the surrounding prose, never by bending
        the product name. (2) No
@@ -92,12 +99,12 @@
           <ul>
             <li>real-time UV index readings for your current location or a saved location;</li>
             <li>personalized sun-protection recommendations and sunburn-time estimates based on your Fitzpatrick skin type;</li>
-            <li>hourly and 7-day UV forecasts, and a history of your exposure;</li>
+            <li>hourly and 7-day UV forecasts;</li>
             <li>UV threshold alerts, daily peak warnings and sunscreen reapplication reminders;</li>
             <li>a sun exposure timer and a Vitamin D estimate;</li>
             <li>educational content about UV radiation, the WHO UV index and sun safety.</li>
           </ul>
-          <p>The App is available in English, Portuguese and Spanish. It needs permission to use your location and an internet connection in order to work. Features may change as the App is developed; these Terms describe the App as it is, not as it may become.</p>
+          <p>The App is available in English, Portuguese, Spanish, French and Italian. It needs permission to use your location and an internet connection in order to work. Features may change as the App is developed; these Terms describe the App as it is, not as it may become.</p>
 
           <h2>3. Medical disclaimer</h2>
           <p>SolShield provides informational content only and is not a substitute for professional medical advice, diagnosis or treatment. UV index data, sunburn-time estimates, Vitamin D estimates and sun-protection recommendations are general information, calculated for an average individual, and your own skin, medication, health conditions and environment can change the result substantially. Always seek the advice of a physician or qualified health provider with any question about sun exposure, skin conditions or your health. Do not rely solely on SolShield for sun-protection decisions.</p>
@@ -181,9 +188,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Footer">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Privacy Policy</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Terms of Use</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contact</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Terms of Use</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · UV Index &amp; Sun Protection</p>
         <p class="attr">Weather data powered by Apple Weather</p>
@@ -193,7 +200,8 @@
   </section>
 
   <!-- ======================================================== /ENGLISH ==
-       id="portugues" and id="espanol" are the only hand-authored ids below:
+       id="portugues", id="espanol", id="francais" and id="italiano" are the
+       only hand-authored ids below:
        they are the deep-link anchors site.js maps to a language, and it
        honours an existing id (`if (!s.id)`). role="tabpanel", aria-controls
        and aria-hidden are still stamped at runtime and must not appear here.
@@ -227,12 +235,12 @@
           <ul>
             <li>leituras do índice UV em tempo real para a sua localização atual ou para um local salvo;</li>
             <li>recomendações personalizadas de proteção solar e estimativas de tempo de queimadura com base no seu tipo de pele de Fitzpatrick;</li>
-            <li>previsão de UV por hora e de 7 dias, além do histórico da sua exposição;</li>
+            <li>previsão de UV por hora e de 7 dias;</li>
             <li>alertas de limite de UV, avisos de pico diário e lembretes para reaplicar protetor solar;</li>
             <li>um cronômetro de exposição solar e uma estimativa de Vitamina D;</li>
             <li>conteúdo educativo sobre radiação UV, o índice UV da OMS e segurança solar.</li>
           </ul>
-          <p>O Aplicativo está disponível em inglês, português e espanhol. Ele precisa de permissão para usar a sua localização e de conexão com a internet para funcionar. Os recursos podem mudar conforme o Aplicativo evolui; estes Termos descrevem o Aplicativo como ele é, e não como ele poderá vir a ser.</p>
+          <p>O Aplicativo está disponível em inglês, português, espanhol, francês e italiano. Ele precisa de permissão para usar a sua localização e de conexão com a internet para funcionar. Os recursos podem mudar conforme o Aplicativo evolui; estes Termos descrevem o Aplicativo como ele é, e não como ele poderá vir a ser.</p>
 
           <h2>3. Aviso médico</h2>
           <p>O SolShield fornece apenas conteúdo informativo e não substitui aconselhamento, diagnóstico ou tratamento médico profissional. Os dados de índice UV, as estimativas de tempo de queimadura, as estimativas de Vitamina D e as recomendações de proteção solar são informações gerais, calculadas para uma pessoa média, e a sua própria pele, os medicamentos que você usa, as suas condições de saúde e o ambiente podem alterar o resultado de forma substancial. Procure sempre a orientação de um médico ou de um profissional de saúde qualificado diante de qualquer dúvida sobre exposição solar, condições de pele ou a sua saúde. Não dependa exclusivamente do SolShield para decisões de proteção solar.</p>
@@ -316,9 +324,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Rodapé">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Política de Privacidade</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Termos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contato</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidade</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Termos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contato</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV e Proteção Solar</p>
         <p class="attr">Dados meteorológicos desenvolvidos com Apple Weather</p>
@@ -354,12 +362,12 @@
           <ul>
             <li>lecturas del índice UV en tiempo real para su ubicación actual o para una ubicación guardada;</li>
             <li>recomendaciones personalizadas de protección solar y estimaciones del tiempo de quemadura según su tipo de piel de Fitzpatrick;</li>
-            <li>pronóstico de UV por hora y de 7 días, además del historial de su exposición;</li>
+            <li>pronóstico de UV por hora y de 7 días;</li>
             <li>alertas de umbral de UV, avisos del pico diario y recordatorios para volver a aplicar protector solar;</li>
             <li>un temporizador de exposición solar y una estimación de Vitamina D;</li>
             <li>contenido educativo sobre la radiación UV, el índice UV de la OMS y la seguridad solar.</li>
           </ul>
-          <p>La Aplicación está disponible en inglés, portugués y español. Necesita permiso para usar su ubicación y conexión a internet para funcionar. Las funciones pueden cambiar a medida que la Aplicación evoluciona; estos Términos describen la Aplicación tal como es, no como pueda llegar a ser.</p>
+          <p>La Aplicación está disponible en inglés, portugués, español, francés e italiano. Necesita permiso para usar su ubicación y conexión a internet para funcionar. Las funciones pueden cambiar a medida que la Aplicación evoluciona; estos Términos describen la Aplicación tal como es, no como pueda llegar a ser.</p>
 
           <h2>3. Aviso médico</h2>
           <p>SolShield ofrece únicamente contenido informativo y no sustituye el consejo, el diagnóstico ni el tratamiento médico profesional. Los datos del índice UV, las estimaciones del tiempo de quemadura, las estimaciones de Vitamina D y las recomendaciones de protección solar son información general, calculada para una persona media, y su propia piel, sus medicamentos, sus condiciones de salud y el entorno pueden alterar el resultado de forma sustancial. Consulte siempre a un médico o a un profesional sanitario cualificado ante cualquier duda sobre la exposición al sol, las afecciones de la piel o su salud. No dependa únicamente de SolShield para tomar decisiones de protección solar.</p>
@@ -443,12 +451,266 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Pie de página">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Política de Privacidad</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Términos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contacto</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidad</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Términos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contacto</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV y Protección Solar</p>
         <p class="attr">Datos meteorológicos desarrollados con Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="fr" id="francais" lang="fr-FR" aria-label="Français">
+
+    <!-- 1. en-tête -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Conditions d’utilisation</h1>
+        <p class="hero-tagline" data-rise>SolShield — Indice UV et protection solaire</p>
+      </div>
+    </header>
+
+    <!-- 2. les conditions -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <p class="updated">Date d’entrée en vigueur&nbsp;: juillet 2026</p>
+
+          <p>Veuillez lire attentivement les présentes Conditions d’utilisation (les «&nbsp;Conditions&nbsp;») avant d’utiliser l’application mobile SolShield (l’«&nbsp;Application&nbsp;»). En téléchargeant, en installant ou en utilisant SolShield, vous acceptez d’être lié par celles-ci.</p>
+
+          <h2>1. Acceptation des présentes Conditions</h2>
+          <p>En téléchargeant, en installant ou en utilisant SolShield, vous confirmez avoir lu et compris les présentes Conditions ainsi que notre <a href="privacy.html">Politique de confidentialité</a>, qui en fait partie intégrante, et les accepter l’une et l’autre. Si vous n’acceptez pas une partie quelconque des présentes Conditions, ne téléchargez pas, n’installez pas et n’utilisez pas l’Application.</p>
+
+          <h2>2. Description du service</h2>
+          <p>SolShield est une application de surveillance des UV pour iPhone et iPad. Elle offre&nbsp;:</p>
+          <ul>
+            <li>des relevés de l’indice UV en temps réel pour votre position actuelle ou pour un lieu enregistré&nbsp;;</li>
+            <li>des recommandations personnalisées de protection solaire et des estimations du temps avant coup de soleil fondées sur votre phototype de Fitzpatrick&nbsp;;</li>
+            <li>des prévisions UV horaires et sur 7&nbsp;jours&nbsp;;</li>
+            <li>des alertes de seuil UV, des avertissements du pic quotidien et des rappels pour réappliquer la crème solaire&nbsp;;</li>
+            <li>un minuteur d’exposition au soleil et une estimation de la vitamine D&nbsp;;</li>
+            <li>des contenus pédagogiques sur le rayonnement UV, l’indice UV de l’OMS et la protection solaire.</li>
+          </ul>
+          <p>L’Application est disponible en anglais, portugais, espagnol, français et italien. Pour fonctionner, elle a besoin de l’autorisation d’utiliser votre position et d’une connexion Internet. Les fonctionnalités peuvent évoluer au fil du développement de l’Application&nbsp;; les présentes Conditions décrivent l’Application telle qu’elle est, et non telle qu’elle pourrait devenir.</p>
+
+          <h2>3. Avertissement médical</h2>
+          <p>SolShield fournit uniquement un contenu informatif et ne remplace pas un avis, un diagnostic ou un traitement médical professionnel. Les données d’indice UV, les estimations du temps avant coup de soleil, les estimations de vitamine D et les recommandations de protection solaire sont des informations générales, calculées pour une personne moyenne, et votre propre peau, vos médicaments, votre état de santé et votre environnement peuvent modifier sensiblement le résultat. Demandez toujours l’avis d’un médecin ou d’un professionnel de santé qualifié pour toute question concernant l’exposition au soleil, les affections cutanées ou votre santé. Ne vous fiez pas uniquement à SolShield pour vos décisions en matière de protection solaire.</p>
+          <p>Les données UV proviennent d’Apple Weather via le framework WeatherKit d’Apple et peuvent être retardées, incomplètes ou indisponibles. L’altitude, la réverbération sur l’eau, le sable ou la neige, la couverture nuageuse et l’heure de la journée peuvent toutes porter votre exposition réelle bien au-delà de ce qu’indique une prévision. <strong>En cas de doute, fiez-vous à l’ombre, aux vêtements et à la crème solaire plutôt qu’à un chiffre sur un écran.</strong></p>
+
+          <h2>4. Abonnement</h2>
+          <p>SolShield nécessite un abonnement actif. Il n’existe pas de version gratuite&nbsp;: après l’écran de lancement, l’Application présente les options d’abonnement, et ses fonctionnalités deviennent accessibles dès qu’un abonnement ou un essai gratuit est actif.</p>
+
+          <h3>Formules et prix</h3>
+          <p>Deux formules sont proposées. Elles donnent le même accès à l’Application et ne diffèrent que par la fréquence de facturation. Les noms ci-dessous sont ceux qui apparaissent sur la fenêtre d’achat de l’App Store&nbsp;:</p>
+          <ul>
+            <li><strong>SolShield Premium</strong> — $9.99&nbsp;USD, facturé annuellement.</li>
+            <li><strong>SolShield Premium (Mensuel)</strong> — $0.99&nbsp;USD, facturé mensuellement.</li>
+          </ul>
+          <p>Les prix sont indiqués en dollars américains et peuvent différer dans d’autres régions et devises. Le prix applicable est celui affiché dans l’App Store au moment de l’achat.</p>
+
+          <h3>Essai gratuit</h3>
+          <p>Les nouveaux abonnés bénéficient d’un essai gratuit de 7&nbsp;jours sur l’une ou l’autre formule. Si vous n’annulez pas au moins 24&nbsp;heures avant la fin de l’essai, celui-ci se convertit automatiquement en abonnement payant au prix de la formule choisie. Toute partie non utilisée d’un essai gratuit est perdue lorsque vous souscrivez un abonnement.</p>
+
+          <h3>Renouvellement automatique</h3>
+          <p>Les abonnements se renouvellent automatiquement, sauf si le renouvellement automatique est désactivé au moins 24&nbsp;heures avant la fin de la période en cours. Le montant du renouvellement est débité de votre compte Apple dans les 24&nbsp;heures précédant la fin de la période en cours, au prix de la formule alors en vigueur.</p>
+
+          <h3>Gérer votre abonnement</h3>
+          <p>Vous pouvez consulter, modifier ou annuler votre abonnement à tout moment dans <strong>Réglages → votre nom → Abonnements</strong> sur votre iPhone ou iPad. L’annulation empêche le renouvellement suivant&nbsp;; elle ne met pas fin à la période déjà payée, et vous conservez l’accès jusqu’à la fin de celle-ci.</p>
+
+          <h3>Remboursements</h3>
+          <p>Tous les achats sont effectués via Apple et traités par Apple. Nous ne pouvons pas accorder de remboursement. Les demandes de remboursement doivent être adressées à Apple et sont tranchées selon les politiques d’Apple — consultez l’<a href="https://support.apple.com/en-us/HT204084">Assistance Apple</a>.</p>
+
+          <h2>5. Vos responsabilités</h2>
+          <p>Vous vous engagez à&nbsp;:</p>
+          <ul>
+            <li>n’utiliser l’Application qu’à des fins licites et conformément aux présentes Conditions&nbsp;;</li>
+            <li>ne pas procéder à l’ingénierie inverse de l’Application, ne pas la décompiler, ne pas la désassembler ni tenter de toute autre manière d’en obtenir le code source, sauf lorsque cette restriction est interdite par la loi applicable&nbsp;;</li>
+            <li>ne pas perturber, endommager, désactiver ni surcharger l’Application ou tout service dont elle dépend&nbsp;;</li>
+            <li>ne pas tenter d’accéder sans autorisation à une quelconque partie de l’Application ou aux systèmes qui la sous-tendent&nbsp;;</li>
+            <li>accorder à l’Application l’accès à votre position, dont elle a besoin pour obtenir l’indice UV à l’endroit où vous vous trouvez — un lieu enregistré ne requiert pas cette autorisation. Une connexion Internet est nécessaire dans tous les cas&nbsp;: sans elle, l’Application ne peut pas fournir de données UV.</li>
+          </ul>
+
+          <h2>6. Propriété intellectuelle</h2>
+          <p>SolShield, son nom, son icône, son interface, ses textes, graphismes, illustrations et logiciels appartiennent à Paulo Branicio, développeur de SolShield, et sont protégés par le droit d’auteur, le droit des marques et les autres lois relatives à la propriété intellectuelle. Les présentes Conditions vous concèdent une licence personnelle, limitée, non exclusive, non transférable et révocable pour utiliser l’Application sur les appareils Apple dont vous êtes propriétaire ou que vous contrôlez, dans les limites permises par les Conditions générales de l’App Store. Elles n’emportent aucun transfert de propriété.</p>
+
+          <h2>7. Services tiers</h2>
+          <p>SolShield obtient les données d’indice UV et de prévisions auprès d’Apple Weather via le framework WeatherKit d’Apple. Ces données sont fournies par Apple selon ses propres conditions et échappent à notre contrôle&nbsp;: nous ne garantissons ni leur disponibilité, ni leur exactitude, ni leur exhaustivité, ni leur actualité, et elles peuvent être retardées ou indisponibles. Les achats sont gérés par Apple via l’App Store et sont également soumis aux conditions d’Apple. Nous ne sommes pas responsables des services tiers.</p>
+
+          <h2>8. Limitation de responsabilité</h2>
+          <p>Dans toute la mesure permise par la loi applicable&nbsp;:</p>
+          <ul>
+            <li>l’Application est fournie «&nbsp;en l’état&nbsp;» et «&nbsp;selon sa disponibilité&nbsp;», sans garantie d’aucune sorte, expresse ou implicite&nbsp;;</li>
+            <li>nous ne garantissons pas que les relevés UV, les prévisions, les estimations du temps avant coup de soleil ou les estimations de vitamine D soient exacts, complets ou à jour&nbsp;;</li>
+            <li>nous ne sommes pas responsables des coups de soleil, des lésions cutanées, des troubles liés à la chaleur ni de toute autre conséquence sur la santé, ni d’aucun dommage indirect, accessoire, spécial ou consécutif résultant de votre utilisation de l’Application ou de l’impossibilité de l’utiliser&nbsp;;</li>
+            <li>notre responsabilité totale envers vous, pour toute réclamation de quelque nature que ce soit, ne dépassera pas le montant que vous avez effectivement payé pour l’Application ou son abonnement au cours des douze mois précédant la naissance de la réclamation.</li>
+          </ul>
+          <p>Aucune disposition des présentes Conditions n’exclut ni ne limite une responsabilité qui ne peut être exclue ou limitée en vertu de la loi qui vous est applicable, notamment la responsabilité en cas de décès ou de dommage corporel causé par une négligence, ou en cas de fraude.</p>
+
+          <h2>9. Indemnisation</h2>
+          <p>Vous acceptez d’indemniser et de garantir Paulo Branicio, développeur de SolShield, contre toute réclamation, tout dommage, toute perte, toute responsabilité ou toute dépense (y compris des honoraires d’avocat raisonnables) découlant de votre utilisation de l’Application, de votre manquement aux présentes Conditions, ou de votre violation d’une loi ou des droits d’un tiers. La présente clause ne s’applique pas lorsque le droit de la consommation qui vous est applicable l’interdit.</p>
+
+          <h2>10. Modification des présentes Conditions</h2>
+          <p>Nous pouvons modifier les présentes Conditions. La version en vigueur est toujours publiée sur cette page avec sa date d’entrée en vigueur. Si une modification est substantielle, nous le signalerons clairement sur cette page avant son entrée en vigueur. Continuer à utiliser l’Application après l’entrée en vigueur d’une modification vaut acceptation des Conditions révisées&nbsp;; si vous ne les acceptez pas, cessez d’utiliser l’Application et annulez votre abonnement.</p>
+
+          <h2>11. Résiliation</h2>
+          <p>Vous pouvez mettre fin au présent contrat à tout moment en annulant votre abonnement et en supprimant l’Application. La résiliation n’affecte pas les droits à remboursement dont vous disposez auprès d’Apple, et les sections relatives à la propriété intellectuelle, à la limitation de responsabilité, à l’indemnisation et au droit applicable demeurent en vigueur après celle-ci.</p>
+
+          <h2>12. Droit applicable</h2>
+          <p>Les présentes Conditions constituent un contrat entre vous et Paulo Branicio, développeur de SolShield et vendeur officiel de l’Application sur l’App Store.</p>
+
+          <p>Les présentes Conditions sont régies et interprétées conformément aux lois de l’État de Californie (États-Unis), sans égard à ses règles de conflit de lois. Tout litige découlant des présentes Conditions ou de l’Application, ou s’y rapportant, sera porté exclusivement devant les tribunaux d’État ou fédéraux situés en Californie, et vous acceptez de vous soumettre à la compétence de ces tribunaux.</p>
+
+          <h2>13. Divisibilité</h2>
+          <p>Si une disposition des présentes Conditions est jugée invalide ou inapplicable, elle sera limitée ou supprimée dans la mesure strictement nécessaire, et les autres dispositions resteront pleinement en vigueur. Le fait de ne pas faire appliquer une disposition ne vaut pas renonciation à celle-ci.</p>
+
+          <h2>14. Contact</h2>
+          <p>SolShield est développé et maintenu par Paulo Branicio. Pour toute question concernant les présentes Conditions, écrivez à <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a>. Consultez également notre <a href="privacy.html">Politique de confidentialité</a>.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. pied de page -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Pied de page">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Conditions d’utilisation</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Indice UV et protection solaire</p>
+        <p class="attr">Données météo fournies par Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="it" id="italiano" lang="it-IT" aria-label="Italiano">
+
+    <!-- 1. intestazione -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Condizioni d’uso</h1>
+        <p class="hero-tagline" data-rise>SolShield — Indice UV e protezione solare</p>
+      </div>
+    </header>
+
+    <!-- 2. le condizioni -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <p class="updated">Data di entrata in vigore: luglio 2026</p>
+
+          <p>Leggi attentamente le presenti Condizioni d’uso (le «Condizioni») prima di utilizzare l’applicazione mobile SolShield (l’«App»). Scaricando, installando o utilizzando SolShield, accetti di essere vincolato da esse.</p>
+
+          <h2>1. Accettazione delle presenti Condizioni</h2>
+          <p>Scaricando, installando o utilizzando SolShield, confermi di aver letto e compreso le presenti Condizioni e la nostra <a href="privacy.html">Informativa sulla privacy</a>, che ne costituisce parte integrante, e di accettarle entrambe. Se non accetti una qualsiasi parte delle presenti Condizioni, non scaricare, non installare e non utilizzare l’App.</p>
+
+          <h2>2. Descrizione del servizio</h2>
+          <p>SolShield è un’applicazione di monitoraggio dei raggi UV per iPhone e iPad. Offre:</p>
+          <ul>
+            <li>valori dell’indice UV in tempo reale per la tua posizione attuale o per una posizione salvata;</li>
+            <li>raccomandazioni personalizzate per la protezione solare e stime del tempo di scottatura basate sul tuo fototipo di Fitzpatrick;</li>
+            <li>previsioni UV orarie e a 7&nbsp;giorni;</li>
+            <li>avvisi di soglia UV, allerte sul picco giornaliero e promemoria per riapplicare la crema solare;</li>
+            <li>un timer di esposizione al sole e una stima della vitamina D;</li>
+            <li>contenuti educativi sulla radiazione UV, sull’indice UV dell’OMS e sulla protezione dal sole.</li>
+          </ul>
+          <p>L’App è disponibile in inglese, portoghese, spagnolo, francese e italiano. Per funzionare, ha bisogno dell’autorizzazione a usare la tua posizione e di una connessione a Internet. Le funzionalità possono cambiare con l’evoluzione dell’App; le presenti Condizioni descrivono l’App così com’è, non come potrà diventare.</p>
+
+          <h2>3. Avvertenza medica</h2>
+          <p>SolShield fornisce esclusivamente contenuti informativi e non sostituisce il parere, la diagnosi o il trattamento di un medico. I dati sull’indice UV, le stime del tempo di scottatura, le stime della vitamina D e le raccomandazioni per la protezione solare sono informazioni generali, calcolate per una persona media, e la tua pelle, i farmaci che assumi, le tue condizioni di salute e l’ambiente possono modificare sensibilmente il risultato. Rivolgiti sempre a un medico o a un operatore sanitario qualificato per qualsiasi domanda sull’esposizione al sole, sulle condizioni della pelle o sulla tua salute. Non affidarti esclusivamente a SolShield per le decisioni relative alla protezione solare.</p>
+          <p>I dati UV provengono da Apple Weather tramite il framework WeatherKit di Apple e possono essere in ritardo, incompleti o non disponibili. L’altitudine, il riverbero dell’acqua, della sabbia o della neve, la copertura nuvolosa e l’ora del giorno possono spingere la tua esposizione reale ben al di sopra di quanto mostri qualsiasi previsione. <strong>Nel dubbio, affidati all’ombra, agli indumenti e alla crema solare, non a un numero su uno schermo.</strong></p>
+
+          <h2>4. Abbonamento</h2>
+          <p>SolShield richiede un abbonamento attivo. Non esiste una versione gratuita: dopo la schermata di avvio, l’App presenta le opzioni di abbonamento e le sue funzionalità diventano disponibili non appena è attivo un abbonamento o una prova gratuita.</p>
+
+          <h3>Piani e prezzi</h3>
+          <p>Sono offerti due piani. Danno lo stesso accesso all’App e differiscono solo per la frequenza dell’addebito. I nomi riportati di seguito sono quelli mostrati nella schermata di acquisto dell’App Store:</p>
+          <ul>
+            <li><strong>SolShield Premium</strong> — $9.99&nbsp;USD, con addebito annuale.</li>
+            <li><strong>SolShield Premium (Mensile)</strong> — $0.99&nbsp;USD, con addebito mensile.</li>
+          </ul>
+          <p>I prezzi sono indicati in dollari statunitensi e possono variare in altre regioni e valute. Si applica il prezzo mostrato nell’App Store al momento dell’acquisto.</p>
+
+          <h3>Prova gratuita</h3>
+          <p>I nuovi abbonati hanno diritto a 7&nbsp;giorni di prova gratuita con entrambi i piani. Se non annulli almeno 24&nbsp;ore prima della fine della prova, questa si converte automaticamente in un abbonamento a pagamento al prezzo del piano scelto. Qualsiasi parte non utilizzata di una prova gratuita viene persa quando acquisti un abbonamento.</p>
+
+          <h3>Rinnovo automatico</h3>
+          <p>Gli abbonamenti si rinnovano automaticamente, a meno che il rinnovo automatico non venga disattivato almeno 24&nbsp;ore prima della fine del periodo in corso. L’importo del rinnovo viene addebitato sul tuo Account Apple nelle 24&nbsp;ore che precedono la fine del periodo in corso, al prezzo del piano in vigore in quel momento.</p>
+
+          <h3>Gestire il tuo abbonamento</h3>
+          <p>Puoi visualizzare, modificare o annullare il tuo abbonamento in qualsiasi momento in <strong>Impostazioni → il tuo nome → Abbonamenti</strong> sul tuo iPhone o iPad. L’annullamento interrompe il rinnovo successivo; non pone fine al periodo già pagato, e mantieni l’accesso fino al termine di tale periodo.</p>
+
+          <h3>Rimborsi</h3>
+          <p>Tutti gli acquisti vengono effettuati tramite Apple ed elaborati da Apple. Non possiamo emettere rimborsi. Le richieste di rimborso devono essere presentate ad Apple e sono valutate secondo le politiche di Apple — consulta il <a href="https://support.apple.com/en-us/HT204084">Supporto Apple</a>.</p>
+
+          <h2>5. Le tue responsabilità</h2>
+          <p>Ti impegni a:</p>
+          <ul>
+            <li>utilizzare l’App solo per scopi leciti e in conformità con le presenti Condizioni;</li>
+            <li>non effettuare il reverse engineering dell’App, non decompilarla, non disassemblarla né tentare in altro modo di ricavarne il codice sorgente, salvo nei casi in cui tale restrizione sia vietata dalla legge applicabile;</li>
+            <li>non interferire con l’App o con qualsiasi servizio da cui dipende, né danneggiarli, disattivarli o sovraccaricarli;</li>
+            <li>non tentare di ottenere un accesso non autorizzato a qualsiasi parte dell’App o ai sistemi su cui si basa;</li>
+            <li>concedere all’App l’accesso alla tua posizione, di cui ha bisogno per consultare l’indice UV nel luogo in cui ti trovi — una posizione salvata non richiede questa autorizzazione. In ogni caso è necessaria una connessione a Internet: senza di essa, l’App non può fornire i dati UV.</li>
+          </ul>
+
+          <h2>6. Proprietà intellettuale</h2>
+          <p>SolShield, il suo nome, l’icona, l’interfaccia, i testi, la grafica, le illustrazioni e il software appartengono a Paulo Branicio, sviluppatore di SolShield, e sono protetti dalle leggi sul diritto d’autore, sui marchi e sulle altre forme di proprietà intellettuale. Le presenti Condizioni ti concedono una licenza personale, limitata, non esclusiva, non trasferibile e revocabile per utilizzare l’App su dispositivi Apple di tua proprietà o sotto il tuo controllo, nei limiti consentiti dai Termini di servizio dell’App Store. Non trasferiscono la proprietà di alcunché.</p>
+
+          <h2>7. Servizi di terze parti</h2>
+          <p>SolShield ottiene i dati sull’indice UV e le previsioni da Apple Weather tramite il framework WeatherKit di Apple. Tali dati sono forniti da Apple secondo i propri termini e sono al di fuori del nostro controllo: non ne garantiamo la disponibilità, l’accuratezza, la completezza o la tempestività, e possono essere in ritardo o non disponibili. Gli acquisti sono gestiti da Apple tramite l’App Store e sono anch’essi soggetti ai termini di Apple. Non siamo responsabili dei servizi di terze parti.</p>
+
+          <h2>8. Limitazione di responsabilità</h2>
+          <p>Nella misura massima consentita dalla legge applicabile:</p>
+          <ul>
+            <li>l’App è fornita «così com’è» e «come disponibile», senza garanzie di alcun tipo, espresse o implicite;</li>
+            <li>non garantiamo che i valori UV, le previsioni, le stime del tempo di scottatura o le stime della vitamina D siano accurati, completi o aggiornati;</li>
+            <li>non siamo responsabili di scottature, danni alla pelle, patologie da calore o qualsiasi altra conseguenza per la salute, né di danni indiretti, incidentali, speciali o consequenziali derivanti dall’uso o dall’impossibilità di usare l’App;</li>
+            <li>la nostra responsabilità complessiva nei tuoi confronti, per qualsiasi pretesa di qualsiasi natura, non supererà l’importo che hai effettivamente pagato per l’App o per il relativo abbonamento nei dodici mesi precedenti l’insorgere della pretesa.</li>
+          </ul>
+          <p>Nessuna disposizione delle presenti Condizioni esclude o limita la responsabilità che non può essere esclusa o limitata ai sensi della legge a te applicabile, inclusa la responsabilità per morte o lesioni personali causate da negligenza, o per frode.</p>
+
+          <h2>9. Manleva</h2>
+          <p>Accetti di manlevare e tenere indenne Paulo Branicio, sviluppatore di SolShield, da qualsiasi pretesa, danno, perdita, responsabilità o spesa (incluse ragionevoli spese legali) derivante dal tuo uso dell’App, dalla tua violazione delle presenti Condizioni o dalla tua violazione di qualsiasi legge o dei diritti di terzi. La presente clausola non si applica laddove la normativa a tutela dei consumatori a te applicabile lo vieti.</p>
+
+          <h2>10. Modifiche alle presenti Condizioni</h2>
+          <p>Possiamo modificare le presenti Condizioni. La versione in vigore è sempre pubblicata in questa pagina con la relativa data di entrata in vigore. Se una modifica è sostanziale, lo indicheremo chiaramente in questa pagina prima che entri in vigore. Continuare a utilizzare l’App dopo l’entrata in vigore di una modifica significa accettare le Condizioni riviste; se non le accetti, smetti di utilizzare l’App e annulla il tuo abbonamento.</p>
+
+          <h2>11. Recesso</h2>
+          <p>Puoi recedere dal presente contratto in qualsiasi momento annullando il tuo abbonamento ed eliminando l’App. Il recesso non pregiudica gli eventuali diritti di rimborso di cui disponi tramite Apple, e le sezioni relative a proprietà intellettuale, limitazione di responsabilità, manleva e legge applicabile restano in vigore anche dopo di esso.</p>
+
+          <h2>12. Legge applicabile</h2>
+          <p>Le presenti Condizioni costituiscono un contratto tra te e Paulo Branicio, sviluppatore di SolShield e venditore ufficiale dell’App sull’App Store.</p>
+
+          <p>Le presenti Condizioni sono regolate e interpretate in conformità con le leggi dello Stato della California, Stati Uniti, senza riguardo alle sue norme sui conflitti di leggi. Qualsiasi controversia derivante dalle presenti Condizioni o dall’App, o a esse relativa, sarà sottoposta in via esclusiva ai tribunali statali o federali situati in California, e accetti di sottoporti alla giurisdizione di tali tribunali.</p>
+
+          <h2>13. Nullità parziale</h2>
+          <p>Se una qualsiasi disposizione delle presenti Condizioni viene ritenuta invalida o inapplicabile, tale disposizione sarà limitata o eliminata nella misura minima necessaria e le restanti disposizioni rimarranno pienamente in vigore. La mancata applicazione di una disposizione non costituisce rinuncia alla stessa.</p>
+
+          <h2>14. Contatti</h2>
+          <p>SolShield è sviluppato e supportato da Paulo Branicio. Per domande sulle presenti Condizioni, scrivi a <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a>. Consulta anche la nostra <a href="privacy.html">Informativa sulla privacy</a>.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. piè di pagina -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Piè di pagina">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Informativa sulla privacy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Condizioni d’uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contatti</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Indice UV e protezione solare</p>
+        <p class="attr">Dati meteo forniti da Apple Weather</p>
       </div>
     </footer>
 

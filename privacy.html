@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — SolShield</title>
-  <meta name="description" content="SolShield has no accounts and no servers. Your location stays on your device; only coordinates are sent to Apple Weather to answer a UV request. English, Portuguese and Spanish.">
+  <meta name="description" content="SolShield has no accounts and no servers. Your location stays on your device; only coordinates are sent to Apple Weather to answer a UV request. English, Portuguese, Spanish, French and Italian.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="app-icon.png">
   <script src="site.js" defer></script>
@@ -13,25 +13,27 @@
 
 <!-- Chrome: lives outside every [data-lang] section, so its text is swapped by
      site.js from the data-i18n-* attributes rather than by duplication. -->
-<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido" data-i18n-fr="Aller au contenu" data-i18n-it="Vai al contenuto">Skip to content</a>
 
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
-    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal">
-      <a href="index.html" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio">Home</a>
-      <a href="privacy.html" aria-current="page" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad">Privacy</a>
-      <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos">Terms</a>
-      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contact</a>
+    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal" data-i18n-aria-fr="Principale" data-i18n-aria-it="Principale">
+      <a href="index.html" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio" data-i18n-fr="Accueil" data-i18n-it="Home">Home</a>
+      <a href="privacy.html" aria-current="page" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad" data-i18n-fr="Confidentialité" data-i18n-it="Privacy">Privacy</a>
+      <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos" data-i18n-fr="Conditions" data-i18n-it="Condizioni">Terms</a>
+      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
     </nav>
     <!-- site.js stamps aria-selected/aria-controls/tabindex on these at load.
-         The three tab labels stay untranslated: a language's own endonym is
+         The five tab labels stay untranslated: a language's own endonym is
          correct in every locale, and translating them would make the switcher
          harder to use, not easier. -->
-    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma">
+    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma" data-i18n-aria-fr="Langue" data-i18n-aria-it="Lingua">
       <button type="button" role="tab" class="langtab" data-lang-target="en" aria-label="English">EN</button>
       <button type="button" role="tab" class="langtab" data-lang-target="pt" aria-label="Português">PT</button>
       <button type="button" role="tab" class="langtab" data-lang-target="es" aria-label="Español">ES</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="fr" aria-label="Français">FR</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="it" aria-label="Italiano">IT</button>
     </div>
   </div>
 </header>
@@ -40,8 +42,8 @@
 
   <!-- ============================================================ ENGLISH ==
        site.js stamps role="tabpanel", id, and aria-hidden on this element.
-       Never hand-author those. Portuguese and Spanish are exact structural
-       copies of this block with data-lang / lang / aria-label and the copy
+       Never hand-author those. Portuguese, Spanish, French and Italian are exact
+       structural copies of this block with data-lang / lang / aria-label and the copy
        swapped; parity.py enforces the equivalence.
 
        The weather provider named in "Where UV data comes from" is Apple
@@ -50,7 +52,7 @@
        a different provider, which was simply false: who receives a user's
        coordinates is the single most important factual claim a privacy
        policy makes. If the app's weather backend ever changes, THAT
-       paragraph changes first, in all three languages, before anything else
+       paragraph changes first, in all five languages, before anything else
        ships.
   -->
   <section data-lang="en" lang="en" aria-label="English">
@@ -72,7 +74,7 @@
           <p class="updated">Effective date: July 2026</p>
 
           <h2>Our commitment</h2>
-          <p>SolShield has no user accounts and no servers of ours. There is nothing to sign up for, nothing to log in to, and nowhere for us to keep a profile of you. Everything the app knows about you — your saved locations, your UV history, your skin type and your settings — stays on your device.</p>
+          <p>SolShield has no user accounts and no servers of ours. There is nothing to sign up for, nothing to log in to, and nowhere for us to keep a profile of you. Everything the app knows about you — your saved locations, your skin type and your settings — stays on your device.</p>
           <p>We do not collect, store, sell or share personal information. This policy sets out, in detail, the one moment any data leaves your device, and exactly what is in it.</p>
 
           <h2>What SolShield collects</h2>
@@ -80,7 +82,7 @@
           <ul>
             <li><strong>Location.</strong> With your permission, the app reads your device’s location so it can look up the UV index for where you are.</li>
             <li><strong>Saved locations.</strong> Places you save are stored locally on your device.</li>
-            <li><strong>UV history.</strong> The readings the app has shown you are stored locally, so it can show weekly averages and trends.</li>
+            <li><strong>Latest UV reading.</strong> The most recent UV reading and hourly forecast for the location you are viewing are kept locally. Each update replaces the previous one, so no history of your readings builds up.</li>
             <li><strong>Preferences.</strong> Your skin type, notification settings and language are stored locally.</li>
           </ul>
           <p>None of it is transmitted to us, because there is no “us” for it to be transmitted to.</p>
@@ -102,7 +104,7 @@
           <h2>Storage</h2>
           <p>All app data lives on your device:</p>
           <ul>
-            <li>UV history and statistics</li>
+            <li>The latest UV reading and hourly forecast</li>
             <li>Saved locations</li>
             <li>Preferences and settings</li>
             <li>Subscription status, which is managed by Apple</li>
@@ -129,7 +131,7 @@
 
           <h3>European Union and Spain (GDPR / RGPD)</h3>
           <p>Under the General Data Protection Regulation (Regulation (EU) 2016/679, known in Spain as the RGPD) you have the rights of access (Article 15), rectification (Article 16), erasure (Article 17), restriction of processing (Article 18), notification (Article 19), data portability (Article 20), objection (Article 21), and not to be subject to a decision based solely on automated processing (Article 22).</p>
-          <p>The same practical note applies: no personal data about you reaches us, so there is nothing for us to export, rectify or erase. Location data is processed on your device with your consent, which you can withdraw at any time in iOS Settings. You also have the right to lodge a complaint with a supervisory authority — in Spain, the Agencia Española de Protección de Datos (AEPD), or the authority in your country of residence.</p>
+          <p>The same practical note applies: no personal data about you reaches us, so there is nothing for us to export, rectify or erase. Location data is processed on your device with your consent, which you can withdraw at any time in iOS Settings. You also have the right to lodge a complaint with a supervisory authority, such as the one in your country of residence — for example, the <a href="https://www.aepd.es">Agencia Española de Protección de Datos (AEPD)</a> in Spain, the <a href="https://www.cnil.fr">Commission nationale de l’informatique et des libertés (CNIL)</a> in France or the <a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a> in Italy.</p>
 
           <h2>Changes to this policy</h2>
           <p>We may update this Privacy Policy from time to time. Any change is posted on this page with a new effective date, and the date at the top of this page always tells you which version is in force.</p>
@@ -147,9 +149,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Footer">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Privacy Policy</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Terms of Use</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contact</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Terms of Use</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · UV Index &amp; Sun Protection</p>
         <p class="attr">Weather data powered by Apple Weather</p>
@@ -159,13 +161,13 @@
   </section>
 
   <!-- ======================================================== /ENGLISH ==
-       The two sections below are structural clones of the block above:
+       The four sections below are structural clones of the block above:
        same elements, same classes, same order, with only the copy and the
        section's own data-lang / id / lang / aria-label changed. The
        rationale comments are not repeated — read them once, in English.
 
-       id="portugues" and id="espanol" are the only hand-authored ids on the
-       page: they are the deep-link anchors site.js maps to a language, and it
+       id="portugues", id="espanol", id="francais" and id="italiano" are the
+       only hand-authored ids on the page: they are the deep-link anchors site.js maps to a language, and it
        honours an existing id (`if (!s.id)`). role="tabpanel", aria-controls
        and aria-hidden are still stamped at runtime and must not appear here.
        id="top" stays on the English <h1> alone — ids must be unique.
@@ -189,7 +191,7 @@
           <p class="updated">Data de vigência: julho de 2026</p>
 
           <h2>Nosso compromisso</h2>
-          <p>O SolShield não tem contas de usuário nem servidores nossos. Não há nada para cadastrar, nada para acessar com login e nenhum lugar onde possamos manter um perfil sobre você. Tudo o que o aplicativo sabe sobre você — suas localizações salvas, seu histórico de UV, seu tipo de pele e seus ajustes — permanece no seu dispositivo.</p>
+          <p>O SolShield não tem contas de usuário nem servidores nossos. Não há nada para cadastrar, nada para acessar com login e nenhum lugar onde possamos manter um perfil sobre você. Tudo o que o aplicativo sabe sobre você — suas localizações salvas, seu tipo de pele e seus ajustes — permanece no seu dispositivo.</p>
           <p>Não coletamos, armazenamos, vendemos nem compartilhamos informações pessoais. Esta política descreve, em detalhe, o único momento em que algum dado sai do seu dispositivo e exatamente o que ele contém.</p>
 
           <h2>O que o SolShield coleta</h2>
@@ -197,7 +199,7 @@
           <ul>
             <li><strong>Localização.</strong> Com a sua permissão, o aplicativo lê a localização do seu dispositivo para consultar o índice UV de onde você está.</li>
             <li><strong>Localizações salvas.</strong> Os lugares que você salva ficam armazenados localmente no seu dispositivo.</li>
-            <li><strong>Histórico de UV.</strong> As leituras que o aplicativo já mostrou ficam armazenadas localmente, para exibir médias semanais e tendências.</li>
+            <li><strong>Última leitura de UV.</strong> A leitura de UV mais recente e a previsão por hora da localização que você está visualizando ficam armazenadas localmente. Cada atualização substitui a anterior, então nenhum histórico das suas leituras se acumula.</li>
             <li><strong>Preferências.</strong> Seu tipo de pele, seus ajustes de notificação e seu idioma ficam armazenados localmente.</li>
           </ul>
           <p>Nada disso é transmitido para nós, porque não existe um “nós” para onde transmitir.</p>
@@ -219,7 +221,7 @@
           <h2>Armazenamento</h2>
           <p>Todos os dados do aplicativo ficam no seu dispositivo:</p>
           <ul>
-            <li>Histórico e estatísticas de UV</li>
+            <li>A última leitura de UV e a previsão por hora</li>
             <li>Localizações salvas</li>
             <li>Preferências e ajustes</li>
             <li>Status da assinatura, que é gerenciado pela Apple</li>
@@ -246,7 +248,7 @@
 
           <h3>União Europeia e Espanha (GDPR / RGPD)</h3>
           <p>Pelo Regulamento Geral sobre a Proteção de Dados (Regulamento (UE) 2016/679, conhecido na Espanha como RGPD), você tem os direitos de acesso (Artigo 15), retificação (Artigo 16), apagamento (Artigo 17), limitação do tratamento (Artigo 18), notificação (Artigo 19), portabilidade dos dados (Artigo 20), oposição (Artigo 21) e de não ficar sujeito a decisão tomada exclusivamente com base em tratamento automatizado (Artigo 22).</p>
-          <p>Vale a mesma observação prática: nenhum dado pessoal sobre você chega até nós, então não há nada para exportarmos, retificarmos ou apagarmos. Os dados de localização são tratados no seu dispositivo com o seu consentimento, que você pode revogar a qualquer momento nos Ajustes do iOS. Você também tem o direito de apresentar reclamação a uma autoridade de controle — na Espanha, a Agencia Española de Protección de Datos (AEPD), ou a autoridade do seu país de residência.</p>
+          <p>Vale a mesma observação prática: nenhum dado pessoal sobre você chega até nós, então não há nada para exportarmos, retificarmos ou apagarmos. Os dados de localização são tratados no seu dispositivo com o seu consentimento, que você pode revogar a qualquer momento nos Ajustes do iOS. Você também tem o direito de apresentar reclamação a uma autoridade de controle, como a do seu país de residência — por exemplo, a <a href="https://www.aepd.es">Agencia Española de Protección de Datos (AEPD)</a> na Espanha, a <a href="https://www.cnil.fr">Commission nationale de l’informatique et des libertés (CNIL)</a> na França ou o <a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a> na Itália.</p>
 
           <h2>Alterações nesta política</h2>
           <p>Podemos atualizar esta Política de Privacidade de tempos em tempos. Qualquer alteração é publicada nesta página com uma nova data de vigência, e a data no topo desta página sempre indica qual versão está em vigor.</p>
@@ -264,9 +266,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Rodapé">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Política de Privacidade</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Termos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contato</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidade</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Termos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contato</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV e Proteção Solar</p>
         <p class="attr">Dados meteorológicos desenvolvidos com Apple Weather</p>
@@ -293,7 +295,7 @@
           <p class="updated">Fecha de entrada en vigor: julio de 2026</p>
 
           <h2>Nuestro compromiso</h2>
-          <p>SolShield no tiene cuentas de usuario ni servidores nuestros. No hay nada que registrar, nada a lo que iniciar sesión y ningún lugar donde podamos guardar un perfil suyo. Todo lo que la aplicación sabe sobre usted — sus ubicaciones guardadas, su historial de UV, su tipo de piel y sus ajustes — permanece en su dispositivo.</p>
+          <p>SolShield no tiene cuentas de usuario ni servidores nuestros. No hay nada que registrar, nada a lo que iniciar sesión y ningún lugar donde podamos guardar un perfil suyo. Todo lo que la aplicación sabe sobre usted — sus ubicaciones guardadas, su tipo de piel y sus ajustes — permanece en su dispositivo.</p>
           <p>No recopilamos, almacenamos, vendemos ni compartimos información personal. Esta política detalla el único momento en que algún dato sale de su dispositivo y exactamente qué contiene.</p>
 
           <h2>Qué recopila SolShield</h2>
@@ -301,7 +303,7 @@
           <ul>
             <li><strong>Ubicación.</strong> Con su permiso, la aplicación lee la ubicación de su dispositivo para consultar el índice UV de donde usted se encuentra.</li>
             <li><strong>Ubicaciones guardadas.</strong> Los lugares que usted guarda se almacenan localmente en su dispositivo.</li>
-            <li><strong>Historial de UV.</strong> Las lecturas que la aplicación le ha mostrado se almacenan localmente, para poder mostrar promedios semanales y tendencias.</li>
+            <li><strong>Última lectura de UV.</strong> La lectura de UV más reciente y el pronóstico por horas de la ubicación que usted está viendo se guardan localmente. Cada actualización sustituye a la anterior, por lo que no se acumula ningún historial de sus lecturas.</li>
             <li><strong>Preferencias.</strong> Su tipo de piel, sus ajustes de notificaciones y su idioma se almacenan localmente.</li>
           </ul>
           <p>Nada de ello se nos transmite, porque no existe un «nosotros» al que transmitirlo.</p>
@@ -323,7 +325,7 @@
           <h2>Almacenamiento</h2>
           <p>Todos los datos de la aplicación residen en su dispositivo:</p>
           <ul>
-            <li>Historial y estadísticas de UV</li>
+            <li>La última lectura de UV y el pronóstico por horas</li>
             <li>Ubicaciones guardadas</li>
             <li>Preferencias y ajustes</li>
             <li>El estado de la suscripción, que gestiona Apple</li>
@@ -350,7 +352,7 @@
 
           <h3>Unión Europea y España (GDPR / RGPD)</h3>
           <p>Conforme al Reglamento General de Protección de Datos (Reglamento (UE) 2016/679, conocido en España como RGPD), usted tiene los derechos de acceso (Artículo 15), rectificación (Artículo 16), supresión (Artículo 17), limitación del tratamiento (Artículo 18), notificación (Artículo 19), portabilidad de los datos (Artículo 20), oposición (Artículo 21) y a no ser objeto de una decisión basada únicamente en el tratamiento automatizado (Artículo 22).</p>
-          <p>Rige la misma observación práctica: ningún dato personal sobre usted llega hasta nosotros, así que no hay nada que podamos exportar, rectificar ni suprimir. Los datos de ubicación se tratan en su dispositivo con su consentimiento, que puede revocar en cualquier momento en los Ajustes de iOS. También tiene derecho a presentar una reclamación ante una autoridad de control — en España, la Agencia Española de Protección de Datos (AEPD), o la autoridad de su país de residencia.</p>
+          <p>Rige la misma observación práctica: ningún dato personal sobre usted llega hasta nosotros, así que no hay nada que podamos exportar, rectificar ni suprimir. Los datos de ubicación se tratan en su dispositivo con su consentimiento, que puede revocar en cualquier momento en los Ajustes de iOS. También tiene derecho a presentar una reclamación ante una autoridad de control, como la de su país de residencia — por ejemplo, la <a href="https://www.aepd.es">Agencia Española de Protección de Datos (AEPD)</a> en España, la <a href="https://www.cnil.fr">Commission nationale de l’informatique et des libertés (CNIL)</a> en Francia o el <a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a> en Italia.</p>
 
           <h2>Cambios en esta política</h2>
           <p>Podemos actualizar esta Política de Privacidad de vez en cuando. Cualquier cambio se publica en esta página con una nueva fecha de entrada en vigor, y la fecha que figura en la parte superior de esta página siempre indica qué versión está vigente.</p>
@@ -368,12 +370,220 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Pie de página">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Política de Privacidad</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Términos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contacto</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidad</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Términos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contacto</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV y Protección Solar</p>
         <p class="attr">Datos meteorológicos desarrollados con Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="fr" id="francais" lang="fr-FR" aria-label="Français">
+
+    <!-- 1. header -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Politique de confidentialité</h1>
+        <p class="hero-tagline" data-rise>SolShield — Indice UV et protection solaire</p>
+      </div>
+    </header>
+
+    <!-- 2. policy body -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <p class="updated">Date d’entrée en vigueur&nbsp;: juillet 2026</p>
+
+          <h2>Notre engagement</h2>
+          <p>SolShield n’a aucun compte utilisateur et ne s’appuie sur aucun serveur qui nous appartienne. Pas d’inscription, pas de connexion, et nulle part où nous pourrions conserver un profil vous concernant. Tout ce que l’application sait de vous — vos lieux enregistrés, votre type de peau et vos réglages — reste sur votre appareil.</p>
+          <p>Nous ne collectons, ne stockons, ne vendons ni ne partageons aucune information personnelle. La présente politique décrit en détail le seul moment où des données quittent votre appareil, et précisément ce qu’elles contiennent.</p>
+
+          <h2>Ce que SolShield collecte</h2>
+          <p>Rien qui permette de vous identifier. SolShield ne détient ni nom, ni adresse e-mail, ni compte, ni identifiant publicitaire, ni empreinte de l’appareil.</p>
+          <ul>
+            <li><strong>Position.</strong> Avec votre autorisation, l’application lit la position de votre appareil afin d’obtenir l’indice UV de l’endroit où vous vous trouvez.</li>
+            <li><strong>Lieux enregistrés.</strong> Les lieux que vous enregistrez sont stockés localement sur votre appareil.</li>
+            <li><strong>Dernier relevé UV.</strong> Le relevé UV le plus récent et les prévisions horaires du lieu que vous consultez sont conservés localement. Chaque mise à jour remplace la précédente&nbsp;: aucun historique de vos relevés ne s’accumule.</li>
+            <li><strong>Préférences.</strong> Votre type de peau, vos réglages de notifications et votre langue sont stockés localement.</li>
+          </ul>
+          <p>Rien de tout cela ne nous est transmis, puisqu’il n’existe aucun «&nbsp;nous&nbsp;» à qui le transmettre.</p>
+
+          <h2>D’où viennent les données UV</h2>
+          <p>SolShield obtient les données d’indice UV et de prévisions auprès d’Apple Weather, au moyen du framework WeatherKit d’Apple. Lorsque l’application demande des données UV, seules la latitude et la longitude du lieu que vous consultez sont envoyées à Apple, afin de répondre à cette demande. Aucun nom, aucune adresse e-mail, aucun identifiant d’appareil ni aucune information de compte n’est transmis, car l’application n’en possède aucun. Le traitement de cette demande par Apple est régi par <a href="https://www.apple.com/legal/privacy/">la propre politique de confidentialité d’Apple</a>.</p>
+          <p>En dehors de cette demande — et de la gestion de votre abonnement par Apple, décrite ci-dessous — aucune information ne quitte votre appareil.</p>
+
+          <h2>Comment votre position est utilisée</h2>
+          <p>Votre position est utilisée sur votre appareil, à quatre fins&nbsp;:</p>
+          <ul>
+            <li>Obtenir l’indice UV actuel et prévu pour l’endroit où vous vous trouvez, ou pour un lieu que vous avez enregistré.</li>
+            <li>Calculer votre temps avant coup de soleil selon votre phototype de Fitzpatrick.</li>
+            <li>Estimer la vitamine D produite par votre exposition actuelle.</li>
+            <li>Programmer les notifications — alertes de seuil UV, avertissement du pic quotidien et rappels pour réappliquer la crème solaire.</li>
+          </ul>
+          <p>Elle n’est utilisée à aucune autre fin. Elle ne sert à aucun profilage, n’est enregistrée nulle part en dehors de l’appareil, n’est pas vendue et n’est partagée ni avec des annonceurs ni avec des courtiers en données. Les notifications sont programmées localement par iOS&nbsp;; aucun serveur de notifications push qui nous appartienne n’intervient.</p>
+
+          <h2>Stockage</h2>
+          <p>Toutes les données de l’application résident sur votre appareil&nbsp;:</p>
+          <ul>
+            <li>Le dernier relevé UV et les prévisions horaires</li>
+            <li>Lieux enregistrés</li>
+            <li>Préférences et réglages</li>
+            <li>Statut de l’abonnement, géré par Apple</li>
+          </ul>
+          <p>Nous n’exploitons aucun serveur qui stocke vos données personnelles. Il n’y a ni synchronisation dans le cloud, ni sauvegarde chez nous. Supprimer SolShield de votre appareil efface l’ensemble de ces données.</p>
+
+          <h2>Analyses et pistage</h2>
+          <p>Rien de tout cela. SolShield ne contient aucun SDK d’analyse, aucun SDK publicitaire, aucun SDK de rapport de plantage, aucune statistique d’utilisation, aucun profilage comportemental ni aucun traceur tiers. L’application ne demande pas l’identifiant publicitaire (IDFA) et ne vous piste pas à travers d’autres apps ou sites web.</p>
+          <p>Ce site web se comporte de la même manière. Il ne charge aucun script, aucune police ni aucune image de tiers, ne dépose aucun cookie et n’envoie aucune requête à un autre serveur que celui qui fournit cette page.</p>
+
+          <h2>Abonnements</h2>
+          <p>SolShield est une application sur abonnement, et l’abonnement est entièrement géré par Apple via l’App Store. Les achats, renouvellements, annulations et remboursements se font tous dans votre compte Apple. Nous ne voyons jamais vos informations de paiement&nbsp;: ni numéro de carte, ni adresse de facturation, ni identifiants de compte Apple.</p>
+          <p>L’application vérifie le statut de votre abonnement sur votre appareil. Les formules et l’essai gratuit sont décrits dans les <a href="terms.html">Conditions d’utilisation</a>.</p>
+
+          <h2>Protection de la vie privée des enfants</h2>
+          <p>L’application SolShield est classée 4+ et ne contient aucun contenu inapproprié. Elle ne collecte aucune information personnelle auprès de quiconque, et donc aucune auprès des enfants. Nous ne collectons sciemment aucune information personnelle auprès d’un enfant, quel que soit son âge, puisque nous n’en collectons aucune.</p>
+
+          <h2>Vos droits</h2>
+          <p>Comme SolShield ne collecte aucune donnée personnelle et que nous n’exploitons aucun serveur, la plupart des demandes relatives à la protection des données ne trouvent, de notre côté, rien sur quoi agir. Vos droits sont néanmoins présentés ci-dessous, avec ce qu’ils signifient concrètement ici.</p>
+
+          <h3>Brésil (LGPD)</h3>
+          <p>En vertu de la Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018), vous disposez du droit à la confirmation de l’existence d’un traitement et à l’accès à vos données, à la correction des données incomplètes ou inexactes, à l’anonymisation, au blocage ou à la suppression des données inutiles, à la portabilité des données, à l’information sur les entités avec lesquelles vos données sont partagées, ainsi qu’au retrait de votre consentement à tout moment.</p>
+          <p>En pratique&nbsp;: nous ne détenons aucune donnée personnelle vous concernant, il n’y a donc rien que nous puissions exporter, corriger ou effacer. Les données présentes sur votre appareil restent sous votre contrôle — effacez-les dans les réglages de l’application, révoquez l’autorisation de localisation dans les Réglages d’iOS, ou supprimez l’application pour tout effacer. Pour exercer l’un de ces droits, ou pour nous demander de confirmer que nous ne détenons rien, écrivez à l’adresse ci-dessous.</p>
+
+          <h3>Union européenne et Espagne (GDPR / RGPD)</h3>
+          <p>En vertu du règlement général sur la protection des données (règlement (UE) 2016/679, connu en Espagne sous le sigle RGPD), vous disposez des droits d’accès (article 15), de rectification (article 16), d’effacement (article 17), à la limitation du traitement (article 18), à la notification (article 19), à la portabilité des données (article 20) et d’opposition (article 21), ainsi que du droit de ne pas faire l’objet d’une décision fondée exclusivement sur un traitement automatisé (article 22).</p>
+          <p>La même remarque pratique s’applique&nbsp;: aucune donnée personnelle vous concernant ne nous parvient, il n’y a donc rien que nous puissions exporter, rectifier ou effacer. Les données de localisation sont traitées sur votre appareil avec votre consentement, que vous pouvez retirer à tout moment dans les Réglages d’iOS. Vous avez également le droit d’introduire une réclamation auprès d’une autorité de contrôle, comme celle de votre pays de résidence — par exemple l’<a href="https://www.aepd.es">Agencia Española de Protección de Datos (AEPD)</a> en Espagne, la <a href="https://www.cnil.fr">Commission nationale de l’informatique et des libertés (CNIL)</a> en France ou le <a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a> en Italie.</p>
+
+          <h2>Modifications de la présente politique</h2>
+          <p>Nous pouvons mettre à jour la présente Politique de confidentialité de temps à autre. Toute modification est publiée sur cette page avec une nouvelle date d’entrée en vigueur, et la date figurant en haut de cette page vous indique toujours quelle version est en vigueur.</p>
+
+          <h2>Contact</h2>
+          <p>Les questions sur cette politique — ou sur tout ce que SolShield fait des données — parviennent directement à la personne qui développe l’application.</p>
+          <p><a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a></p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Pied de page">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Conditions d’utilisation</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Indice UV et protection solaire</p>
+        <p class="attr">Données météo fournies par Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="it" id="italiano" lang="it-IT" aria-label="Italiano">
+
+    <!-- 1. header -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Informativa sulla privacy</h1>
+        <p class="hero-tagline" data-rise>SolShield — Indice UV e protezione solare</p>
+      </div>
+    </header>
+
+    <!-- 2. policy body -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <p class="updated">Data di entrata in vigore: luglio 2026</p>
+
+          <h2>Il nostro impegno</h2>
+          <p>SolShield non ha account utente e non si appoggia ad alcun server nostro. Non c’è nulla a cui iscriversi, nessun accesso da effettuare e nessun luogo in cui potremmo conservare un tuo profilo. Tutto ciò che l’app sa di te — le posizioni salvate, il tipo di pelle e le impostazioni — resta sul tuo dispositivo.</p>
+          <p>Non raccogliamo, conserviamo, vendiamo né condividiamo informazioni personali. La presente informativa descrive nel dettaglio l’unico momento in cui dei dati lasciano il tuo dispositivo, e che cosa contengono esattamente.</p>
+
+          <h2>Che cosa raccoglie SolShield</h2>
+          <p>Nulla che ti identifichi. SolShield non conserva alcun nome, indirizzo email, account, identificativo pubblicitario o impronta digitale del dispositivo.</p>
+          <ul>
+            <li><strong>Posizione.</strong> Con il tuo permesso, l’app legge la posizione del dispositivo per consultare l’indice UV del luogo in cui ti trovi.</li>
+            <li><strong>Posizioni salvate.</strong> I luoghi che salvi vengono archiviati localmente sul tuo dispositivo.</li>
+            <li><strong>Ultimo valore UV.</strong> Il valore UV più recente e le previsioni orarie del luogo che stai visualizzando vengono conservati localmente. Ogni aggiornamento sostituisce il precedente, quindi non si accumula alcuna cronologia dei tuoi valori.</li>
+            <li><strong>Preferenze.</strong> Il tuo tipo di pelle, le impostazioni delle notifiche e la lingua vengono archiviati localmente.</li>
+          </ul>
+          <p>Niente di tutto questo ci viene trasmesso, perché non esiste un «noi» a cui trasmetterlo.</p>
+
+          <h2>Da dove provengono i dati UV</h2>
+          <p>SolShield ottiene i dati sull’indice UV e le previsioni da Apple Weather tramite il framework WeatherKit di Apple. Quando l’app richiede i dati UV, ad Apple vengono inviate soltanto la latitudine e la longitudine del luogo che stai visualizzando, per rispondere a quella richiesta. Non viene trasmesso alcun nome, indirizzo email, identificativo del dispositivo o dato dell’account, perché l’app non ne possiede. Il trattamento di tale richiesta da parte di Apple è regolato dall’<a href="https://www.apple.com/legal/privacy/">informativa sulla privacy di Apple stessa</a>.</p>
+          <p>A parte questa richiesta — e la gestione del tuo abbonamento da parte di Apple, descritta più avanti — nessuna informazione lascia il tuo dispositivo.</p>
+
+          <h2>Come viene usata la tua posizione</h2>
+          <p>La tua posizione viene usata sul dispositivo per quattro scopi:</p>
+          <ul>
+            <li>Consultare l’indice UV attuale e previsto per il luogo in cui ti trovi, o per una posizione che hai salvato.</li>
+            <li>Calcolare il tuo tempo di scottatura in base al tuo fototipo di Fitzpatrick.</li>
+            <li>Stimare la vitamina D prodotta dalla tua esposizione attuale.</li>
+            <li>Programmare le notifiche — avvisi di soglia UV, l’allerta sul picco giornaliero e i promemoria per riapplicare la crema solare.</li>
+          </ul>
+          <p>Non viene usata per nient’altro. Non serve a profilarti, non viene registrata al di fuori del dispositivo, non viene venduta e non viene condivisa con inserzionisti o intermediari di dati. Le notifiche sono programmate localmente da iOS; non interviene alcun nostro server di notifiche push.</p>
+
+          <h2>Archiviazione</h2>
+          <p>Tutti i dati dell’app risiedono sul tuo dispositivo:</p>
+          <ul>
+            <li>L’ultimo valore UV e le previsioni orarie</li>
+            <li>Posizioni salvate</li>
+            <li>Preferenze e impostazioni</li>
+            <li>Stato dell’abbonamento, gestito da Apple</li>
+          </ul>
+          <p>Non gestiamo server che archivino i tuoi dati personali. Non c’è sincronizzazione nel cloud né alcun backup verso di noi. Eliminando SolShield dal dispositivo, elimini tutti questi dati.</p>
+
+          <h2>Analisi e tracciamento</h2>
+          <p>Niente di tutto questo. SolShield non contiene SDK di analisi, SDK pubblicitari, SDK per la segnalazione degli arresti anomali, statistiche di utilizzo, profilazione comportamentale né tracker di terze parti. Non richiede l’identificativo per la pubblicità (IDFA) e non ti traccia attraverso altre app o siti web.</p>
+          <p>Questo sito web si comporta allo stesso modo. Non carica script, font o immagini di terze parti, non imposta cookie e non effettua richieste a server diversi da quello che fornisce questa pagina.</p>
+
+          <h2>Abbonamenti</h2>
+          <p>SolShield è un’app in abbonamento, e l’abbonamento è gestito interamente da Apple tramite l’App Store. Acquisti, rinnovi, annullamenti e rimborsi avvengono tutti nel tuo Account Apple. Non vediamo mai i tuoi dati di pagamento: né il numero della carta, né l’indirizzo di fatturazione, né le credenziali dell’Account Apple.</p>
+          <p>L’app verifica lo stato del tuo abbonamento sul dispositivo. I piani e la prova gratuita sono descritti nelle <a href="terms.html">Condizioni d’uso</a>.</p>
+
+          <h2>Privacy dei minori</h2>
+          <p>L’app SolShield è classificata 4+ e non contiene contenuti inappropriati. Non raccoglie informazioni personali da nessuno, e quindi nemmeno dai minori. Non raccogliamo consapevolmente informazioni personali da minori di qualsiasi età, perché non ne raccogliamo affatto.</p>
+
+          <h2>I tuoi diritti</h2>
+          <p>Poiché SolShield non raccoglie dati personali e non gestiamo alcun server, la maggior parte delle richieste in materia di protezione dei dati non trova, da parte nostra, nulla su cui intervenire. I tuoi diritti sono comunque illustrati qui sotto, insieme a ciò che significano in pratica in questo caso.</p>
+
+          <h3>Brasile (LGPD)</h3>
+          <p>Ai sensi della Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018) hai diritto alla conferma dell’esistenza di un trattamento e all’accesso ai tuoi dati, alla correzione dei dati incompleti o inesatti, all’anonimizzazione, al blocco o alla cancellazione dei dati non necessari, alla portabilità dei dati, all’informazione sui soggetti con cui i tuoi dati sono condivisi e alla revoca del consenso in qualsiasi momento.</p>
+          <p>In pratica: non conserviamo alcun dato personale che ti riguardi, quindi non c’è nulla che possiamo esportare, correggere o cancellare. I dati sul tuo dispositivo sono sotto il tuo controllo — cancellali nelle impostazioni dell’app, revoca l’autorizzazione alla posizione nelle Impostazioni di iOS oppure elimina l’app per rimuoverli tutti. Per esercitare qualsiasi diritto, o per chiederci di confermare che non conserviamo nulla, scrivi all’indirizzo indicato qui sotto.</p>
+
+          <h3>Unione europea e Spagna (GDPR / RGPD)</h3>
+          <p>Ai sensi del Regolamento generale sulla protezione dei dati (Regolamento (UE) 2016/679, noto in Spagna come RGPD) hai diritto di accesso (articolo 15), di rettifica (articolo 16), alla cancellazione (articolo 17), alla limitazione del trattamento (articolo 18), alla notifica (articolo 19), alla portabilità dei dati (articolo 20), di opposizione (articolo 21) e a non essere sottoposto a una decisione basata unicamente sul trattamento automatizzato (articolo 22).</p>
+          <p>Vale la stessa osservazione pratica: nessun dato personale che ti riguardi arriva fino a noi, quindi non c’è nulla che possiamo esportare, rettificare o cancellare. I dati sulla posizione sono trattati sul tuo dispositivo con il tuo consenso, che puoi revocare in qualsiasi momento nelle Impostazioni di iOS. Hai inoltre il diritto di proporre reclamo a un’autorità di controllo, come quella del tuo Paese di residenza — ad esempio l’<a href="https://www.aepd.es">Agencia Española de Protección de Datos (AEPD)</a> in Spagna, la <a href="https://www.cnil.fr">Commission nationale de l’informatique et des libertés (CNIL)</a> in Francia o il <a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a> in Italia.</p>
+
+          <h2>Modifiche alla presente informativa</h2>
+          <p>Potremmo aggiornare di tanto in tanto la presente Informativa sulla privacy. Ogni modifica viene pubblicata in questa pagina con una nuova data di entrata in vigore, e la data in cima a questa pagina indica sempre quale versione è in vigore.</p>
+
+          <h2>Contatti</h2>
+          <p>Le domande su questa informativa — o su qualsiasi cosa SolShield faccia con i dati — arrivano direttamente alla persona che sviluppa l’app.</p>
+          <p><a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a></p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Piè di pagina">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Informativa sulla privacy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Condizioni d’uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contatti</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Indice UV e protezione solare</p>
+        <p class="attr">Dati meteo forniti da Apple Weather</p>
       </div>
     </footer>
 

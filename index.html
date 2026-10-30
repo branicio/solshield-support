@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SolShield — UV Index &amp; Sun Protection</title>
-  <meta name="description" content="Real-time UV index, personalized sunburn time for your skin type, and a 7-day forecast. Powered by Apple Weather. English, Portuguese and Spanish.">
+  <meta name="description" content="Real-time UV index, personalized sunburn time for your skin type, and a 7-day forecast. Powered by Apple Weather. English, Portuguese, Spanish, French and Italian.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="app-icon.png">
   <script src="site.js" defer></script>
@@ -13,25 +13,27 @@
 
 <!-- Chrome: lives outside every [data-lang] section, so its text is swapped by
      site.js from the data-i18n-* attributes rather than by duplication. -->
-<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido" data-i18n-fr="Aller au contenu" data-i18n-it="Vai al contenuto">Skip to content</a>
 
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
-    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal">
-      <a href="index.html" aria-current="page" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio">Home</a>
-      <a href="privacy.html" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad">Privacy</a>
-      <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos">Terms</a>
-      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contact</a>
+    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal" data-i18n-aria-fr="Principale" data-i18n-aria-it="Principale">
+      <a href="index.html" aria-current="page" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio" data-i18n-fr="Accueil" data-i18n-it="Home">Home</a>
+      <a href="privacy.html" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad" data-i18n-fr="Confidentialité" data-i18n-it="Privacy">Privacy</a>
+      <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos" data-i18n-fr="Conditions" data-i18n-it="Condizioni">Terms</a>
+      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
     </nav>
     <!-- site.js stamps aria-selected/aria-controls/tabindex on these at load.
-         The three tab labels stay untranslated: a language's own endonym is
+         The five tab labels stay untranslated: a language's own endonym is
          correct in every locale, and translating them would make the switcher
          harder to use, not easier. -->
-    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma">
+    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma" data-i18n-aria-fr="Langue" data-i18n-aria-it="Lingua">
       <button type="button" role="tab" class="langtab" data-lang-target="en" aria-label="English">EN</button>
       <button type="button" role="tab" class="langtab" data-lang-target="pt" aria-label="Português">PT</button>
       <button type="button" role="tab" class="langtab" data-lang-target="es" aria-label="Español">ES</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="fr" aria-label="Français">FR</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="it" aria-label="Italiano">IT</button>
     </div>
   </div>
 </header>
@@ -40,8 +42,8 @@
 
   <!-- ============================================================ ENGLISH ==
        site.js stamps role="tabpanel", id, and aria-hidden on this element.
-       Never hand-author those. Portuguese and Spanish are exact copies of
-       this block with data-lang / lang / aria-label and the copy swapped.
+       Never hand-author those. Portuguese, Spanish, French and Italian are exact
+       copies of this block with data-lang / lang / aria-label and the copy swapped.
   -->
   <section data-lang="en" lang="en" aria-label="English">
 
@@ -70,9 +72,12 @@
       <div data-uv="extreme"><b>11+</b><i>Extreme</i></div>
     </div>
 
-    <!-- 3. features — exactly nine cards; the copy deck's nine are the nine.
-         Do not add a tenth for a Home Screen extension: the app ships no such
-         target, so advertising one would be false. Each .ico holds a stroked
+    <!-- 3. features — exactly eight cards. A ninth, "Exposure history", was
+         removed on 2026-10-30: the app has no history feature, so advertising
+         one was false. For the same reason there is no card for a Home
+         Screen extension: the app ships no such target. styles.css lays the
+         grid out 4 x 2 / 2 x 4 / 1 x 8, so a ninth card would need that
+         revisited. Each .ico holds a stroked
          inline <svg>; `.ico svg` in styles.css now paints fill: none and
          stroke: currentColor, so no per-icon inline style is needed to keep
          these line art rather than solid blobs. -->
@@ -115,12 +120,6 @@
           </article>
 
           <article class="feature" data-rise>
-            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 20.6h17.2"/><path d="M6.8 20.6v-4.8M11 20.6V9.4M15.2 20.6v-7.4M19.4 20.6V5.6"/></svg></div>
-            <h3>Exposure history</h3>
-            <p>Weekly averages, peak readings and trends over time.</p>
-          </article>
-
-          <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
             <h3>Vitamin D estimate</h3>
             <p>How much your current exposure is actually producing, by skin type.</p>
@@ -134,7 +133,7 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
-            <h3>English · Português · Español</h3>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
             <p>Switch language any time, no restart.</p>
           </article>
 
@@ -194,7 +193,7 @@
 
           <details>
             <summary>What does SolShield cost?</summary>
-            <p>SolShield is a <a href="terms.html">subscription app</a>: <strong>$9.99 per year</strong> or <strong>$0.99 per month</strong> (USD), each with a <strong>7-day free trial</strong>. The subscription unlocks the whole app — real-time UV, forecasts, the exposure timer, notifications, history and the Learn section. If you do not cancel before the trial ends, it converts to a paid subscription automatically.</p>
+            <p>SolShield is a <a href="terms.html">subscription app</a>: <strong>$9.99 per year</strong> or <strong>$0.99 per month</strong> (USD), each with a <strong>7-day free trial</strong>. The subscription unlocks the whole app — real-time UV, forecasts, the exposure timer, notifications and the Learn section. If you do not cancel before the trial ends, it converts to a paid subscription automatically.</p>
           </details>
 
           <details>
@@ -204,7 +203,7 @@
 
           <details>
             <summary>Does SolShield track my location?</summary>
-            <p>No. Your location is used on your device to look up the UV index for where you are, and the coordinates are sent to Apple WeatherKit only to answer that query. There are no accounts, no servers of ours, no analytics SDKs, no advertising SDKs and <a href="privacy.html">no tracking of any kind</a>. Saved locations, UV history and your settings stay on your device.</p>
+            <p>No. Your location is used on your device to look up the UV index for where you are, and the coordinates are sent to Apple WeatherKit only to answer that query. There are no accounts, no servers of ours, no analytics SDKs, no advertising SDKs and <a href="privacy.html">no tracking of any kind</a>. Saved locations and your settings stay on your device.</p>
           </details>
 
           <details>
@@ -219,7 +218,7 @@
 
           <details>
             <summary>Which languages does SolShield support?</summary>
-            <p>English, Portuguese and Spanish. Switch at any time in the app’s Settings — no restart needed.</p>
+            <p>English, Portuguese, Spanish, French and Italian. Switch at any time in the app’s Settings — no restart needed.</p>
           </details>
 
         </div>
@@ -243,9 +242,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Footer">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Privacy Policy</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Terms of Use</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contact</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Terms of Use</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · UV Index &amp; Sun Protection</p>
         <p class="attr">Weather data powered by Apple Weather</p>
@@ -255,14 +254,14 @@
   </section>
 
   <!-- ======================================================== /ENGLISH ==
-       The two sections below are structural clones of the block above:
+       The four sections below are structural clones of the block above:
        same elements, classes, data-rise flags and inline SVGs, with only the
        copy, the App Store badge and the section's own data-lang / id / lang /
        aria-label changed. The rationale comments are not repeated — read them
        once, in English. parity.py enforces the equivalence.
 
-       id="portugues" and id="espanol" are the only hand-authored ids on the
-       page: they are the deep-link anchors site.js maps to a language, and it
+       id="portugues", id="espanol", id="francais" and id="italiano" are the
+       only hand-authored ids on the page: they are the deep-link anchors site.js maps to a language, and it
        honours an existing id (`if (!s.id)`). role="tabpanel", aria-controls
        and aria-hidden are still stamped at runtime and must not appear here.
        id="top" stays on the English <h1> alone — ids must be unique.
@@ -334,12 +333,6 @@
           </article>
 
           <article class="feature" data-rise>
-            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 20.6h17.2"/><path d="M6.8 20.6v-4.8M11 20.6V9.4M15.2 20.6v-7.4M19.4 20.6V5.6"/></svg></div>
-            <h3>Histórico de exposição</h3>
-            <p>Médias semanais, leituras de pico e tendências ao longo do tempo.</p>
-          </article>
-
-          <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
             <h3>Estimativa de Vitamina D</h3>
             <p>Quanto a sua exposição atual está realmente produzindo, por tipo de pele.</p>
@@ -353,7 +346,7 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
-            <h3>English · Português · Español</h3>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
             <p>Troque de idioma quando quiser, sem reiniciar.</p>
           </article>
 
@@ -409,7 +402,7 @@
 
           <details>
             <summary>Quanto custa o SolShield?</summary>
-            <p>O SolShield é um <a href="terms.html">aplicativo por assinatura</a>: <strong>$9.99 por ano</strong> ou <strong>$0.99 por mês</strong> (USD), cada plano com <strong>7 dias de teste gratuito</strong>. A assinatura libera o aplicativo inteiro — UV em tempo real, previsões, o cronômetro de exposição, notificações, histórico e a seção Aprender. Se você não cancelar antes do fim do teste, ele se converte automaticamente em uma assinatura paga.</p>
+            <p>O SolShield é um <a href="terms.html">aplicativo por assinatura</a>: <strong>$9.99 por ano</strong> ou <strong>$0.99 por mês</strong> (USD), cada plano com <strong>7 dias de teste gratuito</strong>. A assinatura libera o aplicativo inteiro — UV em tempo real, previsões, o cronômetro de exposição, notificações e a seção Aprender. Se você não cancelar antes do fim do teste, ele se converte automaticamente em uma assinatura paga.</p>
           </details>
 
           <details>
@@ -419,7 +412,7 @@
 
           <details>
             <summary>O SolShield rastreia minha localização?</summary>
-            <p>Não. Sua localização é usada no seu dispositivo para consultar o índice UV de onde você está, e as coordenadas são enviadas ao Apple WeatherKit apenas para responder a essa consulta. Não há contas, não há servidores nossos, não há SDKs de análise, não há SDKs de publicidade e <a href="privacy.html">não há rastreamento de nenhum tipo</a>. Locais salvos, histórico de UV e seus ajustes permanecem no seu dispositivo.</p>
+            <p>Não. Sua localização é usada no seu dispositivo para consultar o índice UV de onde você está, e as coordenadas são enviadas ao Apple WeatherKit apenas para responder a essa consulta. Não há contas, não há servidores nossos, não há SDKs de análise, não há SDKs de publicidade e <a href="privacy.html">não há rastreamento de nenhum tipo</a>. Locais salvos e seus ajustes permanecem no seu dispositivo.</p>
           </details>
 
           <details>
@@ -434,7 +427,7 @@
 
           <details>
             <summary>Quais idiomas o SolShield oferece?</summary>
-            <p>Inglês, português e espanhol. Troque a qualquer momento nos Ajustes do aplicativo — sem precisar reiniciar.</p>
+            <p>Inglês, português, espanhol, francês e italiano. Troque a qualquer momento nos Ajustes do aplicativo — sem precisar reiniciar.</p>
           </details>
 
         </div>
@@ -458,9 +451,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Rodapé">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Política de Privacidade</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Termos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contato</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidade</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Termos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contato</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV e Proteção Solar</p>
         <p class="attr">Dados meteorológicos desenvolvidos com Apple Weather</p>
@@ -535,12 +528,6 @@
           </article>
 
           <article class="feature" data-rise>
-            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 20.6h17.2"/><path d="M6.8 20.6v-4.8M11 20.6V9.4M15.2 20.6v-7.4M19.4 20.6V5.6"/></svg></div>
-            <h3>Historial de exposición</h3>
-            <p>Promedios semanales, lecturas máximas y tendencias a lo largo del tiempo.</p>
-          </article>
-
-          <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
             <h3>Estimación de Vitamina D</h3>
             <p>Cuánto está produciendo realmente su exposición actual, según el tipo de piel.</p>
@@ -554,7 +541,7 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
-            <h3>English · Português · Español</h3>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
             <p>Cambie de idioma cuando quiera, sin reiniciar.</p>
           </article>
 
@@ -610,7 +597,7 @@
 
           <details>
             <summary>¿Cuánto cuesta SolShield?</summary>
-            <p>SolShield es una <a href="terms.html">aplicación por suscripción</a>: <strong>$9.99 al año</strong> o <strong>$0.99 al mes</strong> (USD), cada plan con <strong>7 días de prueba gratuita</strong>. La suscripción desbloquea toda la aplicación — UV en tiempo real, pronósticos, el temporizador de exposición, notificaciones, historial y la sección Aprender. Si no cancela antes de que termine la prueba, se convierte automáticamente en una suscripción de pago.</p>
+            <p>SolShield es una <a href="terms.html">aplicación por suscripción</a>: <strong>$9.99 al año</strong> o <strong>$0.99 al mes</strong> (USD), cada plan con <strong>7 días de prueba gratuita</strong>. La suscripción desbloquea toda la aplicación — UV en tiempo real, pronósticos, el temporizador de exposición, notificaciones y la sección Aprender. Si no cancela antes de que termine la prueba, se convierte automáticamente en una suscripción de pago.</p>
           </details>
 
           <details>
@@ -620,7 +607,7 @@
 
           <details>
             <summary>¿SolShield rastrea mi ubicación?</summary>
-            <p>No. Su ubicación se usa en su dispositivo para consultar el índice UV del lugar donde se encuentra, y las coordenadas se envían a Apple WeatherKit solo para responder a esa consulta. No hay cuentas, no hay servidores nuestros, no hay SDKs de análisis, no hay SDKs de publicidad y <a href="privacy.html">no hay seguimiento de ningún tipo</a>. Las ubicaciones guardadas, el historial de UV y sus ajustes permanecen en su dispositivo.</p>
+            <p>No. Su ubicación se usa en su dispositivo para consultar el índice UV del lugar donde se encuentra, y las coordenadas se envían a Apple WeatherKit solo para responder a esa consulta. No hay cuentas, no hay servidores nuestros, no hay SDKs de análisis, no hay SDKs de publicidad y <a href="privacy.html">no hay seguimiento de ningún tipo</a>. Las ubicaciones guardadas y sus ajustes permanecen en su dispositivo.</p>
           </details>
 
           <details>
@@ -635,7 +622,7 @@
 
           <details>
             <summary>¿Qué idiomas admite SolShield?</summary>
-            <p>Inglés, portugués y español. Cambie en cualquier momento en los Ajustes de la aplicación — sin necesidad de reiniciar.</p>
+            <p>Inglés, portugués, español, francés e italiano. Cambie en cualquier momento en los Ajustes de la aplicación — sin necesidad de reiniciar.</p>
           </details>
 
         </div>
@@ -659,12 +646,402 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Pie de página">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Política de Privacidad</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso">Términos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contacto</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidad</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Términos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contacto</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV y Protección Solar</p>
         <p class="attr">Datos meteorológicos desarrollados con Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="fr" id="francais" lang="fr-FR" aria-label="Français">
+
+    <!-- 1. hero -->
+    <header class="hero">
+      <div class="wrap">
+        <img class="hero-icon" src="app-icon.png" alt="" width="96" height="96" data-rise>
+        <h1>SolShield</h1>
+        <p class="hero-tagline" data-rise>Maîtrisez votre exposition au soleil</p>
+        <p class="hero-meta" data-rise>iPhone · iPad · Données fournies par Apple Weather · Aucun compte requis</p>
+        <div class="badges" data-rise>
+          <a href="https://apps.apple.com/app/apple-store/id6757956272">
+            <img class="as" src="badges/app-store-fr-fr.svg" alt="Télécharger dans l’App Store">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. WHO UV scale -->
+    <div class="uv-ribbon">
+      <div data-uv="low"><b>0–2</b><i>Faible</i></div>
+      <div data-uv="moderate"><b>3–5</b><i>Modéré</i></div>
+      <div data-uv="high"><b>6–7</b><i>Élevé</i></div>
+      <div data-uv="veryhigh"><b>8–10</b><i>Très élevé</i></div>
+      <div data-uv="extreme"><b>11+</b><i>Extrême</i></div>
+    </div>
+
+    <!-- 3. features -->
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Dans l’app</p>
+          <h2>Fonctionnalités</h2>
+        </div>
+        <div class="grid">
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
+            <h3>Indice UV en temps réel</h3>
+            <p>Des relevés en direct pour votre position, fournis par Apple Weather, avec les niveaux de risque de l’OMS codés par couleur.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
+            <h3>Temps avant coup de soleil personnalisé</h3>
+            <p>Le nombre de minutes avant un coup de soleil selon votre phototype de Fitzpatrick, de I à VI.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="5" width="17.6" height="15.8" rx="2.6"/><path d="M3.2 9.8h17.6M8 3.2v3.4M16 3.2v3.4M7.6 13.6h2.2M11.6 13.6h2.2M15.6 13.6h2.2M7.6 17.2h2.2M11.6 17.2h2.2"/></svg></div>
+            <h3>Prévisions horaires et sur 7&nbsp;jours</h3>
+            <p>Voyez quand l’indice UV culmine aujourd’hui et organisez votre semaine en conséquence.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
+            <h3>Minuteur d’exposition au soleil</h3>
+            <p>Décompte le temps que vous pouvez passer au soleil en sécurité et vous prévient lorsqu’il est écoulé.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 9.2a6 6 0 1 0-12 0c0 5.4-2.2 6.8-2.2 6.8h16.4S18 14.6 18 9.2z"/><path d="M13.8 19.4a2 2 0 0 1-3.6 0"/></svg></div>
+            <h3>Notifications intelligentes</h3>
+            <p>Alertes de seuil UV, avertissements du pic quotidien et rappels pour réappliquer la crème solaire.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
+            <h3>Estimation de la vitamine D</h3>
+            <p>Combien votre exposition actuelle en produit réellement, selon votre type de peau.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.6C10.7 5.1 8.7 4.3 6.2 4.3H3.4v13.2h2.8c2.5 0 4.5.8 5.8 2.2 1.3-1.4 3.3-2.2 5.8-2.2h2.8V4.3h-2.8c-2.5 0-4.5.8-5.8 2.3z"/><path d="M12 6.6v13.1"/></svg></div>
+            <h3>Apprendre</h3>
+            <p>L’indice UV expliqué, les recommandations de l’OMS et la prévention du cancer de la peau.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
+            <p>Changez de langue à tout moment, sans redémarrer.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. the privacy vow -->
+    <div class="vow">
+      <div class="wrap">Sans publicité. Sans compte. <span class="em">Sans pistage.</span></div>
+    </div>
+
+    <!-- 5. the science -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">La science</p>
+          <h2>Le temps avant coup de soleil ne se devine pas</h2>
+        </div>
+        <div class="sci">
+          <div class="formula">minutes = DEM ÷ (indice UV × 1,5)</div>
+          <p>La DEM est la dose érythémale minimale — l’énergie UV que votre peau absorbe avant de rougir visiblement. Elle varie selon le phototype de Fitzpatrick (de 200&nbsp;J/m² pour le type I jusqu’à 900&nbsp;J/m² pour le type VI)&nbsp;: c’est pourquoi deux personnes exposées au même soleil obtiennent des chiffres très différents.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Fitzpatrick scale -->
+    <section class="block alt">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Pensé pour vous</p>
+          <h2>Six types de peau</h2>
+        </div>
+        <div class="skins">
+          <div class="skin"><div class="swatch" data-skin="i"></div><b>I</b><i>Brûle toujours</i></div>
+          <div class="skin"><div class="swatch" data-skin="ii"></div><b>II</b><i>Brûle généralement</i></div>
+          <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Brûle parfois</i></div>
+          <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Brûle rarement</i></div>
+          <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Brûle très rarement</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Ne brûle jamais</i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">Bon à savoir</p>
+          <h2>Questions fréquentes</h2>
+        </div>
+        <div class="faq">
+
+          <details>
+            <summary>Combien coûte SolShield&nbsp;?</summary>
+            <p>SolShield est une <a href="terms.html">app sur abonnement</a>&nbsp;: <strong>$9.99 par an</strong> ou <strong>$0.99 par mois</strong> (USD), chaque formule comprenant un <strong>essai gratuit de 7&nbsp;jours</strong>. L’abonnement débloque toute l’app — l’indice UV en temps réel, les prévisions, le minuteur d’exposition, les notifications et la section Apprendre. Si vous n’annulez pas avant la fin de l’essai, celui-ci se convertit automatiquement en abonnement payant.</p>
+          </details>
+
+          <details>
+            <summary>Comment annuler mon abonnement&nbsp;?</summary>
+            <p>Auprès d’Apple, à tout moment. Ouvrez l’app Réglages de votre iPhone ou iPad, touchez votre nom, touchez <strong>Abonnements</strong>, sélectionnez SolShield et touchez <strong>Annuler l’abonnement</strong>. L’annulation prend effet à la fin de la période de facturation en cours et vous conservez l’accès jusque-là. Les <a href="terms.html">remboursements</a> sont gérés par Apple, et non par nous.</p>
+          </details>
+
+          <details>
+            <summary>SolShield piste-t-il ma position&nbsp;?</summary>
+            <p>Non. Votre position est utilisée sur votre appareil pour obtenir l’indice UV de l’endroit où vous vous trouvez, et les coordonnées ne sont envoyées à Apple WeatherKit que pour répondre à cette requête. Pas de compte, pas de serveur à nous, pas de SDK d’analyse, pas de SDK publicitaire et <a href="privacy.html">aucun pistage d’aucune sorte</a>. Les lieux enregistrés et vos réglages restent sur votre appareil.</p>
+          </details>
+
+          <details>
+            <summary>D’où viennent les données UV&nbsp;?</summary>
+            <p>D’Apple Weather, via le framework WeatherKit d’Apple. Les niveaux de risque suivent les catégories de l’indice UV solaire mondial de l’OMS — Faible 0–2, Modéré 3–5, Élevé 6–7, Très élevé 8–10, Extrême 11+.</p>
+          </details>
+
+          <details>
+            <summary>Comment le temps avant coup de soleil est-il calculé&nbsp;?</summary>
+            <p>À partir de la dose érythémale minimale&nbsp;: <strong>minutes = DEM ÷ (indice UV × 1,5)</strong>. La DEM est l’énergie UV que votre peau absorbe avant de rougir visiblement, et elle varie selon le phototype de Fitzpatrick — de 200&nbsp;J/m² pour le type I jusqu’à 900&nbsp;J/m² pour le type VI. Pour une peau de type II avec un indice UV de 7, cela donne 250 ÷ 10,5 ≈ 24&nbsp;minutes. En dessous d’un indice UV de 3, nous affichons «&nbsp;Faible risque de coup de soleil&nbsp;» au lieu d’un chiffre, conformément aux recommandations de l’OMS. Il s’agit d’estimations pour une personne moyenne, et non d’un avis médical.</p>
+          </details>
+
+          <details>
+            <summary>Quelles langues SolShield prend-il en charge&nbsp;?</summary>
+            <p>Anglais, portugais, espagnol, français et italien. Changez de langue à tout moment dans les Réglages de l’app — sans redémarrage.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. contact -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="contact-card">
+          <p class="kicker">Assistance</p>
+          <h2>Écrivez-nous</h2>
+          <p>Une question sur votre abonnement, un bug, ou une fonctionnalité que vous aimeriez voir dans l’app — chaque message est lu par la personne qui développe SolShield.</p>
+          <a class="mail" href="mailto:braniapps@gmail.com">braniapps@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Pied de page">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Conditions d’utilisation</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Indice UV et protection solaire</p>
+        <p class="attr">Données météo fournies par Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="it" id="italiano" lang="it-IT" aria-label="Italiano">
+
+    <!-- 1. hero -->
+    <header class="hero">
+      <div class="wrap">
+        <img class="hero-icon" src="app-icon.png" alt="" width="96" height="96" data-rise>
+        <h1>SolShield</h1>
+        <p class="hero-tagline" data-rise>Tieni sotto controllo la tua esposizione al sole</p>
+        <p class="hero-meta" data-rise>iPhone · iPad · Dati forniti da Apple Weather · Nessun account richiesto</p>
+        <div class="badges" data-rise>
+          <a href="https://apps.apple.com/app/apple-store/id6757956272">
+            <img class="as" src="badges/app-store-it-it.svg" alt="Scarica su App Store">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. WHO UV scale -->
+    <div class="uv-ribbon">
+      <div data-uv="low"><b>0–2</b><i>Basso</i></div>
+      <div data-uv="moderate"><b>3–5</b><i>Moderato</i></div>
+      <div data-uv="high"><b>6–7</b><i>Alto</i></div>
+      <div data-uv="veryhigh"><b>8–10</b><i>Molto alto</i></div>
+      <div data-uv="extreme"><b>11+</b><i>Estremo</i></div>
+    </div>
+
+    <!-- 3. features -->
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Nell’app</p>
+          <h2>Funzionalità</h2>
+        </div>
+        <div class="grid">
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
+            <h3>Indice UV in tempo reale</h3>
+            <p>Valori aggiornati in tempo reale per la tua posizione, forniti da Apple Weather, con i livelli di rischio dell’OMS distinti per colore.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
+            <h3>Tempo di scottatura personalizzato</h3>
+            <p>I minuti che mancano alla scottatura in base al tuo fototipo di Fitzpatrick, dal I al VI.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="5" width="17.6" height="15.8" rx="2.6"/><path d="M3.2 9.8h17.6M8 3.2v3.4M16 3.2v3.4M7.6 13.6h2.2M11.6 13.6h2.2M15.6 13.6h2.2M7.6 17.2h2.2M11.6 17.2h2.2"/></svg></div>
+            <h3>Previsioni orarie e a 7&nbsp;giorni</h3>
+            <p>Scopri quando l’indice UV raggiunge il picco oggi e organizza la settimana di conseguenza.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
+            <h3>Timer di esposizione al sole</h3>
+            <p>Fa il conto alla rovescia del tempo che puoi passare al sole in sicurezza e ti avvisa quando è scaduto.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 9.2a6 6 0 1 0-12 0c0 5.4-2.2 6.8-2.2 6.8h16.4S18 14.6 18 9.2z"/><path d="M13.8 19.4a2 2 0 0 1-3.6 0"/></svg></div>
+            <h3>Notifiche intelligenti</h3>
+            <p>Avvisi di soglia UV, allerte sul picco giornaliero e promemoria per riapplicare la crema solare.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
+            <h3>Stima della vitamina D</h3>
+            <p>Quanta ne sta producendo davvero la tua esposizione attuale, in base al tipo di pelle.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.6C10.7 5.1 8.7 4.3 6.2 4.3H3.4v13.2h2.8c2.5 0 4.5.8 5.8 2.2 1.3-1.4 3.3-2.2 5.8-2.2h2.8V4.3h-2.8c-2.5 0-4.5.8-5.8 2.3z"/><path d="M12 6.6v13.1"/></svg></div>
+            <h3>Impara</h3>
+            <p>L’indice UV spiegato, le raccomandazioni dell’OMS e la prevenzione dei tumori della pelle.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
+            <p>Cambia lingua quando vuoi, senza riavviare.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. the privacy vow -->
+    <div class="vow">
+      <div class="wrap">Niente pubblicità. Niente account. <span class="em">Niente tracciamento.</span></div>
+    </div>
+
+    <!-- 5. the science -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">La scienza</p>
+          <h2>Il tempo di scottatura non è una stima a occhio</h2>
+        </div>
+        <div class="sci">
+          <div class="formula">minuti = MED ÷ (indice UV × 1,5)</div>
+          <p>La MED è la dose eritematosa minima — l’energia UV che la tua pelle assorbe prima di arrossarsi visibilmente. Varia in base al fototipo di Fitzpatrick (da 200&nbsp;J/m² per il tipo I fino a 900&nbsp;J/m² per il tipo VI), ed è per questo che due persone sotto lo stesso sole ottengono valori molto diversi.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Fitzpatrick scale -->
+    <section class="block alt">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Pensato per te</p>
+          <h2>Sei tipi di pelle</h2>
+        </div>
+        <div class="skins">
+          <div class="skin"><div class="swatch" data-skin="i"></div><b>I</b><i>Si scotta sempre</i></div>
+          <div class="skin"><div class="swatch" data-skin="ii"></div><b>II</b><i>Si scotta spesso</i></div>
+          <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Si scotta a volte</i></div>
+          <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Si scotta raramente</i></div>
+          <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Si scotta molto raramente</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Non si scotta mai</i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">Buono a sapersi</p>
+          <h2>Domande frequenti</h2>
+        </div>
+        <div class="faq">
+
+          <details>
+            <summary>Quanto costa SolShield?</summary>
+            <p>SolShield è un’<a href="terms.html">app in abbonamento</a>: <strong>$9.99 all’anno</strong> o <strong>$0.99 al mese</strong> (USD), ciascun piano con <strong>7&nbsp;giorni di prova gratuita</strong>. L’abbonamento sblocca l’intera app — indice UV in tempo reale, previsioni, timer di esposizione, notifiche e la sezione Impara. Se non annulli prima della fine della prova, questa si converte automaticamente in un abbonamento a pagamento.</p>
+          </details>
+
+          <details>
+            <summary>Come annullo il mio abbonamento?</summary>
+            <p>Tramite Apple, in qualsiasi momento. Apri l’app Impostazioni sul tuo iPhone o iPad, tocca il tuo nome, tocca <strong>Abbonamenti</strong>, trova SolShield e tocca <strong>Annulla abbonamento</strong>. L’annullamento ha effetto alla fine del periodo di fatturazione in corso e mantieni l’accesso fino ad allora. I <a href="terms.html">rimborsi</a> sono gestiti da Apple, non da noi.</p>
+          </details>
+
+          <details>
+            <summary>SolShield traccia la mia posizione?</summary>
+            <p>No. La tua posizione viene usata sul dispositivo per consultare l’indice UV del luogo in cui ti trovi, e le coordinate vengono inviate ad Apple WeatherKit solo per rispondere a quella richiesta. Niente account, nessun server nostro, nessun SDK di analisi, nessun SDK pubblicitario e <a href="privacy.html">nessun tracciamento di alcun tipo</a>. Le posizioni salvate e le tue impostazioni restano sul tuo dispositivo.</p>
+          </details>
+
+          <details>
+            <summary>Da dove provengono i dati UV?</summary>
+            <p>Da Apple Weather, tramite il framework WeatherKit di Apple. I livelli di rischio seguono le fasce dell’indice UV solare globale dell’OMS — Basso 0–2, Moderato 3–5, Alto 6–7, Molto alto 8–10, Estremo 11+.</p>
+          </details>
+
+          <details>
+            <summary>Come viene calcolato il tempo di scottatura?</summary>
+            <p>A partire dalla dose eritematosa minima: <strong>minuti = MED ÷ (indice UV × 1,5)</strong>. La MED è l’energia UV che la tua pelle assorbe prima di arrossarsi visibilmente, e varia in base al fototipo di Fitzpatrick — da 200&nbsp;J/m² per il tipo I fino a 900&nbsp;J/m² per il tipo VI. Per una pelle di tipo II con indice UV 7, il risultato è 250 ÷ 10,5 ≈ 24&nbsp;minuti. Sotto l’indice UV 3 mostriamo «Basso rischio di scottatura» al posto di un numero, secondo le indicazioni dell’OMS. Sono stime per una persona media, non un parere medico.</p>
+          </details>
+
+          <details>
+            <summary>Quali lingue supporta SolShield?</summary>
+            <p>Inglese, portoghese, spagnolo, francese e italiano. Cambia lingua in qualsiasi momento nelle Impostazioni dell’app — senza bisogno di riavviare.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. contact -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="contact-card">
+          <p class="kicker">Assistenza</p>
+          <h2>Scrivici</h2>
+          <p>Una domanda sul tuo abbonamento, un bug o qualcosa che vorresti che l’app facesse — ogni messaggio viene letto dalla persona che sviluppa SolShield.</p>
+          <a class="mail" href="mailto:braniapps@gmail.com">braniapps@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Piè di pagina">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Informativa sulla privacy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Condizioni d’uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contatti</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Indice UV e protezione solare</p>
+        <p class="attr">Dati meteo forniti da Apple Weather</p>
       </div>
     </footer>
 
