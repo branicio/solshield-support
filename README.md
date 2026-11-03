@@ -446,3 +446,9 @@ Support email: **braniapps@gmail.com**
 
 _All URLs above verified returning HTTP 200 on 2026-07-28, and again on
 2026-10-30._
+
+## EU legal pages (2026-11-03)
+
+- `impressum.html` — Impressum / legal notice (§ 5 DDG; English and French mentions légales; one line per other language). Static, no `[data-lang]` sections, so it never renders blank; linked from every footer.
+- Privacy policy: "Controller and your rights (GDPR)" in every language, plus the Android paragraph (Google Weather API, approximate location, Google Play billing) — this page is also the Android app's and the Play listing's privacy policy. Terms: § 13 for EU/EEA/UK/Swiss consumers (Severability and Contact renumbered 14–15).
+- The legal text is shared by all of Paulo's support sites from one canonical source; change it there.
