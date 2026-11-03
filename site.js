@@ -19,7 +19,7 @@
     // <a> can point at — mailto:, the App Store listing, apple.com/legal, the
     // skip link's #main — is deliberately absent: a language fragment on those
     // is meaningless at best and breaks the target at worst.
-    var PAGES = { "index.html": true, "privacy.html": true, "terms.html": true };
+    var PAGES = { "index.html": true, "privacy.html": true, "terms.html": true, "impressum.html": true };
 
     // Written as a function rather than a map lookup so that no inherited
     // Object property ("constructor", "toString", ...) can masquerade as a
@@ -153,6 +153,9 @@
     // what makes "zero active sections" impossible.
     function resolveLang(lang) {
       var i;
+      // A page with no language sections (impressum.html shows every language at once)
+      // keeps the reader's language for its nav, footer and outgoing links.
+      if (!sections.length) return Object.prototype.hasOwnProperty.call(FRAGMENT, lang) ? lang : "en";
       for (i = 0; i < sections.length; i++) {
         if (sections[i].dataset.lang === lang) return lang;
       }
