@@ -440,30 +440,45 @@ a:hover { color: var(--ink); }
   background: var(--sun);
 }
 
+/* Six language tabs (DE joined EN/PT/ES/FR/IT on 2026-11-03, SolShield
+   1.3.0) are ~270px at full padding, which no phone row beside the brand
+   has room for, and which pushed French and German onto a second desktop
+   row in the 761-840px band. Every viewport up to 840px therefore gets the
+   compact tab: 8px side padding and tighter tracking, ~203px for all six.
+   It used to be a <=380px-only rule (10px sides); the tab is still ~32px
+   wide and ~30px tall, above the 24px WCAG 2.5.8 target minimum. */
+@media (max-width: 840px) {
+  .langtabs [role="tab"], .langtabs .langtab { padding: 6px 8px 7px; letter-spacing: .04em; }
+}
+
 @media (max-width: 380px) {
   .brand { font-size: .98rem; }
   .brand-mark { width: 24px; height: 24px; border-radius: 7px; }
-  .langtabs [role="tab"], .langtabs .langtab { padding: 6px 10px 7px; letter-spacing: .06em; }
 }
 
 /* Just above the 760px breakpoint the desktop nav is one row of brand, links
-   and five language tabs. French has the longest link labels
-   ("Confidentialité"), and at 761-781px they pushed the tabs onto a second
-   row (84px nav against a 63px --nav-h). A tighter link gap in that band
-   alone keeps every language on one row; the phone layout (<=760px) keeps
-   its own 18px gap. */
+   and six language tabs. French and German have the longest link labels
+   ("Confidentialité", "Datenschutz"), and at 761-781px French pushed the
+   tabs onto a second row (84px nav against a 63px --nav-h). A tighter link
+   gap in that band, plus the compact tabs above (<=840px), keeps every
+   language on one row — measured 63px for all six at 761-1280px on
+   2026-11-03; the phone layout (<=760px) keeps its own 18px gap. German's
+   nav says "Bedingungen", not "Nutzungsbedingungen", for the same reason
+   French says "Conditions": the full title (~150px) cannot fit this row. */
 @media (min-width: 761px) and (max-width: 840px) {
   .nav-links { gap: 14px; }
 }
 
-/* Five language tabs (EN/PT/ES/FR/IT since SolShield 1.2.0) no longer fit
-   beside the brand below 350px: the tablist wraps to a row of its own and
-   the nav becomes three rows, measured 129px at 320-349px (96px at 350px and
-   up). --nav-h follows it, with the same headroom as the 760px breakpoint,
-   so [id]'s scroll-margin-top keeps its allowance. The 360px threshold sits
-   above the measured 349px on purpose: over-estimating --nav-h only adds a
-   little space above an anchored heading, under-estimating hides it. */
-@media (max-width: 360px) {
+/* The six compact language tabs (EN/PT/ES/FR/IT/DE since 2026-11-03) no
+   longer fit beside the brand at 361px and below: the tablist wraps to a row
+   of its own and the nav becomes three rows, measured 129px at 320-361px
+   (96px from 362px up). --nav-h follows it, with the same headroom as the
+   760px breakpoint, so [id]'s scroll-margin-top keeps its allowance. The
+   370px threshold sits above the measured 361px on purpose: over-estimating
+   --nav-h only adds a little space above an anchored heading,
+   under-estimating hides it. (With five tabs the threshold was 360px over a
+   measured 349px.) */
+@media (max-width: 370px) {
   :root { --nav-h: 131px; }
 }
 

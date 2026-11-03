@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SolShield — UV Index &amp; Sun Protection</title>
-  <meta name="description" content="Real-time UV index, personalized sunburn time for your skin type, and a 7-day forecast. Powered by Apple Weather. English, Portuguese, Spanish, French and Italian.">
+  <meta name="description" content="Real-time UV index, personalized sunburn time for your skin type, and a 7-day forecast. Powered by Apple Weather. English, Portuguese, Spanish, French, Italian and German.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="app-icon.png">
   <script src="site.js" defer></script>
@@ -13,27 +13,28 @@
 
 <!-- Chrome: lives outside every [data-lang] section, so its text is swapped by
      site.js from the data-i18n-* attributes rather than by duplication. -->
-<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido" data-i18n-fr="Aller au contenu" data-i18n-it="Vai al contenuto">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido" data-i18n-fr="Aller au contenu" data-i18n-it="Vai al contenuto" data-i18n-de="Zum Inhalt springen">Skip to content</a>
 
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
-    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal" data-i18n-aria-fr="Principale" data-i18n-aria-it="Principale">
-      <a href="index.html" aria-current="page" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio" data-i18n-fr="Accueil" data-i18n-it="Home">Home</a>
-      <a href="privacy.html" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad" data-i18n-fr="Confidentialité" data-i18n-it="Privacy">Privacy</a>
-      <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos" data-i18n-fr="Conditions" data-i18n-it="Condizioni">Terms</a>
-      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
+    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal" data-i18n-aria-fr="Principale" data-i18n-aria-it="Principale" data-i18n-aria-de="Hauptnavigation">
+      <a href="index.html" aria-current="page" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio" data-i18n-fr="Accueil" data-i18n-it="Home" data-i18n-de="Start">Home</a>
+      <a href="privacy.html" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad" data-i18n-fr="Confidentialité" data-i18n-it="Privacy" data-i18n-de="Datenschutz">Privacy</a>
+      <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos" data-i18n-fr="Conditions" data-i18n-it="Condizioni" data-i18n-de="Bedingungen">Terms</a>
+      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contact</a>
     </nav>
     <!-- site.js stamps aria-selected/aria-controls/tabindex on these at load.
-         The five tab labels stay untranslated: a language's own endonym is
+         The six tab labels stay untranslated: a language's own endonym is
          correct in every locale, and translating them would make the switcher
          harder to use, not easier. -->
-    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma" data-i18n-aria-fr="Langue" data-i18n-aria-it="Lingua">
+    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma" data-i18n-aria-fr="Langue" data-i18n-aria-it="Lingua" data-i18n-aria-de="Sprache">
       <button type="button" role="tab" class="langtab" data-lang-target="en" aria-label="English">EN</button>
       <button type="button" role="tab" class="langtab" data-lang-target="pt" aria-label="Português">PT</button>
       <button type="button" role="tab" class="langtab" data-lang-target="es" aria-label="Español">ES</button>
       <button type="button" role="tab" class="langtab" data-lang-target="fr" aria-label="Français">FR</button>
       <button type="button" role="tab" class="langtab" data-lang-target="it" aria-label="Italiano">IT</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="de" aria-label="Deutsch">DE</button>
     </div>
   </div>
 </header>
@@ -42,7 +43,7 @@
 
   <!-- ============================================================ ENGLISH ==
        site.js stamps role="tabpanel", id, and aria-hidden on this element.
-       Never hand-author those. Portuguese, Spanish, French and Italian are exact
+       Never hand-author those. Portuguese, Spanish, French, Italian and German are exact
        copies of this block with data-lang / lang / aria-label and the copy swapped.
   -->
   <section data-lang="en" lang="en" aria-label="English">
@@ -133,7 +134,7 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
-            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano&nbsp;· Deutsch</h3>
             <p>Switch language any time, no restart.</p>
           </article>
 
@@ -218,7 +219,7 @@
 
           <details>
             <summary>Which languages does SolShield support?</summary>
-            <p>English, Portuguese, Spanish, French and Italian. Switch at any time in the app’s Settings — no restart needed.</p>
+            <p>English, Portuguese, Spanish, French, Italian and German. Switch at any time in the app’s Settings — no restart needed.</p>
           </details>
 
         </div>
@@ -242,9 +243,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Footer">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Privacy Policy</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Terms of Use</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Privacy Policy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Terms of Use</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contact</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · UV Index &amp; Sun Protection</p>
         <p class="attr">Weather data powered by Apple Weather</p>
@@ -254,13 +255,13 @@
   </section>
 
   <!-- ======================================================== /ENGLISH ==
-       The four sections below are structural clones of the block above:
+       The five sections below are structural clones of the block above:
        same elements, classes, data-rise flags and inline SVGs, with only the
        copy, the App Store badge and the section's own data-lang / id / lang /
        aria-label changed. The rationale comments are not repeated — read them
        once, in English. parity.py enforces the equivalence.
 
-       id="portugues", id="espanol", id="francais" and id="italiano" are the
+       id="portugues", id="espanol", id="francais", id="italiano" and id="deutsch" are the
        only hand-authored ids on the page: they are the deep-link anchors site.js maps to a language, and it
        honours an existing id (`if (!s.id)`). role="tabpanel", aria-controls
        and aria-hidden are still stamped at runtime and must not appear here.
@@ -346,7 +347,7 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
-            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano&nbsp;· Deutsch</h3>
             <p>Troque de idioma quando quiser, sem reiniciar.</p>
           </article>
 
@@ -427,7 +428,7 @@
 
           <details>
             <summary>Quais idiomas o SolShield oferece?</summary>
-            <p>Inglês, português, espanhol, francês e italiano. Troque a qualquer momento nos Ajustes do aplicativo — sem precisar reiniciar.</p>
+            <p>Inglês, português, espanhol, francês, italiano e alemão. Troque a qualquer momento nos Ajustes do aplicativo — sem precisar reiniciar.</p>
           </details>
 
         </div>
@@ -451,9 +452,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Rodapé">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidade</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Termos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contato</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Política de Privacidade</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Termos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contato</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV e Proteção Solar</p>
         <p class="attr">Dados meteorológicos desenvolvidos com Apple Weather</p>
@@ -541,7 +542,7 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
-            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano&nbsp;· Deutsch</h3>
             <p>Cambie de idioma cuando quiera, sin reiniciar.</p>
           </article>
 
@@ -622,7 +623,7 @@
 
           <details>
             <summary>¿Qué idiomas admite SolShield?</summary>
-            <p>Inglés, portugués, español, francés e italiano. Cambie en cualquier momento en los Ajustes de la aplicación — sin necesidad de reiniciar.</p>
+            <p>Inglés, portugués, español, francés, italiano y alemán. Cambie en cualquier momento en los Ajustes de la aplicación — sin necesidad de reiniciar.</p>
           </details>
 
         </div>
@@ -646,9 +647,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Pie de página">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidad</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Términos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contacto</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Política de Privacidad</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Términos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contacto</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV y Protección Solar</p>
         <p class="attr">Datos meteorológicos desarrollados con Apple Weather</p>
@@ -736,7 +737,7 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
-            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano&nbsp;· Deutsch</h3>
             <p>Changez de langue à tout moment, sans redémarrer.</p>
           </article>
 
@@ -817,7 +818,7 @@
 
           <details>
             <summary>Quelles langues SolShield prend-il en charge&nbsp;?</summary>
-            <p>Anglais, portugais, espagnol, français et italien. Changez de langue à tout moment dans les Réglages de l’app — sans redémarrage.</p>
+            <p>Anglais, portugais, espagnol, français, italien et allemand. Changez de langue à tout moment dans les Réglages de l’app — sans redémarrage.</p>
           </details>
 
         </div>
@@ -841,9 +842,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Pied de page">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Politique de confidentialité</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Conditions d’utilisation</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Conditions d’utilisation</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contact</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Indice UV et protection solaire</p>
         <p class="attr">Données météo fournies par Apple Weather</p>
@@ -931,7 +932,7 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
-            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano</h3>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano&nbsp;· Deutsch</h3>
             <p>Cambia lingua quando vuoi, senza riavviare.</p>
           </article>
 
@@ -1012,7 +1013,7 @@
 
           <details>
             <summary>Quali lingue supporta SolShield?</summary>
-            <p>Inglese, portoghese, spagnolo, francese e italiano. Cambia lingua in qualsiasi momento nelle Impostazioni dell’app — senza bisogno di riavviare.</p>
+            <p>Inglese, portoghese, spagnolo, francese, italiano e tedesco. Cambia lingua in qualsiasi momento nelle Impostazioni dell’app — senza bisogno di riavviare.</p>
           </details>
 
         </div>
@@ -1036,12 +1037,207 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Piè di pagina">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Informativa sulla privacy</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Condizioni d’uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contatti</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Informativa sulla privacy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Condizioni d’uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contatti</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Indice UV e protezione solare</p>
         <p class="attr">Dati meteo forniti da Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="de" id="deutsch" lang="de-DE" aria-label="Deutsch">
+
+    <!-- 1. hero -->
+    <header class="hero">
+      <div class="wrap">
+        <img class="hero-icon" src="app-icon.png" alt="" width="96" height="96" data-rise>
+        <h1>SolShield</h1>
+        <p class="hero-tagline" data-rise>Behalte deine UV-Belastung im Griff</p>
+        <p class="hero-meta" data-rise>iPhone · iPad · Daten von Apple Weather · Kein Konto erforderlich</p>
+        <div class="badges" data-rise>
+          <a href="https://apps.apple.com/app/apple-store/id6757956272">
+            <img class="as" src="badges/app-store-de-de.svg" alt="Laden im App Store">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. WHO UV scale -->
+    <div class="uv-ribbon">
+      <div data-uv="low"><b>0–2</b><i>Niedrig</i></div>
+      <div data-uv="moderate"><b>3–5</b><i>Mittel</i></div>
+      <div data-uv="high"><b>6–7</b><i>Hoch</i></div>
+      <div data-uv="veryhigh"><b>8–10</b><i>Sehr hoch</i></div>
+      <div data-uv="extreme"><b>11+</b><i>Extrem</i></div>
+    </div>
+
+    <!-- 3. features -->
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">In der App</p>
+          <h2>Funktionen</h2>
+        </div>
+        <div class="grid">
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
+            <h3>UV-Index in Echtzeit</h3>
+            <p>Aktuelle Werte für deinen Standort von Apple Weather, mit den farblich gekennzeichneten Risikostufen der WHO.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
+            <h3>Deine Zeit bis Sonnenbrand</h3>
+            <p>Die Minuten bis zum Sonnenbrand für deinen Hauttyp nach Fitzpatrick, von I bis VI.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="5" width="17.6" height="15.8" rx="2.6"/><path d="M3.2 9.8h17.6M8 3.2v3.4M16 3.2v3.4M7.6 13.6h2.2M11.6 13.6h2.2M15.6 13.6h2.2M7.6 17.2h2.2M11.6 17.2h2.2"/></svg></div>
+            <h3>Vorhersage stündlich und für 7&nbsp;Tage</h3>
+            <p>Sieh, wann der UV-Index heute am höchsten ist, und plane deine Woche danach.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
+            <h3>Sonnen-Timer</h3>
+            <p>Zählt die Zeit herunter, die du sicher in der Sonne verbringen kannst, und sagt dir Bescheid, wenn sie abgelaufen ist.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 9.2a6 6 0 1 0-12 0c0 5.4-2.2 6.8-2.2 6.8h16.4S18 14.6 18 9.2z"/><path d="M13.8 19.4a2 2 0 0 1-3.6 0"/></svg></div>
+            <h3>Intelligente Mitteilungen</h3>
+            <p>Warnungen bei UV-Schwellenwerten, Hinweise auf den täglichen Höchstwert und Erinnerungen zum Nachcremen.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
+            <h3>Vitamin-D-Schätzung</h3>
+            <p>Wie viel Vitamin D du bei deiner aktuellen Sonnenexposition tatsächlich bildest, je nach Hauttyp.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.6C10.7 5.1 8.7 4.3 6.2 4.3H3.4v13.2h2.8c2.5 0 4.5.8 5.8 2.2 1.3-1.4 3.3-2.2 5.8-2.2h2.8V4.3h-2.8c-2.5 0-4.5.8-5.8 2.3z"/><path d="M12 6.6v13.1"/></svg></div>
+            <h3>Wissen</h3>
+            <p>Der UV-Index erklärt, die Empfehlungen der WHO und die Vorbeugung gegen Hautkrebs.</p>
+          </article>
+
+          <article class="feature" data-rise>
+            <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6"/><path d="M12 3.2a13.6 13.6 0 0 1 0 17.6 13.6 13.6 0 0 1 0-17.6z"/></svg></div>
+            <h3>English&nbsp;· Português&nbsp;· Español&nbsp;· Français&nbsp;· Italiano&nbsp;· Deutsch</h3>
+            <p>Wechsle jederzeit die Sprache, ohne Neustart.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. the privacy vow -->
+    <div class="vow">
+      <div class="wrap">Keine Werbung. Kein Konto. <span class="em">Kein Tracking.</span></div>
+    </div>
+
+    <!-- 5. the science -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">Die Wissenschaft dahinter</p>
+          <h2>Die Zeit bis Sonnenbrand ist kein Ratespiel</h2>
+        </div>
+        <div class="sci">
+          <div class="formula">Minuten = MED ÷ (UV-Index × 1,5)</div>
+          <p>MED steht für minimale Erythemdosis – die UV-Energie, die deine Haut aufnimmt, bevor sie sichtbar rot wird. Sie hängt vom Hauttyp nach Fitzpatrick ab (von 200&nbsp;J/m² bei Typ I bis 900&nbsp;J/m² bei Typ VI). Deshalb kommen zwei Menschen, die in derselben Sonne stehen, auf sehr unterschiedliche Werte.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Fitzpatrick scale -->
+    <section class="block alt">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="kicker">Auf dich abgestimmt</p>
+          <h2>Sechs Hauttypen</h2>
+        </div>
+        <div class="skins">
+          <div class="skin"><div class="swatch" data-skin="i"></div><b>I</b><i>Immer Sonnenbrand</i></div>
+          <div class="skin"><div class="swatch" data-skin="ii"></div><b>II</b><i>Meist Sonnenbrand</i></div>
+          <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Manchmal Sonnenbrand</i></div>
+          <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Selten Sonnenbrand</i></div>
+          <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Sehr selten Sonnenbrand</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Nie Sonnenbrand</i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="section-head center">
+          <p class="kicker">Gut zu wissen</p>
+          <h2>Häufige Fragen</h2>
+        </div>
+        <div class="faq">
+
+          <details>
+            <summary>Was kostet SolShield?</summary>
+            <p>SolShield ist eine <a href="terms.html">Abo-App</a>: <strong>$9.99 pro Jahr</strong> oder <strong>$0.99 pro Monat</strong> (USD), jeweils mit einer <strong>kostenlosen Testphase von 7&nbsp;Tagen</strong>. Das Abo schaltet die gesamte App frei – UV-Index in Echtzeit, Vorhersagen, den Sonnen-Timer, Mitteilungen und den Bereich „Wissen“. Wenn du nicht vor dem Ende der Testphase kündigst, geht sie automatisch in ein kostenpflichtiges Abo über.</p>
+          </details>
+
+          <details>
+            <summary>Wie kündige ich mein Abo?</summary>
+            <p>Über Apple, jederzeit. Öffne die App „Einstellungen“ auf deinem iPhone oder iPad, tippe auf deinen Namen, dann auf <strong>Abonnements</strong>, wähle SolShield aus und tippe auf <strong>Abo kündigen</strong>. Die Kündigung wird zum Ende des aktuellen Abrechnungszeitraums wirksam, und bis dahin behältst du den Zugriff. <a href="terms.html">Rückerstattungen</a> wickelt Apple ab, nicht wir.</p>
+          </details>
+
+          <details>
+            <summary>Verfolgt SolShield meinen Standort?</summary>
+            <p>Nein. Dein Standort wird auf deinem Gerät verwendet, um den UV-Index für deinen Aufenthaltsort abzurufen, und die Koordinaten werden nur an Apple WeatherKit gesendet, um genau diese Anfrage zu beantworten. Es gibt keine Konten, keine eigenen Server, keine Analyse-SDKs, keine Werbe-SDKs und <a href="privacy.html">keinerlei Tracking</a>. Gespeicherte Orte und deine Einstellungen bleiben auf deinem Gerät.</p>
+          </details>
+
+          <details>
+            <summary>Woher stammen die UV-Daten?</summary>
+            <p>Von Apple Weather, über Apples Framework WeatherKit. Die Risikostufen folgen den Bereichen des globalen UV-Index (Global Solar UV Index) der WHO – Niedrig 0–2, Mittel 3–5, Hoch 6–7, Sehr hoch 8–10, Extrem 11+.</p>
+          </details>
+
+          <details>
+            <summary>Wie wird die Zeit bis Sonnenbrand berechnet?</summary>
+            <p>Anhand der minimalen Erythemdosis: <strong>Minuten = MED ÷ (UV-Index × 1,5)</strong>. Die MED ist die UV-Energie, die deine Haut aufnimmt, bevor sie sichtbar rot wird, und sie hängt vom Hauttyp nach Fitzpatrick ab – von 200&nbsp;J/m² bei Typ I bis 900&nbsp;J/m² bei Typ VI. Für Hauttyp II bei UV 7 ergibt das 250 ÷ 10,5 ≈ 24&nbsp;Minuten. Unter UV 3 zeigen wir gemäß den Empfehlungen der WHO statt einer Zahl „Geringes Sonnenbrandrisiko“ an. Es handelt sich um Schätzungen für eine durchschnittliche Person, nicht um medizinischen Rat.</p>
+          </details>
+
+          <details>
+            <summary>Welche Sprachen unterstützt SolShield?</summary>
+            <p>Deutsch, Englisch, Französisch, Italienisch, Portugiesisch (Brasilien) und Spanisch. Du kannst die Sprache jederzeit in den Einstellungen der App wechseln – ohne Neustart.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. contact -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="contact-card">
+          <p class="kicker">Support</p>
+          <h2>Schreibe uns</h2>
+          <p>Eine Frage zu deinem Abo, ein Fehler oder etwas, das die App können sollte – jede Nachricht liest die Person, die SolShield entwickelt.</p>
+          <a class="mail" href="mailto:braniapps@gmail.com">braniapps@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Fußzeile">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Datenschutzerklärung</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Nutzungsbedingungen</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Kontakt</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · UV-Index und Sonnenschutz</p>
+        <p class="attr">Wetterdaten von Apple Weather</p>
       </div>
     </footer>
 

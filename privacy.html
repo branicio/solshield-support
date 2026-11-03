@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — SolShield</title>
-  <meta name="description" content="SolShield has no accounts and no servers. Your location stays on your device; only coordinates are sent to Apple Weather to answer a UV request. English, Portuguese, Spanish, French and Italian.">
+  <meta name="description" content="SolShield has no accounts and no servers. Your location stays on your device; only coordinates are sent to Apple Weather to answer a UV request. English, Portuguese, Spanish, French, Italian and German.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="app-icon.png">
   <script src="site.js" defer></script>
@@ -13,27 +13,28 @@
 
 <!-- Chrome: lives outside every [data-lang] section, so its text is swapped by
      site.js from the data-i18n-* attributes rather than by duplication. -->
-<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido" data-i18n-fr="Aller au contenu" data-i18n-it="Vai al contenuto">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n-en="Skip to content" data-i18n-pt="Ir para o conteúdo" data-i18n-es="Ir al contenido" data-i18n-fr="Aller au contenu" data-i18n-it="Vai al contenuto" data-i18n-de="Zum Inhalt springen">Skip to content</a>
 
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
-    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal" data-i18n-aria-fr="Principale" data-i18n-aria-it="Principale">
-      <a href="index.html" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio" data-i18n-fr="Accueil" data-i18n-it="Home">Home</a>
-      <a href="privacy.html" aria-current="page" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad" data-i18n-fr="Confidentialité" data-i18n-it="Privacy">Privacy</a>
-      <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos" data-i18n-fr="Conditions" data-i18n-it="Condizioni">Terms</a>
-      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
+    <nav class="nav-links" aria-label="Main" data-i18n-aria-en="Main" data-i18n-aria-pt="Principal" data-i18n-aria-es="Principal" data-i18n-aria-fr="Principale" data-i18n-aria-it="Principale" data-i18n-aria-de="Hauptnavigation">
+      <a href="index.html" data-i18n-en="Home" data-i18n-pt="Início" data-i18n-es="Inicio" data-i18n-fr="Accueil" data-i18n-it="Home" data-i18n-de="Start">Home</a>
+      <a href="privacy.html" aria-current="page" data-i18n-en="Privacy" data-i18n-pt="Privacidade" data-i18n-es="Privacidad" data-i18n-fr="Confidentialité" data-i18n-it="Privacy" data-i18n-de="Datenschutz">Privacy</a>
+      <a href="terms.html" data-i18n-en="Terms" data-i18n-pt="Termos" data-i18n-es="Términos" data-i18n-fr="Conditions" data-i18n-it="Condizioni" data-i18n-de="Bedingungen">Terms</a>
+      <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contact</a>
     </nav>
     <!-- site.js stamps aria-selected/aria-controls/tabindex on these at load.
-         The five tab labels stay untranslated: a language's own endonym is
+         The six tab labels stay untranslated: a language's own endonym is
          correct in every locale, and translating them would make the switcher
          harder to use, not easier. -->
-    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma" data-i18n-aria-fr="Langue" data-i18n-aria-it="Lingua">
+    <div class="langtabs" role="tablist" aria-label="Language" data-i18n-aria-en="Language" data-i18n-aria-pt="Idioma" data-i18n-aria-es="Idioma" data-i18n-aria-fr="Langue" data-i18n-aria-it="Lingua" data-i18n-aria-de="Sprache">
       <button type="button" role="tab" class="langtab" data-lang-target="en" aria-label="English">EN</button>
       <button type="button" role="tab" class="langtab" data-lang-target="pt" aria-label="Português">PT</button>
       <button type="button" role="tab" class="langtab" data-lang-target="es" aria-label="Español">ES</button>
       <button type="button" role="tab" class="langtab" data-lang-target="fr" aria-label="Français">FR</button>
       <button type="button" role="tab" class="langtab" data-lang-target="it" aria-label="Italiano">IT</button>
+      <button type="button" role="tab" class="langtab" data-lang-target="de" aria-label="Deutsch">DE</button>
     </div>
   </div>
 </header>
@@ -42,7 +43,7 @@
 
   <!-- ============================================================ ENGLISH ==
        site.js stamps role="tabpanel", id, and aria-hidden on this element.
-       Never hand-author those. Portuguese, Spanish, French and Italian are exact
+       Never hand-author those. Portuguese, Spanish, French, Italian and German are exact
        structural copies of this block with data-lang / lang / aria-label and the copy
        swapped; parity.py enforces the equivalence.
 
@@ -52,7 +53,7 @@
        a different provider, which was simply false: who receives a user's
        coordinates is the single most important factual claim a privacy
        policy makes. If the app's weather backend ever changes, THAT
-       paragraph changes first, in all five languages, before anything else
+       paragraph changes first, in all six languages, before anything else
        ships.
   -->
   <section data-lang="en" lang="en" aria-label="English">
@@ -149,9 +150,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Footer">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Privacy Policy</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Terms of Use</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Privacy Policy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Terms of Use</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contact</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · UV Index &amp; Sun Protection</p>
         <p class="attr">Weather data powered by Apple Weather</p>
@@ -161,12 +162,12 @@
   </section>
 
   <!-- ======================================================== /ENGLISH ==
-       The four sections below are structural clones of the block above:
+       The five sections below are structural clones of the block above:
        same elements, same classes, same order, with only the copy and the
        section's own data-lang / id / lang / aria-label changed. The
        rationale comments are not repeated — read them once, in English.
 
-       id="portugues", id="espanol", id="francais" and id="italiano" are the
+       id="portugues", id="espanol", id="francais", id="italiano" and id="deutsch" are the
        only hand-authored ids on the page: they are the deep-link anchors site.js maps to a language, and it
        honours an existing id (`if (!s.id)`). role="tabpanel", aria-controls
        and aria-hidden are still stamped at runtime and must not appear here.
@@ -266,9 +267,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Rodapé">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidade</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Termos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contato</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Política de Privacidade</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Termos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contato</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV e Proteção Solar</p>
         <p class="attr">Dados meteorológicos desenvolvidos com Apple Weather</p>
@@ -370,9 +371,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Pie de página">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Política de Privacidad</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Términos de Uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contacto</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Política de Privacidad</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Términos de Uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contacto</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Índice UV y Protección Solar</p>
         <p class="attr">Datos meteorológicos desarrollados con Apple Weather</p>
@@ -474,9 +475,9 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Pied de page">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Politique de confidentialité</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Conditions d’utilisation</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contact</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Conditions d’utilisation</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contact</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Indice UV et protection solaire</p>
         <p class="attr">Données météo fournies par Apple Weather</p>
@@ -578,12 +579,116 @@
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
         <nav class="foot-links" aria-label="Piè di pagina">
-          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy">Informativa sulla privacy</a>
-          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso">Condizioni d’uso</a>
-          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti">Contatti</a>
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Informativa sulla privacy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Condizioni d’uso</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contatti</a>
         </nav>
         <p class="cr">© 2026 Paulo Branicio · Indice UV e protezione solare</p>
         <p class="attr">Dati meteo forniti da Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="de" id="deutsch" lang="de-DE" aria-label="Deutsch">
+
+    <!-- 1. header -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Datenschutz&shy;erklärung</h1>
+        <p class="hero-tagline" data-rise>SolShield – UV-Index und Sonnenschutz</p>
+      </div>
+    </header>
+
+    <!-- 2. policy body -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <p class="updated">Gültig ab: Juli 2026</p>
+
+          <h2>Unser Versprechen</h2>
+          <p>SolShield hat keine Benutzerkonten und keine eigenen Server. Es gibt nichts, wofür du dich registrieren oder anmelden müsstest, und keinen Ort, an dem wir ein Profil über dich speichern könnten. Alles, was die App über dich weiß – deine gespeicherten Orte, dein Hauttyp und deine Einstellungen –, bleibt auf deinem Gerät.</p>
+          <p>Wir erheben, speichern, verkaufen oder teilen keine personenbezogenen Daten. Diese Datenschutzerklärung beschreibt im Einzelnen den einzigen Moment, in dem Daten dein Gerät verlassen, und was sie genau enthalten.</p>
+
+          <h2>Was SolShield erfasst</h2>
+          <p>Nichts, was dich identifiziert. SolShield speichert keinen Namen, keine E-Mail-Adresse, kein Konto, keine Werbe-ID und keinen digitalen Fingerabdruck deines Geräts.</p>
+          <ul>
+            <li><strong>Standort.</strong> Mit deiner Erlaubnis liest die App den Standort deines Geräts, um den UV-Index für deinen Aufenthaltsort abzurufen.</li>
+            <li><strong>Gespeicherte Orte.</strong> Orte, die du speicherst, werden lokal auf deinem Gerät gespeichert.</li>
+            <li><strong>Letzter UV-Wert.</strong> Der neueste UV-Wert und die stündliche Vorhersage für den Ort, den du gerade ansiehst, werden lokal gespeichert. Jede Aktualisierung ersetzt die vorherige, sodass sich kein Verlauf deiner Werte ansammelt.</li>
+            <li><strong>Präferenzen.</strong> Dein Hauttyp, deine Mitteilungseinstellungen und deine Sprache werden lokal gespeichert.</li>
+          </ul>
+          <p>Nichts davon wird an uns übermittelt, denn es gibt kein „uns“, an das es übermittelt werden könnte.</p>
+
+          <h2>Woher die UV-Daten stammen</h2>
+          <p>SolShield bezieht Daten zum UV-Index und zur Vorhersage von Apple Weather über Apples Framework WeatherKit. Wenn die App UV-Daten anfordert, werden nur der Breiten- und der Längengrad des Orts, den du gerade ansiehst, an Apple gesendet, um diese Anfrage zu beantworten. Es werden kein Name, keine E-Mail-Adresse, keine Gerätekennung und keine Kontoinformationen übermittelt, denn die App hat nichts davon. Für die Verarbeitung dieser Anfrage durch Apple gilt <a href="https://www.apple.com/legal/privacy/">Apples eigene Datenschutzrichtlinie</a>.</p>
+          <p>Abgesehen von dieser Anfrage – und der unten beschriebenen Abwicklung deines Abos durch Apple – verlassen keine Informationen dein Gerät.</p>
+
+          <h2>Wie dein Standort verwendet wird</h2>
+          <p>Dein Standort wird auf deinem Gerät für vier Zwecke verwendet:</p>
+          <ul>
+            <li>Abrufen des aktuellen und des vorhergesagten UV-Index für deinen Aufenthaltsort oder für einen Ort, den du gespeichert hast.</li>
+            <li>Berechnen deiner Zeit bis Sonnenbrand für deinen Hauttyp nach Fitzpatrick.</li>
+            <li>Schätzen, wie viel Vitamin D du bei deiner aktuellen Sonnenexposition bildest.</li>
+            <li>Zeitliche Steuerung der Mitteilungen – Warnungen bei UV-Schwellenwerten, der Hinweis auf den täglichen Höchstwert und Erinnerungen zum Nachcremen.</li>
+          </ul>
+          <p>Für nichts anderes wird er verwendet. Er wird nicht zur Profilbildung genutzt, nicht außerhalb des Geräts protokolliert, nicht verkauft und nicht an Werbetreibende oder Datenhändler weitergegeben. Mitteilungen werden von iOS lokal geplant; ein Push-Server von uns ist nicht beteiligt.</p>
+
+          <h2>Speicherung</h2>
+          <p>Alle Daten der App befinden sich auf deinem Gerät:</p>
+          <ul>
+            <li>Der letzte UV-Wert und die stündliche Vorhersage</li>
+            <li>Gespeicherte Orte</li>
+            <li>Präferenzen und Einstellungen</li>
+            <li>Abo-Status, der von Apple verwaltet wird</li>
+          </ul>
+          <p>Wir betreiben keine Server, die deine personenbezogenen Daten speichern. Es gibt keine Cloud-Synchronisierung und keine Sicherung bei uns. Wenn du SolShield von deinem Gerät löschst, werden all diese Daten gelöscht.</p>
+
+          <h2>Analyse und Tracking</h2>
+          <p>Keines von beidem. SolShield enthält kein Analyse-SDK, kein Werbe-SDK, kein SDK für Absturzberichte, keine Nutzungsstatistiken, keine Verhaltensprofile und keine Tracker von Drittanbietern. Die App fragt die Werbe-ID (IDFA) nicht ab und verfolgt dich nicht über andere Apps oder Websites hinweg.</p>
+          <p>Diese Website verhält sich genauso. Sie lädt keine Skripte, Schriftarten oder Bilder von Drittanbietern, setzt keine Cookies und sendet keine Anfragen an einen anderen Server als den, der diese Seite ausliefert.</p>
+
+          <h2>Abonnements</h2>
+          <p>SolShield ist eine Abo-App, und das Abo wird vollständig von Apple über den App Store abgewickelt. Käufe, Verlängerungen, Kündigungen und Rückerstattungen laufen alle über deine Apple-ID. Deine Zahlungsdaten sehen wir nie: keine Kartennummer, keine Rechnungsadresse, keine Zugangsdaten deiner Apple-ID.</p>
+          <p>Die App prüft deinen Abo-Status auf deinem Gerät. Die Abos und die kostenlose Testphase sind in den <a href="terms.html">Nutzungsbedingungen</a> beschrieben.</p>
+
+          <h2>Datenschutz bei Kindern</h2>
+          <p>SolShield hat die Altersfreigabe 4+ und enthält keine anstößigen Inhalte. Die App erhebt von niemandem personenbezogene Daten und daher auch nicht von Kindern. Wir erheben wissentlich keine personenbezogenen Daten von Kindern jeden Alters, weil wir überhaupt keine erheben.</p>
+
+          <h2>Deine Rechte</h2>
+          <p>Da SolShield keine personenbezogenen Daten erhebt und wir keine Server betreiben, finden die meisten datenschutzrechtlichen Anfragen bei uns nichts, worauf sie sich beziehen könnten. Deine Rechte sind unten dennoch aufgeführt, zusammen mit dem, was sie hier in der Praxis bedeuten.</p>
+
+          <h3>Brasilien (LGPD)</h3>
+          <p>Nach dem brasilianischen Datenschutzgesetz (Lei Geral de Proteção de Dados, LGPD, Lei nº 13.709/2018) hast du das Recht auf Bestätigung, dass eine Verarbeitung stattfindet, und auf Auskunft über deine Daten, auf Berichtigung unvollständiger oder unrichtiger Daten, auf Anonymisierung, Sperrung oder Löschung nicht erforderlicher Daten, auf Datenübertragbarkeit, auf Information über die Stellen, mit denen deine Daten geteilt werden, sowie darauf, deine Einwilligung jederzeit zu widerrufen.</p>
+          <p>In der Praxis: Wir speichern keine personenbezogenen Daten über dich, also gibt es nichts, was wir exportieren, berichtigen oder löschen könnten. Die Daten auf deinem Gerät hast du selbst in der Hand – lösche sie in den Einstellungen der App, entziehe die Standortberechtigung in den iOS-Einstellungen oder lösche die App, um alles zu entfernen. Um eines dieser Rechte auszuüben oder dir von uns bestätigen zu lassen, dass wir nichts über dich gespeichert haben, schreibe an die unten stehende Adresse.</p>
+
+          <h3>Europäische Union und Spanien (DSGVO / RGPD)</h3>
+          <p>Nach der Datenschutz-Grundverordnung (DSGVO, Verordnung (EU) 2016/679, in Spanien als RGPD bekannt) hast du das Recht auf Auskunft (Artikel 15), Berichtigung (Artikel 16), Löschung (Artikel 17), Einschränkung der Verarbeitung (Artikel 18), Mitteilung (Artikel 19), Datenübertragbarkeit (Artikel 20) und Widerspruch (Artikel 21) sowie das Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung beruhenden Entscheidung unterworfen zu werden (Artikel 22).</p>
+          <p>Auch hier gilt in der Praxis: Keine personenbezogenen Daten über dich erreichen uns, also gibt es nichts, was wir exportieren, berichtigen oder löschen könnten. Standortdaten werden auf deinem Gerät mit deiner Einwilligung verarbeitet, die du jederzeit in den iOS-Einstellungen widerrufen kannst. Du hast außerdem das Recht, Beschwerde bei einer Aufsichtsbehörde einzulegen, etwa bei der Behörde deines Wohnsitzlandes – zum Beispiel bei der <a href="https://www.aepd.es">Agencia Española de Protección de Datos (AEPD)</a> in Spanien, der <a href="https://www.cnil.fr">Commission nationale de l’informatique et des libertés (CNIL)</a> in Frankreich oder dem <a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a> in Italien.</p>
+
+          <h2>Änderungen dieser Datenschutzerklärung</h2>
+          <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Jede Änderung wird auf dieser Seite mit einem neuen Gültigkeitsdatum veröffentlicht, und das Datum oben auf dieser Seite zeigt dir immer, welche Fassung gilt.</p>
+
+          <h2>Kontakt</h2>
+          <p>Fragen zu dieser Datenschutzerklärung – oder zu allem, was SolShield mit Daten macht – gehen direkt an die Person, die die App entwickelt.</p>
+          <p><a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a></p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Fußzeile">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Datenschutzerklärung</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Nutzungsbedingungen</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Kontakt</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · UV-Index und Sonnenschutz</p>
+        <p class="attr">Wetterdaten von Apple Weather</p>
       </div>
     </footer>
 

@@ -1,7 +1,7 @@
 (function () {
   // Set first: styles.css only hides languages once this is present, so a
   // script error before this line (e.g. a parse failure) degrades to all
-  // five languages shown stacked, never to none. Everything AFTER it runs
+  // six languages shown stacked, never to none. Everything AFTER it runs
   // inside the try/catch below, whose catch removes this very attribute:
   // it is what authorises the stylesheet to hide any [data-lang] section,
   // so any failure to complete setup must withdraw that authorisation
@@ -11,9 +11,9 @@
   document.documentElement.dataset.js = "on";
 
   try {
-    var HASH = { portugues: "pt", espanol: "es", francais: "fr", italiano: "it", top: "en" };
-    var LANG_ATTR = { en: "en", pt: "pt-BR", es: "es-ES", fr: "fr-FR", it: "it-IT" };
-    var FRAGMENT = { pt: "#portugues", es: "#espanol", fr: "#francais", it: "#italiano", en: "" };
+    var HASH = { portugues: "pt", espanol: "es", francais: "fr", italiano: "it", deutsch: "de", top: "en" };
+    var LANG_ATTR = { en: "en", pt: "pt-BR", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE" };
+    var FRAGMENT = { pt: "#portugues", es: "#espanol", fr: "#francais", it: "#italiano", de: "#deutsch", en: "" };
     var STORE_KEY = "solshield.lang";
     // The three real pages of this site, keyed by filename. Everything else an
     // <a> can point at — mailto:, the App Store listing, apple.com/legal, the
@@ -25,7 +25,8 @@
     // Object property ("constructor", "toString", ...) can masquerade as a
     // valid stored language.
     function isLang(v) {
-      return v === "en" || v === "pt" || v === "es" || v === "fr" || v === "it";
+      return v === "en" || v === "pt" || v === "es" || v === "fr" || v === "it" ||
+        v === "de";
     }
 
     var sections = Array.prototype.slice.call(document.querySelectorAll("[data-lang]"));
@@ -110,7 +111,7 @@
       if (!store) return null;
       try {
         var v = store.getItem(STORE_KEY);
-        // Anything that is not one of the five languages — hand-edited, left
+        // Anything that is not one of the six languages — hand-edited, left
         // by an older build, corrupted — is ignored rather than trusted.
         return isLang(v) ? v : null;
       } catch (e) {
@@ -127,12 +128,12 @@
       // Order matters, and the first two are the non-obvious part.
       //
       // A language named in the URL outranks the stored preference on purpose:
-      // #portugues / #espanol / #francais / #italiano / #top is an explicit,
-      // per-visit request — that link was shared precisely to land the reader
-      // in that language — while the stored value only records what this
-      // browser chose last time. If memory won, a Portuguese reader could
-      // never open a Spanish link a friend sent them, which is a worse bug
-      // than the one being fixed.
+      // #portugues / #espanol / #francais / #italiano / #deutsch / #top is an
+      // explicit, per-visit request — that link was shared precisely to land
+      // the reader in that language — while the stored value only records
+      // what this browser chose last time. If memory won, a Portuguese reader
+      // could never open a Spanish link a friend sent them, which is a worse
+      // bug than the one being fixed.
       var h = (location.hash || "").replace("#", "").toLowerCase();
       if (HASH[h]) return HASH[h];
       var stored = readStored();
@@ -142,6 +143,8 @@
       if (n.indexOf("es") === 0) return "es";
       if (n.indexOf("fr") === 0) return "fr";
       if (n.indexOf("it") === 0) return "it";
+      // de, de-DE, de-AT, de-CH, de-LI, de-LU ... all read the de-DE copy.
+      if (n.indexOf("de") === 0) return "de";
       return "en";
     }
 
@@ -241,12 +244,12 @@
     // sticky wrong answer this feature exists to avoid.
     if (HASH[initialHash]) remember(initialLang);
     // Only re-derive the language when the new hash actually names one of the
-    // five language anchors (#top / #portugues / #espanol / #francais /
-    // #italiano). Any other in-page anchor — including the skip link's
-    // #main — must leave the reader's current language alone: falling
+    // six language anchors (#top / #portugues / #espanol / #francais /
+    // #italiano / #deutsch). Any other in-page anchor — including the skip
+    // link's #main — must leave the reader's current language alone: falling
     // through to pick()'s navigator.language branch on every hashchange would
-    // silently switch a PT/ES/FR/IT reader who clicks an ordinary anchor to
-    // whatever the browser's locale says.
+    // silently switch a PT/ES/FR/IT/DE reader who clicks an ordinary anchor
+    // to whatever the browser's locale says.
     // Arriving at a language anchor is an explicit signal too, so it is
     // remembered on the same terms as a tab click.
     window.addEventListener("hashchange", function () {
@@ -257,7 +260,7 @@
   } catch (err) {
     // Setup did not complete, so withdraw the authorisation data-js grants
     // the stylesheet to hide content: without it, the no-JS branch takes
-    // over and all five languages render stacked. Never rethrow past here.
+    // over and all six languages render stacked. Never rethrow past here.
     document.documentElement.removeAttribute("data-js");
     console.error("site.js: language-tab setup failed, falling back to no-JS presentation", err);
   }
