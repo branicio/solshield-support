@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressum · Legal notice — SolShield</title>
-  <meta name="description" content="Impressum and legal notice for SolShield and this support site: provider, contact, hosting.">
+  <meta name="description" content="Impressum and legal notice for SolShield: provider, contact details and hosting (§ 5 DDG), in every language of this site.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="app-icon.png">
   <script src="site.js" defer></script>
@@ -41,56 +41,53 @@
 
 <main id="main">
 
+  <!-- ============================================================ ENGLISH ==
+       site.js stamps role="tabpanel", id, and aria-hidden on this element.
+       Never hand-author those. Portuguese, Spanish, French, Italian and German are exact
+       structural copies of this block with data-lang / lang / aria-label and the copy
+       swapped; parity.py enforces the equivalence.
+
+       The weather provider named in "Where UV data comes from" is Apple
+       Weather, reached through Apple's framework of that name — see
+       SolShield/Services/WeatherService.swift. The pre-redesign policy named
+       a different provider, which was simply false: who receives a user's
+       coordinates is the single most important factual claim a privacy
+       policy makes. If the app's weather backend ever changes, THAT
+       paragraph changes first, in all six languages, before anything else
+       ships.
+  -->
+  <section data-lang="en" lang="en" aria-label="English">
+
+    <!-- 1. header — the .hero band without .hero-icon/.badges, which is the
+         legal-page shape in the stylesheet contract. -->
     <header class="hero">
       <div class="wrap">
-        <h1>Impressum · Legal notice</h1>
-        <p class="hero-tagline">SolShield — UV Index &amp; Sun Protection</p>
+        <h1 id="top">Legal notice</h1>
+        <p class="hero-tagline" data-rise>SolShield — UV Index &amp; Sun Protection</p>
       </div>
     </header>
 
+    <!-- 2. policy body -->
     <section class="block">
       <div class="wrap narrow">
         <div class="legal">
-          <section lang="de" id="impressum">
-          <h2>Impressum</h2>
-          <p>Anbieter dieser Website und der App SolShield:</p>
-          <h3>Angaben gemäß § 5 DDG</h3>
-          <p>Paulo Branicio<br>715 De La Fuente St<br>Monterey Park, CA 91754<br>USA</p>
-          <h3>Kontakt</h3>
-          <p>E-Mail: <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a><br>Telefon: <a href="tel:+16263809714">+1 626 380 9714</a></p>
-          <h3>Hosting</h3>
+
+          <h2>Provider</h2>
+          <p>Provider of this website and of the app SolShield (information pursuant to § 5 of the German Digital Services Act, DDG):</p>
+          <p>Paulo Branicio<br>715 De La Fuente St<br>Monterey Park, CA 91754<br>United States</p>
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a><br>Phone: <a href="tel:+16263809714">+1 626 380 9714</a></p>
+          <h2>Hosting</h2>
           <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
-          <h3>Verbraucherstreitbeilegung</h3>
-          <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-          <p>Datenschutz: siehe unsere <a href="privacy.html">Datenschutzerklärung</a>.</p>
-          </section>
-
-          <section lang="en" id="legal-notice">
-          <h2>Legal notice</h2>
-          <p>Provider of this website and of the app SolShield (information pursuant to § 5 of the German Digital Services Act, DDG):</p>
-          <p>Paulo Branicio<br>715 De La Fuente St<br>Monterey Park, CA 91754<br>United States<br>Email: <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a> · Phone: <a href="tel:+16263809714">+1 626 380 9714</a></p>
-          <p>Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
-          <p>Consumer dispute resolution: unless the law of your country requires it, we do not take part in proceedings before a consumer dispute resolution body.</p>
+          <h2>Consumer dispute resolution</h2>
+          <p>Unless the law of your country requires it, we do not take part in proceedings before a consumer dispute resolution body.</p>
           <p>Privacy: see our <a href="privacy.html">privacy policy</a>.</p>
-          </section>
 
-          <section lang="fr" id="mentions-legales">
-          <h2>Mentions légales</h2>
-          <p>Éditeur du site et de l’app SolShield et directeur de la publication : Paulo Branicio, 715 De La Fuente St, Monterey Park, CA 91754, États-Unis · E-mail : <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a> · Téléphone : <a href="tel:+16263809714">+1 626 380 9714</a></p>
-          <p>Hébergeur : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
-          <p>Données personnelles : voir notre <a href="privacy.html">politique de confidentialité</a>.</p>
-          </section>
-
-          <section class="legal-others">
-          <p lang="pt"><strong>Aviso legal:</strong> responsável pelo site e pelo app SolShield: Paulo Branicio, 715 De La Fuente St, Monterey Park, CA 91754, Estados Unidos · <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a> · <a href="tel:+16263809714">+1 626 380 9714</a>. Hospedagem: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
-          <p lang="es"><strong>Aviso legal:</strong> titular del sitio y de la app SolShield: Paulo Branicio, 715 De La Fuente St, Monterey Park, CA 91754, Estados Unidos · <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a> · <a href="tel:+16263809714">+1 626 380 9714</a>. Alojamiento: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
-          <p lang="it"><strong>Note legali:</strong> titolare del sito e dell’app SolShield: Paulo Branicio, 715 De La Fuente St, Monterey Park, CA 91754, Stati Uniti · <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a> · <a href="tel:+16263809714">+1 626 380 9714</a>. Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
-          <p lang="el"><strong>Νομικές πληροφορίες:</strong> πάροχος του ιστότοπου και της εφαρμογής SolShield: Paulo Branicio, 715 De La Fuente St, Monterey Park, CA 91754, Ηνωμένες Πολιτείες · <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a> · <a href="tel:+16263809714">+1 626 380 9714</a>. Φιλοξενία: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
-          </section>
         </div>
       </div>
     </section>
 
+    <!-- 3. footer — inside the language section so it translates with it. -->
     <footer class="foot">
       <div class="wrap">
         <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
@@ -105,6 +102,257 @@
       </div>
     </footer>
 
+  </section>
+
+  <!-- ======================================================== /ENGLISH ==
+       The five sections below are structural clones of the block above:
+       same elements, same classes, same order, with only the copy and the
+       section's own data-lang / id / lang / aria-label changed. The
+       rationale comments are not repeated — read them once, in English.
+
+       id="portugues", id="espanol", id="francais", id="italiano" and id="deutsch" are the
+       only hand-authored ids on the page: they are the deep-link anchors site.js maps to a language, and it
+       honours an existing id (`if (!s.id)`). role="tabpanel", aria-controls
+       and aria-hidden are still stamped at runtime and must not appear here.
+       id="top" stays on the English <h1> alone — ids must be unique.
+  -->
+
+  <section data-lang="pt" id="portugues" lang="pt-BR" aria-label="Português">
+
+    <!-- 1. header -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Aviso legal</h1>
+        <p class="hero-tagline" data-rise>SolShield — Índice UV e Proteção Solar</p>
+      </div>
+    </header>
+
+    <!-- 2. policy body -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <h2>Responsável</h2>
+          <p>Responsável por este site e pelo app SolShield (informações exigidas pelo § 5 da Lei alemã de Serviços Digitais, DDG):</p>
+          <p>Paulo Branicio<br>715 De La Fuente St<br>Monterey Park, CA 91754<br>Estados Unidos</p>
+          <h2>Contato</h2>
+          <p>E-mail: <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a><br>Telefone: <a href="tel:+16263809714">+1 626 380 9714</a></p>
+          <h2>Hospedagem</h2>
+          <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
+          <h2>Resolução de litígios de consumo</h2>
+          <p>Salvo quando a lei do seu país o exigir, não participamos de procedimentos de resolução de litígios perante entidades de resolução alternativa de litígios de consumo.</p>
+          <p>Privacidade: veja nossa <a href="privacy.html">política de privacidade</a>.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Rodapé">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Política de Privacidade</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Termos de Uso</a>
+          <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Aviso legal</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contato</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Índice UV e Proteção Solar</p>
+        <p class="attr">Dados meteorológicos desenvolvidos com Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="es" id="espanol" lang="es-ES" aria-label="Español">
+
+    <!-- 1. header -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Aviso legal</h1>
+        <p class="hero-tagline" data-rise>SolShield — Índice UV y Protección Solar</p>
+      </div>
+    </header>
+
+    <!-- 2. policy body -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <h2>Titular</h2>
+          <p>Titular de este sitio y de la app SolShield (información exigida por el § 5 de la Ley alemana de Servicios Digitales, DDG):</p>
+          <p>Paulo Branicio<br>715 De La Fuente St<br>Monterey Park, CA 91754<br>Estados Unidos</p>
+          <h2>Contacto</h2>
+          <p>Correo electrónico: <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a><br>Teléfono: <a href="tel:+16263809714">+1 626 380 9714</a></p>
+          <h2>Alojamiento</h2>
+          <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
+          <h2>Resolución de litigios de consumo</h2>
+          <p>Salvo que la ley de su país lo exija, no participamos en procedimientos de resolución de litigios ante entidades de resolución alternativa de litigios de consumo.</p>
+          <p>Privacidad: consulte nuestra <a href="privacy.html">política de privacidad</a>.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Pie de página">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Política de Privacidad</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Términos de Uso</a>
+          <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Aviso legal</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contacto</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Índice UV y Protección Solar</p>
+        <p class="attr">Datos meteorológicos desarrollados con Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="fr" id="francais" lang="fr-FR" aria-label="Français">
+
+    <!-- 1. header -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Mentions légales</h1>
+        <p class="hero-tagline" data-rise>SolShield — Indice UV et protection solaire</p>
+      </div>
+    </header>
+
+    <!-- 2. policy body -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <h2>Éditeur</h2>
+          <p>Éditeur du site et de l’app SolShield et directeur de la publication :</p>
+          <p>Paulo Branicio<br>715 De La Fuente St<br>Monterey Park, CA 91754<br>États-Unis</p>
+          <h2>Contact</h2>
+          <p>E-mail : <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a><br>Téléphone : <a href="tel:+16263809714">+1 626 380 9714</a></p>
+          <h2>Hébergeur</h2>
+          <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
+          <h2>Règlement des litiges de consommation</h2>
+          <p>Sauf si la loi de votre pays l’exige, nous ne participons pas à des procédures de règlement des litiges devant un organisme de médiation de la consommation.</p>
+          <p>Données personnelles : voir notre <a href="privacy.html">politique de confidentialité</a>.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Pied de page">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Conditions d’utilisation</a>
+          <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Mentions légales</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contact</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Indice UV et protection solaire</p>
+        <p class="attr">Données météo fournies par Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="it" id="italiano" lang="it-IT" aria-label="Italiano">
+
+    <!-- 1. header -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Note legali</h1>
+        <p class="hero-tagline" data-rise>SolShield — Indice UV e protezione solare</p>
+      </div>
+    </header>
+
+    <!-- 2. policy body -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <h2>Titolare</h2>
+          <p>Titolare di questo sito e dell’app SolShield (informazioni ai sensi del § 5 della legge tedesca sui servizi digitali, DDG):</p>
+          <p>Paulo Branicio<br>715 De La Fuente St<br>Monterey Park, CA 91754<br>Stati Uniti</p>
+          <h2>Contatti</h2>
+          <p>E-mail: <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a><br>Telefono: <a href="tel:+16263809714">+1 626 380 9714</a></p>
+          <h2>Hosting</h2>
+          <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
+          <h2>Risoluzione delle controversie dei consumatori</h2>
+          <p>Salvo che la legge del tuo Paese lo imponga, non partecipiamo a procedure di risoluzione delle controversie davanti a un organismo di risoluzione alternativa delle controversie dei consumatori.</p>
+          <p>Privacy: vedi la nostra <a href="privacy.html">informativa sulla privacy</a>.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Piè di pagina">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Informativa sulla privacy</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Condizioni d’uso</a>
+          <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Note legali</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contatti</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · Indice UV e protezione solare</p>
+        <p class="attr">Dati meteo forniti da Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <section data-lang="de" id="deutsch" lang="de-DE" aria-label="Deutsch">
+
+    <!-- 1. header -->
+    <header class="hero">
+      <div class="wrap">
+        <h1>Impressum</h1>
+        <p class="hero-tagline" data-rise>SolShield – UV-Index und Sonnenschutz</p>
+      </div>
+    </header>
+
+    <!-- 2. policy body -->
+    <section class="block">
+      <div class="wrap narrow">
+        <div class="legal">
+
+          <h2>Angaben gemäß § 5 DDG</h2>
+          <p>Anbieter dieser Website und der App SolShield:</p>
+          <p>Paulo Branicio<br>715 De La Fuente St<br>Monterey Park, CA 91754<br>USA</p>
+          <h2>Kontakt</h2>
+          <p>E-Mail: <a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a><br>Telefon: <a href="tel:+16263809714">+1 626 380 9714</a></p>
+          <h2>Hosting</h2>
+          <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
+          <h2>Verbraucherstreitbeilegung</h2>
+          <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+          <p>Datenschutz: siehe unsere <a href="privacy.html">Datenschutzerklärung</a>.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. footer -->
+    <footer class="foot">
+      <div class="wrap">
+        <a class="brand" href="index.html"><img class="brand-mark" src="app-icon.png" alt="">SolShield</a>
+        <nav class="foot-links" aria-label="Fußzeile">
+          <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad" data-i18n-fr="Politique de confidentialité" data-i18n-it="Informativa sulla privacy" data-i18n-de="Datenschutzerklärung">Datenschutzerklärung</a>
+          <a href="terms.html" data-i18n-en="Terms of Use" data-i18n-pt="Termos de Uso" data-i18n-es="Términos de Uso" data-i18n-fr="Conditions d’utilisation" data-i18n-it="Condizioni d’uso" data-i18n-de="Nutzungsbedingungen">Nutzungsbedingungen</a>
+          <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Impressum</a>
+          <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Kontakt</a>
+        </nav>
+        <p class="cr">© 2026 Paulo Branicio · UV-Index und Sonnenschutz</p>
+        <p class="attr">Wetterdaten von Apple Weather</p>
+      </div>
+    </footer>
+
+  </section>
+
 </main>
+
 </body>
 </html>
