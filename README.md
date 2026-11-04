@@ -1,6 +1,6 @@
 # SolShield — Support Site
 
-Static support and legal site for **SolShield**, the UV monitoring app for iOS.
+Static support and legal site for **SolShield**, the UV monitoring app for iOS and Android.
 
 Plain HTML, no build step. Served by **GitHub Pages** from the `main` branch root
 (`source: main /`), so anything pushed to root is live within a minute:
@@ -43,7 +43,8 @@ reason, without first confirming a coordinated App Store Connect update.**
 | `index.html` | Home page — six-language landing page (English → Português → Español → Français → Italiano → Deutsch stacked sections): hero, UV-level ribbon, feature grid, science card, skin-type reference, FAQ, contact card |
 | `privacy.html` | Privacy Policy, same six-language structure |
 | `terms.html` | Terms of Use, same six-language structure, including the subscription pricing section |
-| `styles.css` | The one stylesheet for all three pages: Solar Noon design tokens (colour, type, spacing), nav/hero/card/footer components, the `[data-lang]` show/hide rules and their no-JS fallback, and the `[data-rise]` load-in animation (disabled under `prefers-reduced-motion`) |
+| `impressum.html` | Impressum / legal notice (added 2026-11-03), same six-language structure, linked from every footer — see "EU legal pages" below |
+| `styles.css` | The one stylesheet for all four pages: Solar Noon design tokens (colour, type, spacing), nav/hero/card/footer components, the `[data-lang]` show/hide rules and their no-JS fallback, and the `[data-rise]` load-in animation (disabled under `prefers-reduced-motion`) |
 | `site.js` | Language-tab controller — see "Languages and anchors" below. No other behaviour lives here |
 | `fonts/Inter-latin.woff2` | Self-hosted variable Inter, latin subset — see "Self-hosted font" below |
 | `fonts/OFL.txt` | The SIL Open Font License covering Inter — required attribution, must ship alongside the font |
@@ -126,7 +127,7 @@ Self-hosting, same as the badges above, means **zero third-party requests of
 any kind** — no Google Fonts DNS/TLS round trip, no dependency on a CDN
 staying up, and no way for a third party to see a visitor's IP or User-Agent
 just from loading this site. This matters more here than it would for an
-ordinary marketing site: two of these three pages *are* the privacy policy
+ordinary marketing site: two of these four pages *are* the privacy policy
 and the terms of use for an app that promises to protect the user's data, so
 the pages that host that promise have to keep it themselves.
 
@@ -284,8 +285,8 @@ that hides `[data-lang]` content outside that scope. Together, that means:
   which hands control back to the same no-JS stylesheet branch.
 
 So a missing, disabled, or broken script degrades to **all six languages
-stacked and readable**, never to a blank page. That matters because two of
-these three pages are legal documents a user, or an App Store reviewer, must
+stacked and readable**, never to a blank page. That matters because three of
+these four pages are legal documents a user, or an App Store reviewer, must
 be able to read regardless of what their browser or network does with the
 script.
 
@@ -449,6 +450,6 @@ _All URLs above verified returning HTTP 200 on 2026-07-28, and again on
 
 ## EU legal pages (2026-11-03)
 
-- `impressum.html` — Impressum / legal notice (§ 5 DDG; English and French mentions légales; one line per other language). Static, no `[data-lang]` sections, so it never renders blank; linked from every footer.
+- `impressum.html` — Impressum / legal notice (§ 5 DDG), linked from every footer. Since later that day (`1b27856`) it has all six `[data-lang]` sections (Legal notice, Aviso legal, Mentions légales, Note legali, Impressum), switched by the language bar like the other pages. `site.js` lists it in `PAGES`, so the reader's language carries over.
 - Privacy policy: "Controller and your rights (GDPR)" in every language, plus the Android paragraph (Google Weather API, approximate location, Google Play billing) — this page is also the Android app's and the Play listing's privacy policy. Terms: § 13 for EU/EEA/UK/Swiss consumers (Severability and Contact renumbered 14–15).
 - The legal text is shared by all of Paulo's support sites from one canonical source; change it there.
