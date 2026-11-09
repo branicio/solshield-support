@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SolShield — UV Index &amp; Sun Protection</title>
-  <meta name="description" content="Real-time UV index, personalized sunburn time for your skin type, and a 7-day forecast. Powered by Apple Weather. English, Portuguese, Spanish, French, Italian and German.">
+  <meta name="description" content="Current UV index, estimated sunburn time for your skin type, and a 7-day forecast. Powered by Apple Weather. English, Portuguese, Spanish, French, Italian and German.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="app-icon.png">
   <script src="site.js" defer></script>
@@ -92,14 +92,14 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
-            <h3>Real-time UV index</h3>
-            <p>Live readings for your location from Apple Weather, with WHO colour-coded risk levels.</p>
+            <h3>Current UV index</h3>
+            <p>Current readings for your area from Apple Weather, with WHO colour-coded risk levels.</p>
           </article>
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
-            <h3>Personalized sunburn time</h3>
-            <p>Minutes to burn for your Fitzpatrick skin type, I through VI.</p>
+            <h3>Estimated sunburn time</h3>
+            <p>An estimate of the minutes to sunburn on unprotected skin, for your Fitzpatrick skin type, I through VI.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -111,7 +111,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
             <h3>Sun exposure timer</h3>
-            <p>Counts down your safe time in the sun and tells you when it’s up.</p>
+            <p>Counts down the time you choose and tells you when it’s up — a reminder, not a safe limit.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -123,7 +123,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
             <h3>Vitamin D estimate</h3>
-            <p>How much your current exposure is actually producing, by skin type.</p>
+            <p>An estimate of the Vitamin D the current UV can produce, by skin type.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -155,11 +155,11 @@
       <div class="wrap narrow">
         <div class="section-head center">
           <p class="kicker">The science</p>
-          <h2>Sunburn time isn’t a guess</h2>
+          <h2>How sunburn time is estimated</h2>
         </div>
         <div class="sci">
           <div class="formula">minutes = MED ÷ (UV index × 1.5)</div>
-          <p>MED is the Minimal Erythemal Dose — the UV energy your skin absorbs before it visibly reddens. It differs by Fitzpatrick type (200 J/m² for Type I up to 900 J/m² for Type VI), which is why two people standing in the same sun get very different numbers.</p>
+          <p>MED is the Minimal Erythemal Dose — the UV energy your skin absorbs before it visibly reddens. It differs by Fitzpatrick type (200 J/m² for Type I up to 900 J/m² for Type VI), which is why two people standing in the same sun get very different numbers. It is an estimate for an average adult with unprotected skin, not a safe limit: children, some medicines, snow, water, sand and altitude can make you burn much sooner.</p>
         </div>
       </div>
     </section>
@@ -178,7 +178,7 @@
           <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Sometimes burns</i></div>
           <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Rarely burns</i></div>
           <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Very rarely burns</i></div>
-          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Never burns</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Can still burn</i></div>
         </div>
       </div>
     </section>
@@ -194,7 +194,7 @@
 
           <details>
             <summary>What does SolShield cost?</summary>
-            <p>SolShield is a <a href="terms.html">subscription app</a>: <strong>$9.99 per year</strong> or <strong>$0.99 per month</strong> (USD), each with a <strong>7-day free trial</strong>. The subscription unlocks the whole app — real-time UV, forecasts, the exposure timer, notifications and the Learn section. If you do not cancel before the trial ends, it converts to a paid subscription automatically.</p>
+            <p>SolShield is a <a href="terms.html">subscription app</a>: <strong>$9.99 per year</strong> or <strong>$0.99 per month</strong> (USD), each with a <strong>7-day free trial</strong>. The subscription unlocks the whole app — the current UV index, forecasts, the exposure timer, notifications and the Learn section. If you do not cancel before the trial ends, it converts to a paid subscription automatically.</p>
           </details>
 
           <details>
@@ -214,7 +214,7 @@
 
           <details>
             <summary>How is sunburn time calculated?</summary>
-            <p>From the Minimal Erythemal Dose: <strong>minutes = MED ÷ (UV index × 1.5)</strong>. MED is the UV energy your skin absorbs before it visibly reddens, and it differs by Fitzpatrick type — 200 J/m² for Type I up to 900 J/m² for Type VI. For Type II skin at UV 7 that is 250 ÷ 10.5 ≈ 24 minutes. Below UV 3 we show “Low burn risk” instead of a number, following WHO guidance. These are estimates for an average individual, not medical advice.</p>
+            <p>From the Minimal Erythemal Dose: <strong>minutes = MED ÷ (UV index × 1.5)</strong>. MED is the UV energy your skin absorbs before it visibly reddens, and it differs by Fitzpatrick type — 200 J/m² for Type I up to 900 J/m² for Type VI. For Type II skin at UV 7 that is 250 ÷ 10.5 ≈ 24 minutes. Below UV 3 we show “Low burn risk” instead of a number, following WHO guidance. These are estimates for an average adult with unprotected skin — not a safe limit and not medical advice. Children, some medicines, snow, water, sand and altitude can make you burn much sooner, and UV readings can be wrong. Every skin type can burn: protect your skin whatever the number says.</p>
           </details>
 
           <details>
@@ -248,7 +248,7 @@
           <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Legal notice</a>
           <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contact</a>
         </nav>
-        <p class="cr">© 2026 Paulo Branicio · UV Index &amp; Sun Protection</p>
+        <p class="cr">© 2026 SolShield · UV Index &amp; Sun Protection</p>
         <p class="attr">Weather data powered by Apple Weather</p>
       </div>
     </footer>
@@ -306,14 +306,14 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
-            <h3>Índice UV em tempo real</h3>
-            <p>Leituras em tempo real para a sua localização, fornecidas pelo Apple Weather, com níveis de risco codificados por cores da OMS.</p>
+            <h3>Índice UV atual</h3>
+            <p>Leituras atuais para a sua região, fornecidas pelo Apple Weather, com níveis de risco codificados por cores da OMS.</p>
           </article>
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
-            <h3>Tempo de queimadura personalizado</h3>
-            <p>Minutos até a queimadura para o seu tipo de pele Fitzpatrick, do I ao VI.</p>
+            <h3>Tempo estimado até a queimadura</h3>
+            <p>Uma estimativa dos minutos até a queimadura na pele desprotegida, para o seu tipo de pele Fitzpatrick, do I ao VI.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -325,7 +325,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
             <h3>Timer de exposição solar</h3>
-            <p>Faz a contagem regressiva do seu tempo seguro ao sol e avisa quando ele acaba.</p>
+            <p>Faz a contagem regressiva do tempo que você escolher e avisa quando ele acaba — um lembrete, não um limite seguro.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -337,7 +337,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
             <h3>Estimativa de vitamina D</h3>
-            <p>Quanto a sua exposição atual está realmente produzindo, por tipo de pele.</p>
+            <p>Uma estimativa da vitamina D que o UV atual pode produzir, por tipo de pele.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -366,11 +366,11 @@
       <div class="wrap narrow">
         <div class="section-head center">
           <p class="kicker">A ciência</p>
-          <h2>O tempo de queimadura não é um palpite</h2>
+          <h2>Como o tempo até a queimadura é estimado</h2>
         </div>
         <div class="sci">
           <div class="formula">minutos = DEM ÷ (índice UV × 1,5)</div>
-          <p>A DEM é a dose eritematosa mínima — a energia UV que a sua pele absorve antes de avermelhar visivelmente. Ela varia conforme o tipo Fitzpatrick (200 J/m² para o tipo I até 900 J/m² para o tipo VI), e é por isso que duas pessoas sob o mesmo sol obtêm números muito diferentes.</p>
+          <p>A DEM é a dose eritematosa mínima — a energia UV que a sua pele absorve antes de avermelhar visivelmente. Ela varia conforme o tipo Fitzpatrick (200 J/m² para o tipo I até 900 J/m² para o tipo VI), e é por isso que duas pessoas sob o mesmo sol obtêm números muito diferentes. É uma estimativa para um adulto médio com a pele desprotegida, não um limite seguro: em crianças, com alguns medicamentos e na neve, na água, na areia ou em altitude, a queimadura pode acontecer muito antes.</p>
         </div>
       </div>
     </section>
@@ -388,7 +388,7 @@
           <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Às vezes queima</i></div>
           <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Raramente queima</i></div>
           <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Muito raramente queima</i></div>
-          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Nunca queima</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Ainda pode queimar</i></div>
         </div>
       </div>
     </section>
@@ -404,7 +404,7 @@
 
           <details>
             <summary>Quanto custa o SolShield?</summary>
-            <p>O SolShield é um <a href="terms.html">aplicativo por assinatura</a>: <strong>$9.99 por ano</strong> ou <strong>$0.99 por mês</strong> (USD), cada plano com <strong>7 dias de teste gratuito</strong>. A assinatura libera o aplicativo inteiro — UV em tempo real, previsões, o timer de exposição, notificações e a seção Aprender. Se você não cancelar antes do fim do teste, ele se converte automaticamente em uma assinatura paga.</p>
+            <p>O SolShield é um <a href="terms.html">aplicativo por assinatura</a>: <strong>$9.99 por ano</strong> ou <strong>$0.99 por mês</strong> (USD), cada plano com <strong>7 dias de teste gratuito</strong>. A assinatura libera o aplicativo inteiro — o índice UV atual, previsões, o timer de exposição, notificações e a seção Aprender. Se você não cancelar antes do fim do teste, ele se converte automaticamente em uma assinatura paga.</p>
           </details>
 
           <details>
@@ -424,7 +424,7 @@
 
           <details>
             <summary>Como o tempo de queimadura é calculado?</summary>
-            <p>A partir da dose eritematosa mínima: <strong>minutos = DEM ÷ (índice UV × 1,5)</strong>. A DEM é a energia UV que a sua pele absorve antes de avermelhar visivelmente, e varia conforme o tipo Fitzpatrick — 200 J/m² para o tipo I até 900 J/m² para o tipo VI. Para pele do tipo II com UV 7, isso dá 250 ÷ 10,5 ≈ 24 minutos. Abaixo de UV 3 mostramos “Baixo risco de queimadura” em vez de um número, seguindo a orientação da OMS. São estimativas para um indivíduo médio, não aconselhamento médico.</p>
+            <p>A partir da dose eritematosa mínima: <strong>minutos = DEM ÷ (índice UV × 1,5)</strong>. A DEM é a energia UV que a sua pele absorve antes de avermelhar visivelmente, e varia conforme o tipo Fitzpatrick — 200 J/m² para o tipo I até 900 J/m² para o tipo VI. Para pele do tipo II com UV 7, isso dá 250 ÷ 10,5 ≈ 24 minutos. Abaixo de UV 3 mostramos “Baixo risco de queimadura” em vez de um número, seguindo a orientação da OMS. São estimativas para um adulto médio com a pele desprotegida — não um limite seguro nem aconselhamento médico. Em crianças, com alguns medicamentos e na neve, na água, na areia ou em altitude, a queimadura pode acontecer muito antes, e as leituras de UV podem estar erradas. Todos os tipos de pele podem queimar: proteja sua pele, seja qual for o número mostrado.</p>
           </details>
 
           <details>
@@ -458,7 +458,7 @@
           <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Aviso legal</a>
           <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contato</a>
         </nav>
-        <p class="cr">© 2026 Paulo Branicio · Índice UV e Proteção Solar</p>
+        <p class="cr">© 2026 SolShield · Índice UV e Proteção Solar</p>
         <p class="attr">Dados meteorológicos fornecidos pelo Apple Weather</p>
       </div>
     </footer>
@@ -502,14 +502,14 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
-            <h3>Índice UV en tiempo real</h3>
-            <p>Lecturas en tiempo real para su ubicación, procedentes de Apple Weather, con niveles de riesgo codificados por colores de la OMS.</p>
+            <h3>Índice UV actual</h3>
+            <p>Lecturas actuales para su zona, procedentes de Apple Weather, con niveles de riesgo codificados por colores de la OMS.</p>
           </article>
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
-            <h3>Tiempo de quemadura personalizado</h3>
-            <p>Minutos hasta la quemadura para su tipo de piel Fitzpatrick, del I al VI.</p>
+            <h3>Tiempo estimado de quemadura</h3>
+            <p>Una estimación de los minutos hasta la quemadura con la piel sin protección, para su tipo de piel Fitzpatrick, del I al VI.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -521,7 +521,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
             <h3>Temporizador de exposición solar</h3>
-            <p>Va descontando su tiempo seguro al sol y le avisa cuando se acaba.</p>
+            <p>Va descontando el tiempo que usted elija y le avisa cuando se acaba — un recordatorio, no un límite seguro.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -533,7 +533,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
             <h3>Estimación de vitamina D</h3>
-            <p>Cuánto está produciendo realmente su exposición actual, según el tipo de piel.</p>
+            <p>Una estimación de la vitamina D que puede producir la radiación UV actual, según el tipo de piel.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -562,11 +562,11 @@
       <div class="wrap narrow">
         <div class="section-head center">
           <p class="kicker">La ciencia</p>
-          <h2>El tiempo de quemadura no es una suposición</h2>
+          <h2>Cómo se estima el tiempo de quemadura</h2>
         </div>
         <div class="sci">
           <div class="formula">minutos = DEM ÷ (índice UV × 1,5)</div>
-          <p>La DEM es la dosis eritematosa mínima — la energía UV que su piel absorbe antes de enrojecer visiblemente. Varía según el tipo Fitzpatrick (200 J/m² para el tipo I hasta 900 J/m² para el tipo VI), y por eso dos personas bajo el mismo sol obtienen cifras muy diferentes.</p>
+          <p>La DEM es la dosis eritematosa mínima — la energía UV que su piel absorbe antes de enrojecer visiblemente. Varía según el tipo Fitzpatrick (200 J/m² para el tipo I hasta 900 J/m² para el tipo VI), y por eso dos personas bajo el mismo sol obtienen cifras muy diferentes. El tiempo de quemadura es una estimación para un adulto medio con la piel sin protección, no un límite seguro: los niños, algunos medicamentos, la nieve, el agua, la arena y la altitud pueden hacer que la piel se queme mucho antes.</p>
         </div>
       </div>
     </section>
@@ -584,7 +584,7 @@
           <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>A veces se quema</i></div>
           <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Raramente se quema</i></div>
           <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Muy raramente se quema</i></div>
-          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Nunca se quema</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Aun así puede quemarse</i></div>
         </div>
       </div>
     </section>
@@ -600,7 +600,7 @@
 
           <details>
             <summary>¿Cuánto cuesta SolShield?</summary>
-            <p>SolShield es una <a href="terms.html">aplicación por suscripción</a>: <strong>$9.99 al año</strong> o <strong>$0.99 al mes</strong> (USD), cada plan con <strong>7 días de prueba gratuita</strong>. La suscripción desbloquea toda la aplicación — UV en tiempo real, pronósticos, el temporizador de exposición, notificaciones y la sección Aprender. Si no cancela antes de que termine la prueba, se convierte automáticamente en una suscripción de pago.</p>
+            <p>SolShield es una <a href="terms.html">aplicación por suscripción</a>: <strong>$9.99 al año</strong> o <strong>$0.99 al mes</strong> (USD), cada plan con <strong>7 días de prueba gratuita</strong>. La suscripción desbloquea toda la aplicación — el índice UV actual, pronósticos, el temporizador de exposición, notificaciones y la sección Aprender. Si no cancela antes de que termine la prueba, se convierte automáticamente en una suscripción de pago.</p>
           </details>
 
           <details>
@@ -620,7 +620,7 @@
 
           <details>
             <summary>¿Cómo se calcula el tiempo de quemadura?</summary>
-            <p>A partir de la dosis eritematosa mínima: <strong>minutos = DEM ÷ (índice UV × 1,5)</strong>. La DEM es la energía UV que su piel absorbe antes de enrojecer visiblemente, y varía según el tipo Fitzpatrick — 200 J/m² para el tipo I hasta 900 J/m² para el tipo VI. Para una piel de tipo II con UV 7, eso da 250 ÷ 10,5 ≈ 24 minutos. Por debajo de UV 3 mostramos «Bajo riesgo de quemadura» en lugar de un número, siguiendo las recomendaciones de la OMS. Son estimaciones para una persona promedio, no consejo médico.</p>
+            <p>A partir de la dosis eritematosa mínima: <strong>minutos = DEM ÷ (índice UV × 1,5)</strong>. La DEM es la energía UV que su piel absorbe antes de enrojecer visiblemente, y varía según el tipo Fitzpatrick — 200 J/m² para el tipo I hasta 900 J/m² para el tipo VI. Para una piel de tipo II con UV 7, eso da 250 ÷ 10,5 ≈ 24 minutos. Por debajo de UV 3 mostramos «Bajo riesgo de quemadura» en lugar de un número, siguiendo las recomendaciones de la OMS. Son estimaciones para un adulto medio con la piel sin protección — no un límite seguro ni consejo médico. Los niños, algunos medicamentos, la nieve, el agua, la arena y la altitud pueden hacer que la piel se queme mucho antes, y las lecturas de UV pueden ser erróneas. Todos los tipos de piel pueden quemarse: proteja su piel independientemente de lo que indique la cifra.</p>
           </details>
 
           <details>
@@ -654,7 +654,7 @@
           <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Aviso legal</a>
           <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contacto</a>
         </nav>
-        <p class="cr">© 2026 Paulo Branicio · Índice UV y Protección Solar</p>
+        <p class="cr">© 2026 SolShield · Índice UV y Protección Solar</p>
         <p class="attr">Datos meteorológicos proporcionados por Apple Weather</p>
       </div>
     </footer>
@@ -698,14 +698,14 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
-            <h3>Indice UV en temps réel</h3>
-            <p>Des relevés en direct pour votre position, fournis par Apple Weather, avec les niveaux de risque de l’OMS codés par couleur.</p>
+            <h3>Indice UV actuel</h3>
+            <p>Des relevés actuels pour votre zone, fournis par Apple Weather, avec les niveaux de risque de l’OMS codés par couleur.</p>
           </article>
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
-            <h3>Temps avant coup de soleil personnalisé</h3>
-            <p>Le nombre de minutes avant un coup de soleil selon votre phototype de Fitzpatrick, de I à VI.</p>
+            <h3>Temps estimé avant coup de soleil</h3>
+            <p>Une estimation du nombre de minutes avant un coup de soleil sur une peau non protégée, selon votre phototype de Fitzpatrick, de I à VI.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -717,7 +717,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
             <h3>Minuteur d’exposition au soleil</h3>
-            <p>Décompte le temps que vous pouvez passer au soleil en sécurité et vous prévient lorsqu’il est écoulé.</p>
+            <p>Décompte la durée que vous choisissez et vous prévient lorsqu’elle est écoulée — un rappel, et non une limite de sécurité.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -729,7 +729,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
             <h3>Estimation de la vitamine D</h3>
-            <p>Combien votre exposition actuelle en produit réellement, selon votre type de peau.</p>
+            <p>Une estimation de la vitamine D que les UV actuels peuvent produire, selon votre type de peau.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -758,11 +758,11 @@
       <div class="wrap narrow">
         <div class="section-head center">
           <p class="kicker">La science</p>
-          <h2>Le temps avant coup de soleil ne se devine pas</h2>
+          <h2>Comment le temps avant coup de soleil est estimé</h2>
         </div>
         <div class="sci">
           <div class="formula">minutes = DEM ÷ (indice UV × 1,5)</div>
-          <p>La DEM est la dose érythémale minimale — l’énergie UV que votre peau absorbe avant de rougir visiblement. Elle varie selon le phototype de Fitzpatrick (de 200&nbsp;J/m² pour le type I jusqu’à 900&nbsp;J/m² pour le type VI)&nbsp;: c’est pourquoi deux personnes exposées au même soleil obtiennent des chiffres très différents.</p>
+          <p>La DEM est la dose érythémale minimale — l’énergie UV que votre peau absorbe avant de rougir visiblement. Elle varie selon le phototype de Fitzpatrick (de 200&nbsp;J/m² pour le type I jusqu’à 900&nbsp;J/m² pour le type VI)&nbsp;: c’est pourquoi deux personnes exposées au même soleil obtiennent des chiffres très différents. Il s’agit d’une estimation pour un adulte moyen à la peau non protégée, et non d’une limite de sécurité&nbsp;: chez les enfants, avec certains médicaments, sur la neige, l’eau ou le sable et en altitude, un coup de soleil peut survenir beaucoup plus tôt.</p>
         </div>
       </div>
     </section>
@@ -780,7 +780,7 @@
           <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Brûle parfois</i></div>
           <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Brûle rarement</i></div>
           <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Brûle très rarement</i></div>
-          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Ne brûle jamais</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Peut tout de même brûler</i></div>
         </div>
       </div>
     </section>
@@ -796,7 +796,7 @@
 
           <details>
             <summary>Combien coûte SolShield&nbsp;?</summary>
-            <p>SolShield est une <a href="terms.html">app sur abonnement</a>&nbsp;: <strong>$9.99 par an</strong> ou <strong>$0.99 par mois</strong> (USD), chaque formule comprenant un <strong>essai gratuit de 7&nbsp;jours</strong>. L’abonnement débloque toute l’app — l’indice UV en temps réel, les prévisions, le minuteur d’exposition, les notifications et la section Apprendre. Si vous n’annulez pas avant la fin de l’essai, celui-ci se convertit automatiquement en abonnement payant.</p>
+            <p>SolShield est une <a href="terms.html">app sur abonnement</a>&nbsp;: <strong>$9.99 par an</strong> ou <strong>$0.99 par mois</strong> (USD), chaque formule comprenant un <strong>essai gratuit de 7&nbsp;jours</strong>. L’abonnement débloque toute l’app — l’indice UV actuel, les prévisions, le minuteur d’exposition, les notifications et la section Apprendre. Si vous n’annulez pas avant la fin de l’essai, celui-ci se convertit automatiquement en abonnement payant.</p>
           </details>
 
           <details>
@@ -816,7 +816,7 @@
 
           <details>
             <summary>Comment le temps avant coup de soleil est-il calculé&nbsp;?</summary>
-            <p>À partir de la dose érythémale minimale&nbsp;: <strong>minutes = DEM ÷ (indice UV × 1,5)</strong>. La DEM est l’énergie UV que votre peau absorbe avant de rougir visiblement, et elle varie selon le phototype de Fitzpatrick — de 200&nbsp;J/m² pour le type I jusqu’à 900&nbsp;J/m² pour le type VI. Pour une peau de type II avec un indice UV de 7, cela donne 250 ÷ 10,5 ≈ 24&nbsp;minutes. En dessous d’un indice UV de 3, nous affichons «&nbsp;Faible risque de coup de soleil&nbsp;» au lieu d’un chiffre, conformément aux recommandations de l’OMS. Il s’agit d’estimations pour une personne moyenne, et non d’un avis médical.</p>
+            <p>À partir de la dose érythémale minimale&nbsp;: <strong>minutes = DEM ÷ (indice UV × 1,5)</strong>. La DEM est l’énergie UV que votre peau absorbe avant de rougir visiblement, et elle varie selon le phototype de Fitzpatrick — de 200&nbsp;J/m² pour le type I jusqu’à 900&nbsp;J/m² pour le type VI. Pour une peau de type II avec un indice UV de 7, cela donne 250 ÷ 10,5 ≈ 24&nbsp;minutes. En dessous d’un indice UV de 3, nous affichons «&nbsp;Faible risque de coup de soleil&nbsp;» au lieu d’un chiffre, conformément aux recommandations de l’OMS. Il s’agit d’estimations pour un adulte moyen à la peau non protégée — et non d’une limite de sécurité ni d’un avis médical. Chez les enfants, avec certains médicaments, sur la neige, l’eau ou le sable et en altitude, un coup de soleil peut survenir beaucoup plus tôt, et les relevés UV peuvent être erronés. Tous les types de peau peuvent brûler&nbsp;: protégez votre peau, quel que soit le chiffre affiché.</p>
           </details>
 
           <details>
@@ -850,7 +850,7 @@
           <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Mentions légales</a>
           <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contact</a>
         </nav>
-        <p class="cr">© 2026 Paulo Branicio · Indice UV et protection solaire</p>
+        <p class="cr">© 2026 SolShield · Indice UV et protection solaire</p>
         <p class="attr">Données météo fournies par Apple Weather</p>
       </div>
     </footer>
@@ -894,14 +894,14 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
-            <h3>Indice UV in tempo reale</h3>
-            <p>Valori aggiornati in tempo reale per la tua posizione, forniti da Apple Weather, con i livelli di rischio dell’OMS distinti per colore.</p>
+            <h3>Indice UV attuale</h3>
+            <p>Valori attuali per la tua zona, forniti da Apple Weather, con i livelli di rischio dell’OMS distinti per colore.</p>
           </article>
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
-            <h3>Tempo di scottatura personalizzato</h3>
-            <p>I minuti che mancano alla scottatura in base al tuo fototipo di Fitzpatrick, dal I al VI.</p>
+            <h3>Tempo di scottatura stimato</h3>
+            <p>Una stima dei minuti che mancano alla scottatura sulla pelle non protetta, in base al tuo fototipo di Fitzpatrick, dal I al VI.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -913,7 +913,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
             <h3>Timer di esposizione al sole</h3>
-            <p>Fa il conto alla rovescia del tempo che puoi passare al sole in sicurezza e ti avvisa quando è scaduto.</p>
+            <p>Fa il conto alla rovescia del tempo che scegli e ti avvisa quando è scaduto — un promemoria, non un limite di sicurezza.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -925,7 +925,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
             <h3>Stima della vitamina D</h3>
-            <p>Quanta ne sta producendo davvero la tua esposizione attuale, in base al tipo di pelle.</p>
+            <p>Una stima della vitamina D che puoi produrre con i raggi UV attuali, in base al tipo di pelle.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -954,11 +954,11 @@
       <div class="wrap narrow">
         <div class="section-head center">
           <p class="kicker">La scienza</p>
-          <h2>Il tempo di scottatura non è una stima a occhio</h2>
+          <h2>Come si stima il tempo di scottatura</h2>
         </div>
         <div class="sci">
           <div class="formula">minuti = MED ÷ (indice UV × 1,5)</div>
-          <p>La MED è la dose eritematosa minima — l’energia UV che la tua pelle assorbe prima di arrossarsi visibilmente. Varia in base al fototipo di Fitzpatrick (da 200&nbsp;J/m² per il tipo I fino a 900&nbsp;J/m² per il tipo VI), ed è per questo che due persone sotto lo stesso sole ottengono valori molto diversi.</p>
+          <p>La MED è la dose eritematosa minima — l’energia UV che la tua pelle assorbe prima di arrossarsi visibilmente. Varia in base al fototipo di Fitzpatrick (da 200&nbsp;J/m² per il tipo I fino a 900&nbsp;J/m² per il tipo VI), ed è per questo che due persone sotto lo stesso sole ottengono valori molto diversi. È una stima per un adulto medio con la pelle non protetta, non un limite di sicurezza: nei bambini, con alcuni farmaci, sulla neve, sull’acqua, sulla sabbia e in quota la scottatura può arrivare molto prima.</p>
         </div>
       </div>
     </section>
@@ -976,7 +976,7 @@
           <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Si scotta a volte</i></div>
           <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Si scotta raramente</i></div>
           <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Si scotta molto raramente</i></div>
-          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Non si scotta mai</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Può comunque scottarsi</i></div>
         </div>
       </div>
     </section>
@@ -992,7 +992,7 @@
 
           <details>
             <summary>Quanto costa SolShield?</summary>
-            <p>SolShield è un’<a href="terms.html">app in abbonamento</a>: <strong>$9.99 all’anno</strong> o <strong>$0.99 al mese</strong> (USD), ciascun piano con <strong>7&nbsp;giorni di prova gratuita</strong>. L’abbonamento sblocca l’intera app — indice UV in tempo reale, previsioni, timer di esposizione, notifiche e la sezione Impara. Se non annulli prima della fine della prova, questa si converte automaticamente in un abbonamento a pagamento.</p>
+            <p>SolShield è un’<a href="terms.html">app in abbonamento</a>: <strong>$9.99 all’anno</strong> o <strong>$0.99 al mese</strong> (USD), ciascun piano con <strong>7&nbsp;giorni di prova gratuita</strong>. L’abbonamento sblocca l’intera app — indice UV attuale, previsioni, timer di esposizione, notifiche e la sezione Impara. Se non annulli prima della fine della prova, questa si converte automaticamente in un abbonamento a pagamento.</p>
           </details>
 
           <details>
@@ -1012,7 +1012,7 @@
 
           <details>
             <summary>Come viene calcolato il tempo di scottatura?</summary>
-            <p>A partire dalla dose eritematosa minima: <strong>minuti = MED ÷ (indice UV × 1,5)</strong>. La MED è l’energia UV che la tua pelle assorbe prima di arrossarsi visibilmente, e varia in base al fototipo di Fitzpatrick — da 200&nbsp;J/m² per il tipo I fino a 900&nbsp;J/m² per il tipo VI. Per una pelle di tipo II con indice UV 7, il risultato è 250 ÷ 10,5 ≈ 24&nbsp;minuti. Sotto l’indice UV 3 mostriamo «Basso rischio di scottatura» al posto di un numero, secondo le indicazioni dell’OMS. Sono stime per una persona media, non un parere medico.</p>
+            <p>A partire dalla dose eritematosa minima: <strong>minuti = MED ÷ (indice UV × 1,5)</strong>. La MED è l’energia UV che la tua pelle assorbe prima di arrossarsi visibilmente, e varia in base al fototipo di Fitzpatrick — da 200&nbsp;J/m² per il tipo I fino a 900&nbsp;J/m² per il tipo VI. Per una pelle di tipo II con indice UV 7, il risultato è 250 ÷ 10,5 ≈ 24&nbsp;minuti. Sotto l’indice UV 3 mostriamo «Basso rischio di scottatura» al posto di un numero, secondo le indicazioni dell’OMS. Sono stime per un adulto medio con la pelle non protetta — non un limite di sicurezza e non un parere medico. Nei bambini, con alcuni farmaci, sulla neve, sull’acqua, sulla sabbia e in quota la scottatura può arrivare molto prima, e i valori UV possono essere errati. Ogni tipo di pelle può scottarsi: proteggi la tua pelle qualunque sia il numero.</p>
           </details>
 
           <details>
@@ -1046,7 +1046,7 @@
           <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Note legali</a>
           <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Contatti</a>
         </nav>
-        <p class="cr">© 2026 Paulo Branicio · Indice UV e protezione solare</p>
+        <p class="cr">© 2026 SolShield · Indice UV e protezione solare</p>
         <p class="attr">Dati meteo forniti da Apple Weather</p>
       </div>
     </footer>
@@ -1090,14 +1090,14 @@
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></div>
-            <h3>UV-Index in Echtzeit</h3>
-            <p>Aktuelle Werte für deinen Standort von Apple Weather, mit den farblich gekennzeichneten Risikostufen der WHO.</p>
+            <h3>Aktueller UV-Index</h3>
+            <p>Aktuelle Werte für deine Gegend von Apple Weather, mit den farblich gekennzeichneten Risikostufen der WHO.</p>
           </article>
 
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.2 20.4a6.8 6.8 0 0 1 13.6 0"/></svg></div>
-            <h3>Deine Zeit bis Sonnenbrand</h3>
-            <p>Die Minuten bis zum Sonnenbrand für deinen Hauttyp nach Fitzpatrick, von I bis VI.</p>
+            <h3>Geschätzte Zeit bis Sonnenbrand</h3>
+            <p>Eine Schätzung der Minuten bis zum Sonnenbrand auf ungeschützter Haut, für deinen Hauttyp nach Fitzpatrick, von I bis VI.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -1109,7 +1109,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.6" r="7.4"/><path d="M12 9.8v3.8l2.6 1.6M9.6 2.6h4.8M12 2.6v3.6"/></svg></div>
             <h3>Sonnen-Timer</h3>
-            <p>Zählt die Zeit herunter, die du sicher in der Sonne verbringen kannst, und sagt dir Bescheid, wenn sie abgelaufen ist.</p>
+            <p>Zählt die von dir gewählte Zeit herunter und sagt dir Bescheid, wenn sie abgelaufen ist – eine Erinnerung, kein sicherer Grenzwert.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -1121,7 +1121,7 @@
           <article class="feature" data-rise>
             <div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="9" width="18.8" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.9 9.9 14.1 14.1"/></svg></div>
             <h3>Vitamin-D-Schätzung</h3>
-            <p>Wie viel Vitamin D du bei deiner aktuellen Sonnenexposition tatsächlich bildest, je nach Hauttyp.</p>
+            <p>Eine Schätzung, wie viel Vitamin D bei der aktuellen UV-Strahlung gebildet werden kann, je nach Hauttyp.</p>
           </article>
 
           <article class="feature" data-rise>
@@ -1150,11 +1150,11 @@
       <div class="wrap narrow">
         <div class="section-head center">
           <p class="kicker">Die Wissenschaft dahinter</p>
-          <h2>Die Zeit bis Sonnenbrand ist kein Ratespiel</h2>
+          <h2>So wird die Zeit bis Sonnenbrand geschätzt</h2>
         </div>
         <div class="sci">
           <div class="formula">Minuten = MED ÷ (UV-Index × 1,5)</div>
-          <p>MED steht für minimale Erythemdosis – die UV-Energie, die deine Haut aufnimmt, bevor sie sichtbar rot wird. Sie hängt vom Hauttyp nach Fitzpatrick ab (von 200&nbsp;J/m² bei Typ I bis 900&nbsp;J/m² bei Typ VI). Deshalb kommen zwei Menschen, die in derselben Sonne stehen, auf sehr unterschiedliche Werte.</p>
+          <p>MED steht für minimale Erythemdosis – die UV-Energie, die deine Haut aufnimmt, bevor sie sichtbar rot wird. Sie hängt vom Hauttyp nach Fitzpatrick ab (von 200&nbsp;J/m² bei Typ I bis 900&nbsp;J/m² bei Typ VI). Deshalb kommen zwei Menschen, die in derselben Sonne stehen, auf sehr unterschiedliche Werte. Das Ergebnis ist eine Schätzung für eine durchschnittliche erwachsene Person mit ungeschützter Haut, kein sicherer Grenzwert: Bei Kindern, bei manchen Medikamenten, bei Schnee, Wasser und Sand und in größerer Höhe kann ein Sonnenbrand viel früher entstehen.</p>
         </div>
       </div>
     </section>
@@ -1172,7 +1172,7 @@
           <div class="skin"><div class="swatch" data-skin="iii"></div><b>III</b><i>Manchmal Sonnenbrand</i></div>
           <div class="skin"><div class="swatch" data-skin="iv"></div><b>IV</b><i>Selten Sonnenbrand</i></div>
           <div class="skin"><div class="swatch" data-skin="v"></div><b>V</b><i>Sehr selten Sonnenbrand</i></div>
-          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Nie Sonnenbrand</i></div>
+          <div class="skin"><div class="swatch" data-skin="vi"></div><b>VI</b><i>Trotzdem Sonnenbrand möglich</i></div>
         </div>
       </div>
     </section>
@@ -1188,7 +1188,7 @@
 
           <details>
             <summary>Was kostet SolShield?</summary>
-            <p>SolShield ist eine <a href="terms.html">Abo-App</a>: <strong>$9.99 pro Jahr</strong> oder <strong>$0.99 pro Monat</strong> (USD), jeweils mit einer <strong>kostenlosen Testphase von 7&nbsp;Tagen</strong>. Das Abo schaltet die gesamte App frei – UV-Index in Echtzeit, Vorhersagen, den Sonnen-Timer, Mitteilungen und den Bereich „Wissen“. Wenn du nicht vor dem Ende der Testphase kündigst, geht sie automatisch in ein kostenpflichtiges Abo über.</p>
+            <p>SolShield ist eine <a href="terms.html">Abo-App</a>: <strong>$9.99 pro Jahr</strong> oder <strong>$0.99 pro Monat</strong> (USD), jeweils mit einer <strong>kostenlosen Testphase von 7&nbsp;Tagen</strong>. Das Abo schaltet die gesamte App frei – den aktuellen UV-Index, Vorhersagen, den Sonnen-Timer, Mitteilungen und den Bereich „Wissen“. Wenn du nicht vor dem Ende der Testphase kündigst, geht sie automatisch in ein kostenpflichtiges Abo über.</p>
           </details>
 
           <details>
@@ -1208,7 +1208,7 @@
 
           <details>
             <summary>Wie wird die Zeit bis Sonnenbrand berechnet?</summary>
-            <p>Anhand der minimalen Erythemdosis: <strong>Minuten = MED ÷ (UV-Index × 1,5)</strong>. Die MED ist die UV-Energie, die deine Haut aufnimmt, bevor sie sichtbar rot wird, und sie hängt vom Hauttyp nach Fitzpatrick ab – von 200&nbsp;J/m² bei Typ I bis 900&nbsp;J/m² bei Typ VI. Für Hauttyp II bei UV 7 ergibt das 250 ÷ 10,5 ≈ 24&nbsp;Minuten. Unter UV 3 zeigen wir gemäß den Empfehlungen der WHO statt einer Zahl „Geringes Sonnenbrandrisiko“ an. Es handelt sich um Schätzungen für eine durchschnittliche Person, nicht um medizinischen Rat.</p>
+            <p>Anhand der minimalen Erythemdosis: <strong>Minuten = MED ÷ (UV-Index × 1,5)</strong>. Die MED ist die UV-Energie, die deine Haut aufnimmt, bevor sie sichtbar rot wird, und sie hängt vom Hauttyp nach Fitzpatrick ab – von 200&nbsp;J/m² bei Typ I bis 900&nbsp;J/m² bei Typ VI. Für Hauttyp II bei UV 7 ergibt das 250 ÷ 10,5 ≈ 24&nbsp;Minuten. Unter UV 3 zeigen wir gemäß den Empfehlungen der WHO statt einer Zahl „Geringes Sonnenbrandrisiko“ an. Es handelt sich um Schätzungen für eine durchschnittliche erwachsene Person mit ungeschützter Haut – nicht um einen sicheren Grenzwert und nicht um medizinischen Rat. Bei Kindern, bei manchen Medikamenten, bei Schnee, Wasser und Sand und in größerer Höhe kann ein Sonnenbrand viel früher entstehen, und UV-Werte können falsch sein. Jeder Hauttyp kann einen Sonnenbrand bekommen: Schütze deine Haut, ganz gleich, was die Zahl sagt.</p>
           </details>
 
           <details>
@@ -1242,7 +1242,7 @@
           <a href="impressum.html" data-i18n-en="Legal notice" data-i18n-pt="Aviso legal" data-i18n-es="Aviso legal" data-i18n-fr="Mentions légales" data-i18n-it="Note legali" data-i18n-de="Impressum">Impressum</a>
           <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto" data-i18n-fr="Contact" data-i18n-it="Contatti" data-i18n-de="Kontakt">Kontakt</a>
         </nav>
-        <p class="cr">© 2026 Paulo Branicio · UV-Index und Sonnenschutz</p>
+        <p class="cr">© 2026 SolShield · UV-Index und Sonnenschutz</p>
         <p class="attr">Wetterdaten von Apple Weather</p>
       </div>
     </footer>

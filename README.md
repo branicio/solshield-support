@@ -321,6 +321,11 @@ one. The French and Italian names were written for 1.2.0, the German one
 de-DE subscription localizations in ASC whenever those change. The German
 copies, added 2026-11-03, repeat the amounts above unchanged.
 
+**Android prices are not quoted anywhere on the site** (since the 1.4.0 Terms, 2026-11-09): Google
+Play shows them before purchase, and they differ from the App Store's (read 2026-11-09: annual $4.99
+with a 7-day trial, monthly $0.99 with no trial). The Terms say so in words; only the iPhone/iPad prices
+above are quoted.
+
 **Prices must be re-verified via the ASC API before every release — never
 trusted from in-repo strings, and never trusted from any single source.**
 This is not a hypothetical: in July 2026 three sources disagreed and none of
@@ -453,3 +458,24 @@ _All URLs above verified returning HTTP 200 on 2026-07-28, and again on
 - `impressum.html` — Impressum / legal notice (§ 5 DDG), linked from every footer. Since later that day (`1b27856`) it has all six `[data-lang]` sections (Legal notice, Aviso legal, Mentions légales, Note legali, Impressum), switched by the language bar like the other pages. `site.js` lists it in `PAGES`, so the reader's language carries over.
 - Privacy policy: "Controller and your rights (GDPR)" in every language, plus the Android paragraph (Google Weather API, approximate location, Google Play billing) — this page is also the Android app's and the Play listing's privacy policy. Terms: § 13 for EU/EEA/UK/Swiss consumers (Severability and Contact renumbered 14–15).
 - The legal text is shared by all of Paulo's support sites from one canonical source; change it there.
+
+## Terms of Use 1.4.0 and the name rule (2026-11-09)
+
+- `terms.html` was rebuilt on Lightfast's model for SolShield 1.4.0 (effective November 9, 2026): it covers
+  iPhone, iPad **and Android** (Apple Weather / Google's Weather API; App Store / Google Play pairs), has a
+  bold **sun-exposure section with an assumption of risk and release** (section 6), a bold disclaimer and
+  limitation (US$100 floor, carve-outs for fraud, gross negligence and willful misconduct), no indemnity,
+  and the shared EU/EEA/UK/Swiss block (section 15) word for word. Each language keeps its own id on that
+  heading (`eu-consumers`, `consumidores-ue`, …).
+- The apps ask users to accept these Terms ("Agree and continue", `TermsOfUse.version` = "2026-11-09").
+  **Any important change to the Terms needs a new effective date and a version bump in both apps**, or
+  existing users are never asked to accept it.
+- SolShield has **no custom EULA** in App Store Connect: Apple's standard EULA applies on iOS, and
+  section 9 carries Apple's minimum-terms bullets.
+- **Paulo's name, address and phone appear only in the Impressum** (Paulo, 2026-11-09). Footers read
+  "© 2026 SolShield"; the Terms give only braniapps@gmail.com; the Privacy Policy names the controller as
+  "the provider named in our Legal notice (Impressum)" plus the email. Only the German Impressum names
+  § 5 DDG; the other languages say "Provider of this website and of the app SolShield:".
+- Record: `Solshield/docs/reviews/2026-11-09-safety/` in the iOS repo (decisions, the English source, every
+  language's translation notes and independent legal review).
+

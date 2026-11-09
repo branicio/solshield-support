@@ -1167,6 +1167,19 @@ a:hover { color: var(--ink); }
   background: var(--sun);
 }
 
+/* The box at the top of the Terms: "Please read carefully" and the app's main
+   safety point. Ink on the tinted ground (both tokens, so contrast.py covers it in
+   light and dark) with a sun-coloured rule on the left. */
+.legal-box {
+  margin-bottom: clamp(26px, 4vw, 38px);
+  padding: 4px 20px 18px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--sun);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+  color: var(--ink);
+}
+
 /* ------------------------------------------------------ language visibility */
 
 /* Languages are hidden ONLY when site.js has announced itself by setting
